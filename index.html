@@ -4,18 +4,202 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>notkal.com</title>
+    <title>notkal</title>
+    <link rel="stylesheet" href="index.css">
 
-    <style>
-        body {
-            background-color: black;
-            color: white;
-        }
-    </style>
+    <!-- not-util -->
+    <link rel="stylesheet" href="https://not-the.github.io/not-util/not-util.css" crossorigin>
+    <script src="https://not-the.github.io/not-util/not-util.js" crossorigin></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>
-        There's nothing here
-    </p>
+    <!---------- Navigation ---------->
+    <nav id="nav" class="overlay_element flex nav_transparent">
+        <!-- Menu button -->
+        <div role="button" tabindex="0" id="menu_button" class="nav_button">
+            <img src="./assets/icon/hamburger.svg" alt="Menu" id="menu_button_icon" class="button_icon">
+        </div>
+
+        <!-- Page name -->
+        <h1 class="nav_item page_title">notkal</h1>
+
+        <div class="flex" id="hamburger_menu">
+            <!-- Nav items -->
+            <div id="nav_list" class="flex">
+                <a href="#" class="nav_item" onclick="toTop();">Home</a>
+                <a href="#projects" class="nav_item" onclick="toggleMenu()">Projects</a>
+                <a href="#contact" class="nav_item" onclick="toggleMenu()">Contact</a>    
+            </div>
+            
+            <!-- Additional buttons -->
+            <div class="nav_item nav_right flex">
+                <a href="https://github.com/not-the" target="_blank" rel=”noreferrer”>
+                    <div role="button" class="nav_button">
+                        <img src="./assets/icon/github.svg" alt="Github" class="button_icon">
+                    </div>
+                </a>
+                <div role="button" tabindex="0" id="theme_button" class="nav_button">
+                    <img src="./assets/icon/moon.svg" alt="Theme" id="theme_button_icon" class="button_icon">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!---------- Main ---------->
+    <!-- Video -->
+    <video src="./assets/video/abstract_ds.mp4" id="video_main" autoplay muted loop></video>
+    <!-- Landing spacer -->
+    <div style="margin-bottom: 100vh"></div>
+    <main id="home">
+        <!-- Hello -->
+        <div class="home_block home_hello">
+            <h1 class="big_title">
+                Hi, I'm<br/><span class="big_title_accent">not-the</span>
+            </h1>
+            <p class="tagline">Web developer</p><br/>
+            <p class="secondary_text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores vel sapiente quasi fugit temporibus.
+            </p><br/>
+            <a href="#projects" class="bold underline">My work 🡆</a>
+        </div>
+
+        <!-- More -->
+        <div class="home_block home_more">
+            <p class="center">Available for <b class="emphasize">freelance work</b></span></p>
+            <br/>
+            <a href="#contact">
+                <div class="button call_to_action full_width">
+                    <p>Email me</p>
+                    <div class="button_shade"></div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!---------- Projects ---------->
+    <section id="projects" class="container">
+        <!-- Title -->
+        <h2>Projects</h2>
+        
+        <!-- List -->
+        <div id="projects_list" class="flex">
+
+            <!-- Carrot Clicker -->
+            <div class="project_item" style="background-image: url(./assets/project/carrot_clicker_big.png);">
+                <a href="https://jjcvip.github.io/Carrot-Clicker/"><div class="full_width full_height"></div></a>
+                <div class="label flex">
+                    <img src="./assets/project/carrot_clicker.png" alt="">
+                    <h3>Carrot Clicker</h3>
+                </div>
+            </div>
+
+            <!-- Minecraft Worlds Directory -->
+            <div class="project_item" style="background-image: url(./assets/project/minecraft_worlds_big.png);">
+                <a href="https://worlds.notkal.com/"><div class="full_width full_height"></div></a>
+                <div class="label flex">
+                    <h3>Minecraft Worlds Directory</h3>
+                </div>
+            </div>
+
+            <!-- Rubiks -->
+            <div class="project_item" style="background-image: url(./assets/project/rubiks_big.png);">
+                <a href="https://rubiks.notkal.com/"><div class="full_width full_height"></div></a>
+                <div class="label flex">
+                    <h3>Rubik's Cube simulator</h3>
+                </div>
+            </div>
+
+            <!-- Confetti -->
+            <div class="project_item" style="background-image: url(./assets/project/confetti.png);">
+                <a href="https://confetti.notkal.com/"><div class="full_width full_height"></div></a>
+                <div class="label flex">
+                    <h3>HTML Confetti</h3>
+                </div>
+            </div>
+
+            <!-- Tic Tac Toe -->
+            <div class="project_item" style="background-image: url(./assets/project/tic_tac_toe_big.png);">
+                <a href="https://not-the.github.io/TicTacToe/"><div class="full_width full_height"></div></a>
+                <div class="label flex">
+                    <h3>Tic Tac Toe</h3>
+                </div>
+            </div>
+
+            <!-- Geolocation -->
+            <div class="project_item" style="background-image: url(./assets/project/geolocation_big.png);">
+                <a href="https://not-the.github.io/geolocation-html/"><div class="full_width full_height"></div></a>
+                <div class="label flex">
+                    <h3>Geolocation</h3>
+                </div>
+            </div>
+
+            <!-- Leap years list -->
+            <div class="project_item">
+                <a href="https://not-the.github.io/geolocation-html/"><div class="full_width full_height"></div></a>
+                <div class="label flex">
+                    <h3>Leap years list</h3>
+                </div>
+            </div>
+
+            <!-- CSS loading screens -->
+            <div class="project_item">
+                <a href="https://not-the.github.io/Loading-Screens/"><div class="full_width full_height"></div></a>
+                <div class="label flex">
+                    <h3>CSS loading screens</h3>
+                </div>
+            </div>
+
+            <!-- Leap Year -->
+            <div class="project_item">
+                <a href="https://not-the.github.io/js-pyramid/"><div class="full_width full_height"></div></a>
+                <div class="label flex">
+                    <h3>JS Pyramid</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---------- Contact ---------->
+    <section id="contact" class="container">
+        <!-- Title -->
+        <h2>Contact</h2>
+
+        <b class="emphasize">Email</b>
+        <p>contact@notkal.com</p>
+    </section>
+
+    <!---------- Footer ---------->
+    <footer id="footer" class="flex">
+        <div class="container">
+            <div class="column">
+                <!-- Attribution -->
+                <p class="emphasize bold">Image attribution</p>
+                <p>
+                    <a href="https://commons.wikimedia.org/wiki/File:Hamburger_icon.svg">Hamburger icon</a> by <a href="https://commons.wikimedia.org/wiki/File:Hamburger_icon.svg">Timothy Miller</a>, Public domain, via Wikimedia Commons
+                </p>
+                <p>
+                    <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-sun.svg">Sun</a> and <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-moon.svg">Moon</a> icons by <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-sun.svg">Cole Bemis</a>, <a href="http://opensource.org/licenses/mit-license.php">MIT</a>, via Wikimedia Commons
+                </p>
+                <br/>
+    
+                <!-- Copyright -->
+                <p class="emphasize">Ⓒ 2022 notkal.com</p>
+            </div>
+            <div class="column">
+                <a href="#" onclick="toTop()">Return to top</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!---------- Overlays ---------->
+    <div id="backdrop"></div>
+
+    <!-- JS -->
+    <script src="index.js"></script>
 </body>
 </html>
