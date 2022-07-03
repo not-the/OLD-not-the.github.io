@@ -1,3 +1,3 @@
 # notkal.com
 
-http://www.notkal.com/
+https://www.notkal.com/
