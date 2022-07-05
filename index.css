@@ -16,7 +16,7 @@
 
     /* Text and elements */
     --text:                white;
-    --secondary-text:      rgb(200, 200, 200);
+    --secondary-text:      rgb(190, 190, 190);
     --link-color:          rgb(81, 162, 255);
 
     /* Accents */
@@ -38,7 +38,7 @@
     /* Misc */
     --dark-border-color:   rgba(199, 199, 199, 0.3);
     --border-color:        rgba(0, 0, 0, 0.3);
-    /* --border-darker:       rgba(255, 255, 255, 0.1); */
+    --border-darker:       rgba(0, 0, 0, 0.1);
     --nav-button-hover-bg: rgb(255, 255, 255, 0.1);
 
     /* Text and elements */
@@ -48,7 +48,7 @@
 
     /* Accents */
     /* --accent-color:        rgb(81, 162, 255); */
-    --gradient-a:          #02dd65;
+    --gradient-a:          #00c257;
     --gradient-b:          #3765ff;
 }
 
@@ -167,16 +167,21 @@ select:hover,
     transition: 0.2s background-color ease;
 }
 section {
+    padding-top: 32px !important;
     padding-bottom: 24px !important;
 }
 section h2 {
-    font-size: 20pt;
+    font-size: 24pt;
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 12px;
 }
+section:target h2 {
+    border-color: var(--accent-color);
+    /* box-shadow: inset 0 -6px 5px -4px rgba(81, 162, 255, 0.6); */
+}
 .column {
     flex: 1;
-    padding: 8px 16px;
+    padding: 8px 0;
     position: relative;
 }
 
@@ -200,7 +205,7 @@ section h2 {
     background-color: transparent;
     border-color: var(--dark-border-color);
 }
-#nav:not(.nav_transparent) .nav_item {
+#nav:not(.nav_transparent:not(.menu_open)) .nav_item {
     color: var(--text);
 }
 .nav_item {
@@ -247,6 +252,9 @@ a.nav_item:hover,
     user-select: none;
     -webkit-user-select: none;
 }
+.icon {
+    filter: invert();
+}
 .button_icon {
     box-sizing: content-box;
     width: 8px;
@@ -267,11 +275,10 @@ a.nav_item:hover,
     position: absolute;
 }
 #menu_button_icon {
-    padding: 3px;
-    margin-bottom: -8px;
+    padding-left: 7px;
+    padding-top: 6px;
 }
 
-/* .nav_button:active .button_icon { animation: rollout 500ms ease; } */
 .a_rollout { animation: rollout 500ms ease; }
 @keyframes rollout {
     0%   { transform: scale(2.5, 2.5) rotate(25deg); }
@@ -306,16 +313,8 @@ a.nav_item:hover,
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 460px;
-    /* max-width: 386px; */
-
-    animation: floatin 1s ease;
 }
-@keyframes floatin {
-    from {
-        transform: translate(-50%, calc(-50% + 48px));
-        opacity: 0;
-    }
-}
+@keyframes floatin   { 0% { transform: translateY(48px); } }
 #home .home_block {
     width: 100%;
     padding: 20px;
@@ -331,6 +330,8 @@ a.nav_item:hover,
     transition-property: border-color box-shadow;
     transition-duration: 0.2s;
     transition-timing-function: ease;
+
+    animation: floatin 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #home .home_block:hover {
     border-color: rgba(255, 255, 255, 0.2);
@@ -347,6 +348,8 @@ a.nav_item:hover,
     width: 280px;
     margin-left: 180px;
     margin-top: -90px;
+    animation-delay: 0.15s;
+    animation-fill-mode: backwards;
 }
 #home h1.big_title {
     font-size: 32pt;
@@ -372,37 +375,38 @@ a.nav_item:hover,
 #home p.tagline { font-size: 14pt; }
 
 /* Projects */
-#projects {
-    padding-top: 24px;
-}
 #projects_list {
     flex-wrap: wrap;
-    /* justify-content: center; */
+    justify-content: space-between;
 }
 .project_item {
     color: white;
 
-    width: calc(50% - 12px);
+    width: 49.5%;
     height: 240px;
     margin-bottom: 12px;
-    margin-right: 12px;
+    /* margin-right: 12px; */
 
     /* background-color: var(--lighter-bg); */
     background-color: #222124;
     border: 1px solid var(--border-color);
     border-radius: 6px;
-    filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.5));
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
 
     background-size: cover;
-    transition-property: transform, filter, border-color;
+    /* background-position: center; */
+    /* background-size: 100%; */
+    transition-property: transform, box-shadow, border-color, background-size;
     transition-duration: 0.2s;
     transition-timing-function: cubic-bezier(0.95, 0.55, 0.05, 0.445);
     transform: perspective(800px);
 }
 .project_item:hover {
     border-color: rgb(182, 182, 182);
-    transform: perspective(800px) rotateX(5deg) scale(1.025, 1.025);
     filter: brightness(120%);
+    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.8);
+    /* background-size: 110%; */
+    transform: perspective(800px) rotateX(5deg) scale(1.025, 1.025);
     z-index: 1;
 }
 .project_item img {
@@ -413,7 +417,7 @@ a.nav_item:hover,
     bottom: 8px;
     left: 12px;
 
-    text-shadow: 0 0 3px black;
+    text-shadow: 0 0 1px black, 0 0 2px black, 0 0 3px black, 0 0 4px black;
     font-size: 12pt;
 }
 .project_item .label img {
@@ -424,18 +428,37 @@ a.nav_item:hover,
 
 
 /* Contact */
-/* #contact {
-    background-color: rgb(23, 23, 24);
-} */
+#contact_list {
+    background-color: var(--lighter-bg);
+    border-radius: 8px;
+
+    font-size: 12pt;
+}
+.contact_item { padding: 8px 12px; }
+.contact_item:not(:last-of-type) { border-bottom: 1px solid var(--border-darker); }
+.contact_item img {
+    margin: 4px 12px 0 2px;
+    width: 32px;
+    height: 32px;
+
+    opacity: 0.8;
+}
 
 
 /* Footer */
 #footer {
+    color: var(--secondary-text);
+
     padding: 12px 0;
     margin-top: 12px;
     border-top: 1px solid var(--border-color);
+
+	background-image: url(./assets/halftone.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 320px;
 }
-#footer .column:first-of-type { margin-right: 16px; }
+/* #footer .column:first-of-type { margin-right: 16px; } */
 
 
 
@@ -454,8 +477,9 @@ a.nav_item:hover,
 
 
 /* Themes */
-.theme_light #nav:not(.nav_transparent) .button_icon,
-.theme_light #nav.menu_open .button_icon {
+.theme_light .icon:not(.button_icon),
+.theme_light #nav:not(.nav_transparent) .icon,
+.theme_light #nav.menu_open .icon {
     filter: none;
 }
 
@@ -467,6 +491,10 @@ a.nav_item:hover,
 /* Mobile layout */
 @media screen and (max-width: 600px) {
     /* Nav */
+    #nav {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
     #nav .page_title {
         border-color: transparent !important;
         padding-left: 0;

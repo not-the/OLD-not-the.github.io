@@ -1,7 +1,7 @@
 // HTML
 const body              = $('body');
 const nav               = dom('nav');
-const menu_button       = dom('menu_button_icon');
+const menu_button       = dom('menu_button');
 const hamburger_menu    = dom('hamburger_menu');
 const theme_button      = dom('theme_button');
 const theme_button_icon = dom('theme_button_icon');
@@ -43,10 +43,15 @@ function switchTheme(animate=true) {
     }
 }
 /** Scrolls page to top */
-function toTop() {
+function toTop(closemenu=false) {
     window.scrollTo(0, 0);
-
+    if(!closemenu) return;
     toggleMenu();
+}
+
+/** Updates parallax */
+function updateParallax() {
+    
 }
 
 // Event listeners
@@ -66,6 +71,7 @@ document.addEventListener("keypress", event => {
 
 /** On scroll */
 window.onscroll = () => {
+    // Nav bar
     let distance = document.documentElement.scrollTop || document.body.scrollTop;
     style(nav, 'nav_transparent', (distance == 0));
 };

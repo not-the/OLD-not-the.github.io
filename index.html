@@ -21,7 +21,7 @@
     <nav id="nav" class="overlay_element flex nav_transparent">
         <!-- Menu button -->
         <div role="button" tabindex="0" id="menu_button" class="nav_button">
-            <img src="./assets/icon/hamburger.svg" alt="Menu" id="menu_button_icon" class="button_icon">
+            <img src="./assets/icon/hamburger.svg" alt="Menu" id="menu_button_icon" class="icon button_icon">
         </div>
 
         <!-- Page name -->
@@ -30,7 +30,7 @@
         <div class="flex" id="hamburger_menu">
             <!-- Nav items -->
             <div id="nav_list" class="flex">
-                <a href="#" class="nav_item" onclick="toTop();">Home</a>
+                <a href="#" class="nav_item" onclick="toTop(true);">Home</a>
                 <a href="#projects" class="nav_item" onclick="toggleMenu()">Projects</a>
                 <a href="#contact" class="nav_item" onclick="toggleMenu()">Contact</a>    
             </div>
@@ -39,11 +39,11 @@
             <div class="nav_item nav_right flex">
                 <a href="https://github.com/not-the" target="_blank" rel=”noreferrer”>
                     <div role="button" class="nav_button">
-                        <img src="./assets/icon/github.svg" alt="Github" class="button_icon">
+                        <img src="./assets/icon/github.svg" alt="Github" class="icon button_icon">
                     </div>
                 </a>
                 <div role="button" tabindex="0" id="theme_button" class="nav_button">
-                    <img src="./assets/icon/moon.svg" alt="Theme" id="theme_button_icon" class="button_icon">
+                    <img src="./assets/icon/moon.svg" alt="Theme" id="theme_button_icon" class="icon button_icon">
                 </div>
             </div>
         </div>
@@ -63,8 +63,9 @@
             <p class="tagline">Web developer</p><br/>
             <p class="secondary_text">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores vel sapiente quasi fugit temporibus.
+                <!-- I have a solid understanding of HTML, CSS, JS, and Node.JS -->
             </p><br/>
-            <a href="#projects" class="bold underline">My work 🡆</a>
+            <a href="#projects" class="bold">My work 🡆</a>
         </div>
 
         <!-- More -->
@@ -139,7 +140,7 @@
 
             <!-- Leap years list -->
             <div class="project_item">
-                <a href="https://not-the.github.io/geolocation-html/"><div class="full_width full_height"></div></a>
+                <a href="https://not-the.github.io/LeapYear/"><div class="full_width full_height"></div></a>
                 <div class="label flex">
                     <h3>Leap years list</h3>
                 </div>
@@ -153,7 +154,7 @@
                 </div>
             </div>
 
-            <!-- Leap Year -->
+            <!-- JS Pyramid -->
             <div class="project_item">
                 <a href="https://not-the.github.io/js-pyramid/"><div class="full_width full_height"></div></a>
                 <div class="label flex">
@@ -168,8 +169,24 @@
         <!-- Title -->
         <h2>Contact</h2>
 
-        <b class="emphasize">Email</b>
-        <p>contact@notkal.com</p>
+        <div id="contact_list">
+            <div class="contact_item flex">
+                <img src="./assets/icon/email.svg" alt="" class="icon">
+                <div>
+                    <b class="emphasize">Email</b>
+                    <a href="mailto:contact@notkal.com" target="_blank" rel="noreferrer"><p>contact@notkal.com</p></a>
+                </div>
+            </div>
+    
+            <div class="contact_item flex">
+                <img src="./assets/icon/github.svg" alt="" class="icon">
+                <div>
+                    <b class="emphasize">Github</b>
+                    <a href="https://github.com/not-the" target="_blank" rel="noreferrer"><p>https://github.com/not-the</p></a>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!---------- Footer ---------->
@@ -179,10 +196,16 @@
                 <!-- Attribution -->
                 <p class="emphasize bold">Image attribution</p>
                 <p>
-                    <a href="https://commons.wikimedia.org/wiki/File:Hamburger_icon.svg">Hamburger icon</a> by <a href="https://commons.wikimedia.org/wiki/File:Hamburger_icon.svg">Timothy Miller</a>, Public domain, via Wikimedia Commons
+                    <a href="https://www.pexels.com/video/changes-in-form-and-appearance-of-a-submerged-material-3163534/" target="_blank" rel="noreferrer">Header video</a> from <a href="https://www.pexels.com/">pexels.com</a>
                 </p>
                 <p>
-                    <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-sun.svg">Sun</a> and <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-moon.svg">Moon</a> icons by <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-sun.svg">Cole Bemis</a>, <a href="http://opensource.org/licenses/mit-license.php">MIT</a>, via Wikimedia Commons
+                    <a href="https://commons.wikimedia.org/wiki/File:Hamburger_icon.svg" target="_blank" rel="noreferrer">Hamburger icon</a> by Timothy Miller, Public domain, via Wikimedia Commons
+                </p>
+                <p>
+                    <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-sun.svg" target="_blank" rel="noreferrer">Sun</a> and <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-moon.svg" target="_blank" rel="noreferrer">Moon</a> icons by Cole Bemis, <a href="http://opensource.org/licenses/mit-license.php" target="_blank" rel="noreferrer">MIT</a>, via Wikimedia Commons
+                </p>
+                <p>
+                    <a href="https://commons.wikimedia.org/wiki/File:Aiga_mail_inverted_nobg.svg" target="_blank" rel="noreferrer">Envelope icon</a> by US DoT - AIGA, Public domain, via Wikimedia Commons
                 </p>
                 <br/>
     
