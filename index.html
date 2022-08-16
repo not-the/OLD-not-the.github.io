@@ -4,8 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>notkal</title>
+    <title>notkal - Home</title>
+
+    <!-- Visual -->
     <link rel="stylesheet" href="index.css">
+    <meta name="theme-color" content="#171718"/>
+
+    <!-- Meta -->
+    <meta property="og:url" content="https://www.notkal.com/">
+    <meta property="og:title" content="notkal">
+    <meta property="og:description" content="Offering tour packages for individuals or groups.">
+    <!-- <meta property="og:image" content=""> -->
+    <!-- <meta name="twitter:image:alt" content="Alt text for image"> -->
+    <!-- <meta name="twitter:card" content="summary_large_image"> -->
+    <meta property="og:site_name" content="notkal">
 
     <!-- not-util -->
     <link rel="stylesheet" href="https://not-the.github.io/not-util/not-util.css" crossorigin>
@@ -15,6 +27,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Animate on Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <!---------- Navigation ---------->
@@ -37,13 +52,13 @@
             
             <!-- Additional buttons -->
             <div class="nav_item nav_right flex">
-                <a href="https://github.com/not-the" target="_blank" rel=”noreferrer”>
-                    <div role="button" class="nav_button">
+                <a href="https://github.com/not-the" target="_blank" rel=”noreferrer” title="Github">
+                    <div class="nav_button">
                         <img src="./assets/icon/github.svg" alt="Github" class="icon button_icon">
                     </div>
                 </a>
                 <div role="button" tabindex="0" id="theme_button" class="nav_button">
-                    <img src="./assets/icon/moon.svg" alt="Theme" id="theme_button_icon" class="icon button_icon">
+                    <img src="./assets/icon/moon.svg" alt="Change Theme" id="theme_button_icon" class="icon button_icon">
                 </div>
             </div>
         </div>
@@ -51,49 +66,120 @@
 
     <!---------- Main ---------->
     <!-- Video -->
-    <video src="./assets/video/abstract_ds.mp4" id="video_main" autoplay muted loop></video>
-    <!-- Landing spacer -->
-    <div style="margin-bottom: 100vh"></div>
+    <video src="./assets/video/abstract_ds.mp4" id="video_main" autoplay loop muted webkit-playsinline playsinline></video>
     <main id="home">
-        <!-- Hello -->
-        <div class="home_block home_hello">
-            <h1 class="big_title">
-                Hi, I'm<br/><span class="big_title_accent">not-the</span>
-            </h1>
-            <p class="tagline">Web developer</p><br/>
-            <p class="secondary_text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores vel sapiente quasi fugit temporibus.
-                <!-- I have a solid understanding of HTML, CSS, JS, and Node.JS -->
-            </p><br/>
-            <a href="#projects" class="bold">My work 🡆</a>
+        <div id="home_center">
+            <!-- Hello -->
+            <div class="home_block home_hello">
+                <h1 class="big_title">
+                    Hi, I'm<br/><span class="big_title_accent">not-the</span>
+                </h1>
+                <p class="tagline">Web developer</p><br/>
+                <p class="secondary_text">
+                    <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores vel sapiente quasi fugit temporibus. -->
+                </p>
+                <!-- <br/> -->
+                <a href="#projects" class="bold">My work 🡆</a>
+            </div>
+
+            <!-- More -->
+            <div class="home_block home_more">
+                <p class="center">Looking for <b class="emphasize">freelance work</b></span></p>
+                <br/>
+                <a href="#contact">
+                    <div class="button full_width bold" id="call_to_action">
+                        <p>Email me</p>
+                        <div class="button_shade"></div>
+                    </div>
+                </a>
+            </div>
         </div>
 
-        <!-- More -->
-        <div class="home_block home_more">
-            <p class="center">Available for <b class="emphasize">freelance work</b></span></p>
-            <br/>
-            <a href="#contact">
-                <div class="button call_to_action full_width">
-                    <p>Email me</p>
-                    <div class="button_shade"></div>
-                </div>
-            </a>
+        <!-- Reduce Motion -->
+        <div class="home_block secondary_text pointer" id="reduce_motion" role="button" onclick="toggleMotion()">
+            ⏸︎ Reduce motion
         </div>
+
+        <!-- Wave SVG -->>
+        <div class="wave_decoration white_icon"></div>
     </main>
+
+    <!---------- Skills ---------->
+    <section id="skills" class="container flex">
+        <div>
+            <h2>Skills & Experience</h2>
+    
+            <!-- List -->
+            <div id="skills_list">
+                <!-- HTML -->
+                <div class="skill" id="skill_html" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1500">
+                    <img src="./assets/image/html.png" alt="HTML5">
+                    <div>
+                        <h3>HTML5</h3>
+                    </div>
+                </div>
+                <!-- CSS -->
+                <div class="skill" id="skill_css" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1100">
+                    <img src="./assets/image/css.png" alt="CSS3">
+                    <div>
+                        <h3>CSS</h3>
+                        <!-- <p>Experience creating visually pleasing & responsive websites</p> -->
+                    </div>
+                </div>
+                <!-- JS -->
+                <div class="skill" id="skill_js" data-aos="fade-right" data-aos-delay="110" data-aos-duration="650">
+                    <img src="./assets/image/js.png" alt="JS">
+                    <div>
+                        <h3>Javascript</h3>
+                        <p>Experience with both frontend and backend Javascript</p>
+                    </div>
+                </div>
+                <!-- NodeJS -->
+                <div class="skill" id="skill_node" data-aos="fade-left"data-aos-delay="150" data-aos-duration="900">
+                    <img src="./assets/image/nodejs.png" alt="NodeJS">
+                    <div>
+                        <h3>NodeJS</h3>
+                        <p>Experience creating web servers using NodeJS</p>
+                    </div>
+                </div>
+                <!-- Cloud Platforms -->
+                <div class="skill" data-aos="fade-right">
+                    <img src="./assets/icon/cloud.svg" alt="Cloud" class="icon" data-aos-delay="160" data-aos-duration="1200">
+                    <div>
+                        <h3>Cloud Platforms</h3>
+                        <p>Experience with Amazon Web Services, Google Cloud Platform, Netlify, Heroku, & Cloudflare</p>
+                    </div>
+                </div>
+                <!-- Image Editing -->
+                <div class="skill" id="skill_photoshop" data-aos="fade-left" data-aos-delay="170" data-aos-duration="1350">
+                    <img src="./assets/image/photoshop.png" alt="Photoshop">
+                    <div>
+                        <h3>Image Manipulation</h3>
+                        <p>Proficient in GIMP, Photoshop and MS Paint</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="visual_layer">
+                <div class="circle"></div>
+                <div class="triangle"></div>
+            </div>
+        </div>
+    </section>
 
     <!---------- Projects ---------->
     <section id="projects" class="container">
         <!-- Title -->
-        <h2>Projects</h2>
+        <h2>Personal Projects</h2>
         
         <!-- List -->
-        <div id="projects_list" class="flex">
+        <div class="projects_list flex">
 
             <!-- Carrot Clicker -->
             <div class="project_item" style="background-image: url(./assets/project/carrot_clicker_big.png);">
                 <a href="./carrot-clicker"><div class="full_width full_height"></div></a>
                 <div class="label flex">
-                    <img src="./assets/project/carrot_clicker.png" alt="">
+                    <!-- <img src="./assets/project/carrot_clicker.png" alt=""> -->
                     <h3>Carrot Clicker</h3>
                 </div>
             </div>
@@ -138,29 +224,35 @@
                 </div>
             </div>
 
-            <!-- Leap years list -->
-            <div class="project_item">
-                <a href="https://not-the.github.io/LeapYear/"><div class="full_width full_height"></div></a>
-                <div class="label flex">
-                    <h3>Leap years list</h3>
-                </div>
-            </div>
+            <!-- COLLAPSE SECTION -->
+            <details class="projects_list flex">
+                <summary class="bold">View all</summary>
 
-            <!-- CSS loading screens -->
-            <div class="project_item">
-                <a href="https://not-the.github.io/Loading-Screens/"><div class="full_width full_height"></div></a>
-                <div class="label flex">
-                    <h3>CSS loading screens</h3>
-                </div>
-            </div>
 
-            <!-- JS Pyramid -->
-            <div class="project_item">
-                <a href="https://not-the.github.io/js-pyramid/"><div class="full_width full_height"></div></a>
-                <div class="label flex">
-                    <h3>JS Pyramid</h3>
+                <!-- Leap years list -->
+                <div class="project_item">
+                    <a href="https://not-the.github.io/LeapYear/"><div class="full_width full_height"></div></a>
+                    <div class="label flex">
+                        <h3>Leap years list</h3>
+                    </div>
                 </div>
-            </div>
+
+                <!-- CSS loading screens -->
+                <div class="project_item">
+                    <a href="https://not-the.github.io/Loading-Screens/"><div class="full_width full_height"></div></a>
+                    <div class="label flex">
+                        <h3>CSS loading screens</h3>
+                    </div>
+                </div>
+
+                <!-- JS Pyramid -->
+                <div class="project_item">
+                    <a href="https://not-the.github.io/js-pyramid/"><div class="full_width full_height"></div></a>
+                    <div class="label flex">
+                        <h3>JS Pyramid</h3>
+                    </div>
+                </div>
+            </details>
         </div>
     </section>
 
@@ -207,6 +299,9 @@
                 <p>
                     <a href="https://commons.wikimedia.org/wiki/File:Aiga_mail_inverted_nobg.svg" target="_blank" rel="noreferrer">Envelope icon</a> by US DoT - AIGA, Public domain, via Wikimedia Commons
                 </p>
+                <p>
+                    <a href="https://commons.wikimedia.org/wiki/File:Antu_folder-cloud.svg" target="_blank" rel="noreferrer">Cloud Icon</a> by Fabián Alexis, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>, via Wikimedia Commons
+                </p>
                 <br/>
     
                 <!-- Copyright -->
@@ -224,5 +319,28 @@
 
     <!-- JS -->
     <script src="index.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 240, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 800, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+    });
+    </script>
 </body>
 </html>

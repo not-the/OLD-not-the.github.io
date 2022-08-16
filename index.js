@@ -5,12 +5,15 @@ const menu_button       = dom('menu_button');
 const hamburger_menu    = dom('hamburger_menu');
 const theme_button      = dom('theme_button');
 const theme_button_icon = dom('theme_button_icon');
+const video_main        = dom('video_main');
+const reduce_motion     = dom('reduce_motion');
 const backdrop          = dom('backdrop');
 
 // Variables
 const mobile_layout_width = 600;
 var hamburger_open = false;
 var theme = false; // true = light
+var reducedMotion = false;
 var ti1; // Timeout 1
 var ti2; // Timeout 2
 
@@ -45,14 +48,34 @@ function switchTheme(animate=true) {
 /** Scrolls page to top */
 function toTop(closemenu=false) {
     window.scrollTo(0, 0);
+    document.activeElement.blur(); // Move keyboard navigation back to start
     if(!closemenu) return;
     toggleMenu();
 }
 
-/** Updates parallax */
-function updateParallax() {
-    
+/** Toggles "Reduce Motion" */
+function toggleMotion() {
+    reducedMotion = !reducedMotion;
+    store('reducedMotion', `${reducedMotion}`); // Save in localStorage
+    style(body, 'reduced_motion', reducedMotion); // Set theme
+    reduce_motion.innerText = reducedMotion ? '⏵︎ Reduce motion' : '⏸︎ Reduce motion';
+
+    // Disable AOS
+    let alternate = true;
+    document.querySelectorAll('[data-aos]').forEach(element => {
+        element.setAttribute("data-aos", reducedMotion ? "none" : alternate ? "fade-right" : "fade-left");
+        alternate = !alternate;
+    });
+
+    // Video play/pause
+    if(reducedMotion) video_main.pause();
+    else video_main.play();
 }
+
+/** Updates parallax */
+// function updateParallax() {
+    
+// }
 
 // Event listeners
 //#region 
@@ -62,11 +85,7 @@ theme_button.addEventListener('click', switchTheme);
 
 /** Enter acts as click */
 document.addEventListener("keypress", event => {
-    if(event.key === "Enter") {
-        console.log('enter');
-        console.log(document.activeElement);
-        document.activeElement.click();
-    }
+    if(event.key === "Enter") document.activeElement.click();
 });
 
 /** On scroll */
@@ -81,6 +100,12 @@ window.onresize = () => { if(hamburger_open && window.innerWidth > mobile_layout
 
 /** On load */
 window.onload = event => {
+    // Reduced motion
+    let m = store('reducedMotion');
+    const reduce_motion_preference = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+    if(m == 'true' || m == null && reduce_motion_preference) toggleMotion();
+
+    // Theme
     let t = store('theme');
     if(t == null || t == 'false') return;
     switchTheme(false);
