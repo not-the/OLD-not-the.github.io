@@ -41,8 +41,8 @@ function switchTheme(animate=true) {
     ti2 = setTimeout(() => { theme_button_icon.classList.remove('a_rollout'); }, 500);
     function themeIcon() {
         theme ? // Update theme button
-          theme_button_icon.src = './assets/icon/sun.svg'
-        : theme_button_icon.src = './assets/icon/moon.svg';
+          theme_button_icon.src = '/assets/icon/sun.svg'
+        : theme_button_icon.src = '/assets/icon/moon.svg';
     }
 }
 /** Scrolls page to top */
@@ -85,6 +85,7 @@ theme_button.addEventListener('click', switchTheme);
 
 /** Enter acts as click */
 document.addEventListener("keypress", event => {
+    // if(document.activeElement.tagName == 'details') return;
     if(event.key === "Enter") document.activeElement.click();
 });
 

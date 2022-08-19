@@ -7,13 +7,13 @@
     <title>notkal - Home</title>
 
     <!-- Visual -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/index.css">
     <meta name="theme-color" content="#171718"/>
 
     <!-- Meta -->
     <meta property="og:url" content="https://www.notkal.com/">
     <meta property="og:title" content="notkal">
-    <meta property="og:description" content="Offering tour packages for individuals or groups.">
+    <!-- <meta property="og:description" content="DESCRIPTION"> -->
     <!-- <meta property="og:image" content=""> -->
     <!-- <meta name="twitter:image:alt" content="Alt text for image"> -->
     <!-- <meta name="twitter:card" content="summary_large_image"> -->
@@ -31,12 +31,12 @@
     <!-- Animate on Scroll -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-<body>
+<body class="light_header">
     <!---------- Navigation ---------->
     <nav id="nav" class="overlay_element flex nav_transparent">
         <!-- Menu button -->
         <div role="button" tabindex="0" id="menu_button" class="nav_button">
-            <img src="./assets/icon/hamburger.svg" alt="Menu" id="menu_button_icon" class="icon button_icon">
+            <img src="/assets/icon/hamburger.svg" alt="Menu" id="menu_button_icon" class="icon button_icon">
         </div>
 
         <!-- Page name -->
@@ -45,20 +45,20 @@
         <div class="flex" id="hamburger_menu">
             <!-- Nav items -->
             <div id="nav_list" class="flex">
-                <a href="#" class="nav_item" onclick="toTop(true);">Home</a>
-                <a href="#projects" class="nav_item" onclick="toggleMenu()">Projects</a>
-                <a href="#contact" class="nav_item" onclick="toggleMenu()">Contact</a>    
+                <a href="/#top" class="nav_item" onclick="toTop(true);">Home</a>
+                <a href="/#projects" class="nav_item" onclick="toggleMenu()">Projects</a>
+                <a href="/#contact" class="nav_item" onclick="toggleMenu()">Contact</a>    
             </div>
             
             <!-- Additional buttons -->
             <div class="nav_item nav_right flex">
                 <a href="https://github.com/not-the" target="_blank" rel=”noreferrer” title="Github">
                     <div class="nav_button">
-                        <img src="./assets/icon/github.svg" alt="Github" class="icon button_icon">
+                        <img src="/assets/icon/github.svg" alt="Github" class="icon button_icon">
                     </div>
                 </a>
                 <div role="button" tabindex="0" id="theme_button" class="nav_button">
-                    <img src="./assets/icon/moon.svg" alt="Change Theme" id="theme_button_icon" class="icon button_icon">
+                    <img src="/assets/icon/moon.svg" alt="Change Theme" id="theme_button_icon" class="icon button_icon">
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
 
     <!---------- Main ---------->
     <!-- Video -->
-    <video src="./assets/video/abstract_ds.mp4" id="video_main" autoplay loop muted webkit-playsinline playsinline></video>
+    <video src="/assets/video/abstract_ds.mp4" id="video_main" class="banner" autoplay loop muted webkit-playsinline playsinline></video>
     <main id="home">
         <div id="home_center">
             <!-- Hello -->
@@ -86,8 +86,8 @@
             <div class="home_block home_more">
                 <p class="center">Looking for <b class="emphasize">freelance work</b></span></p>
                 <br/>
-                <a href="#contact">
-                    <div class="button full_width bold" id="call_to_action">
+                <a href="#email">
+                    <div class="button full_width bold button_blue" id="call_to_action">
                         <p>Email me</p>
                         <div class="button_shade"></div>
                     </div>
@@ -96,11 +96,11 @@
         </div>
 
         <!-- Reduce Motion -->
-        <div class="home_block secondary_text pointer" id="reduce_motion" role="button" onclick="toggleMotion()">
+        <div class="home_block secondary_text pointer" id="reduce_motion" role="button" tabindex="0" onclick="toggleMotion()">
             ⏸︎ Reduce motion
         </div>
 
-        <!-- Wave SVG -->>
+        <!-- Wave SVG -->
         <div class="wave_decoration white_icon"></div>
     </main>
 
@@ -113,48 +113,48 @@
             <div id="skills_list">
                 <!-- HTML -->
                 <div class="skill" id="skill_html" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1500">
-                    <img src="./assets/image/html.png" alt="HTML5">
+                    <img src="/assets/image/html.png" alt="HTML5">
                     <div>
-                        <h3>HTML5</h3>
+                        <h4>HTML5</h4>
                     </div>
                 </div>
                 <!-- CSS -->
                 <div class="skill" id="skill_css" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1100">
-                    <img src="./assets/image/css.png" alt="CSS3">
+                    <img src="/assets/image/css.png" alt="CSS3">
                     <div>
-                        <h3>CSS</h3>
+                        <h4>CSS</h4>
                         <!-- <p>Experience creating visually pleasing & responsive websites</p> -->
                     </div>
                 </div>
                 <!-- JS -->
                 <div class="skill" id="skill_js" data-aos="fade-right" data-aos-delay="110" data-aos-duration="650">
-                    <img src="./assets/image/js.png" alt="JS">
+                    <img src="/assets/image/js.png" alt="JS">
                     <div>
-                        <h3>Javascript</h3>
+                        <h4>Javascript</h4>
                         <p>Experience with both frontend and backend Javascript</p>
                     </div>
                 </div>
                 <!-- NodeJS -->
                 <div class="skill" id="skill_node" data-aos="fade-left"data-aos-delay="150" data-aos-duration="900">
-                    <img src="./assets/image/nodejs.png" alt="NodeJS">
+                    <img src="/assets/image/nodejs.png" alt="NodeJS">
                     <div>
-                        <h3>NodeJS</h3>
+                        <h4>NodeJS</h4>
                         <p>Experience creating web servers using NodeJS</p>
                     </div>
                 </div>
                 <!-- Cloud Platforms -->
                 <div class="skill" data-aos="fade-right">
-                    <img src="./assets/icon/cloud.svg" alt="Cloud" class="icon" data-aos-delay="160" data-aos-duration="1200">
+                    <img src="/assets/icon/cloud.svg" alt="Cloud" class="icon" data-aos-delay="160" data-aos-duration="1200">
                     <div>
-                        <h3>Cloud Platforms</h3>
+                        <h4>Cloud Platforms</h4>
                         <p>Experience with Amazon Web Services, Google Cloud Platform, Netlify, Heroku, & Cloudflare</p>
                     </div>
                 </div>
                 <!-- Image Editing -->
                 <div class="skill" id="skill_photoshop" data-aos="fade-left" data-aos-delay="170" data-aos-duration="1350">
-                    <img src="./assets/image/photoshop.png" alt="Photoshop">
+                    <img src="/assets/image/photoshop.png" alt="Photoshop">
                     <div>
-                        <h3>Image Manipulation</h3>
+                        <h4>Image Manipulation</h4>
                         <p>Proficient in GIMP, Photoshop and MS Paint</p>
                     </div>
                 </div>
@@ -173,87 +173,233 @@
         <h2>Personal Projects</h2>
         
         <!-- List -->
-        <div class="projects_list flex">
+        <div id="projects_list">
 
-            <!-- Carrot Clicker -->
-            <div class="project_item" style="background-image: url(./assets/project/carrot_clicker_big.png);">
-                <a href="./carrot-clicker"><div class="full_width full_height"></div></a>
-                <div class="label flex">
-                    <!-- <img src="./assets/project/carrot_clicker.png" alt=""> -->
-                    <h3>Carrot Clicker</h3>
-                </div>
-            </div>
-
-            <!-- Minecraft Worlds Directory -->
-            <div class="project_item" style="background-image: url(./assets/project/minecraft_worlds_big.png);">
-                <a href="https://worlds.notkal.com/"><div class="full_width full_height"></div></a>
-                <div class="label flex">
-                    <h3>Minecraft Worlds Directory</h3>
-                </div>
-            </div>
-
-            <!-- Rubiks -->
-            <div class="project_item" style="background-image: url(./assets/project/rubiks_big.png);">
-                <a href="https://rubiks.notkal.com/"><div class="full_width full_height"></div></a>
-                <div class="label flex">
-                    <h3>Rubik's Cube simulator</h3>
-                </div>
-            </div>
-
-            <!-- Confetti -->
-            <div class="project_item" style="background-image: url(./assets/project/confetti.png);">
-                <a href="https://confetti.notkal.com/"><div class="full_width full_height"></div></a>
-                <div class="label flex">
-                    <h3>HTML Confetti</h3>
-                </div>
-            </div>
-
-            <!-- Tic Tac Toe -->
-            <div class="project_item" style="background-image: url(./assets/project/tic_tac_toe_big.png);">
-                <a href="https://not-the.github.io/TicTacToe/"><div class="full_width full_height"></div></a>
-                <div class="label flex">
-                    <h3>Tic Tac Toe</h3>
-                </div>
-            </div>
-
-            <!-- Geolocation -->
-            <div class="project_item" style="background-image: url(./assets/project/geolocation_big.png);">
-                <a href="https://not-the.github.io/geolocation-html/"><div class="full_width full_height"></div></a>
-                <div class="label flex">
-                    <h3>Geolocation</h3>
-                </div>
-            </div>
-
-            <!-- COLLAPSE SECTION -->
-            <details class="projects_list flex">
-                <summary class="bold">View all</summary>
-
-
-                <!-- Leap years list -->
-                <div class="project_item">
-                    <a href="https://not-the.github.io/LeapYear/"><div class="full_width full_height"></div></a>
-                    <div class="label flex">
-                        <h3>Leap years list</h3>
+            <div class="project" id="carrot-clicker"style="background: var(--project-gradient), url(/assets/project/carrot_clicker_big.png);">
+                <div class="title_section flex">
+                    <div>
+                        <a href="/projects/carrot-clicker" class="project_link"><div class="project_link_area"></div></a>
+                        <h3>Carrot Clicker</h3>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/Carrot-Clicker" class="label_github" target="_blank" rel="noreferrer">
+                            <div class="button bold small_button">
+                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
+                        <!-- Visit -->
+                        <a href="https://carrot.notkal.com/">
+                            <div class="button bold button_blue">
+                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-
-                <!-- CSS loading screens -->
-                <div class="project_item">
-                    <a href="https://not-the.github.io/Loading-Screens/"><div class="full_width full_height"></div></a>
-                    <div class="label flex">
-                        <h3>CSS loading screens</h3>
+            </div>
+            <div class="project" id="minecraft-worlds"style="background: var(--project-gradient), url(/assets/project/minecraft_worlds_big.png);">
+                <div class="title_section flex">
+                    <div>
+                        <a href="/projects/minecraft-worlds" class="project_link"><div class="project_link_area"></div></a>
+                        <h3>Minecraft Worlds</h3>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/Minecraft-Worlds-Directory" class="label_github" target="_blank" rel="noreferrer">
+                            <div class="button bold small_button">
+                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
+                        <!-- Visit -->
+                        <a href="https://worlds.notkal.com/">
+                            <div class="button bold button_blue">
+                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
                     </div>
                 </div>
+            </div>
+            <div class="project" id="rubiks"style="background: var(--project-gradient), url(/assets/project/rubiks_big.png);">
+                <div class="title_section flex">
+                    <div>
+                        <a href="/projects/rubiks" class="project_link"><div class="project_link_area"></div></a>
+                        <h3>Rubik's Cube</h3>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/puzzle-cube" class="label_github" target="_blank" rel="noreferrer">
+                            <div class="button bold small_button">
+                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
+                        <!-- Visit -->
+                        <a href="https://rubiks.notkal.com/">
+                            <div class="button bold button_blue">
+                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project" id="confetti"style="background: var(--project-gradient), url(/assets/project/confetti.png);">
+                <div class="title_section flex">
+                    <div>
+                        <a href="/projects/confetti" class="project_link"><div class="project_link_area"></div></a>
+                        <h3>HTML Confetti</h3>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/Mouse-Confetti" class="label_github" target="_blank" rel="noreferrer">
+                            <div class="button bold small_button">
+                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
+                        <!-- Visit -->
+                        <a href="https://confetti.notkal.com/">
+                            <div class="button bold button_blue">
+                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project" id="tic-tac-toe"style="background: var(--project-gradient), url(/assets/project/ttt.png);">
+                <div class="title_section flex">
+                    <div>
+                        <a href="/projects/tic-tac-toe" class="project_link"><div class="project_link_area"></div></a>
+                        <h3>Tic Tac Toe</h3>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/TicTacToe" class="label_github" target="_blank" rel="noreferrer">
+                            <div class="button bold small_button">
+                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
+                        <!-- Visit -->
+                        <a href="https://tictactoe.notkal.com/">
+                            <div class="button bold button_blue">
+                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project" id="css-loading-screens">
+                <div class="title_section flex">
+                    <div>
+                        <a href="/projects/css-loading-screens" class="project_link"><div class="project_link_area"></div></a>
+                        <h3>CSS Loading Screens</h3>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/Loading-Screens" class="label_github" target="_blank" rel="noreferrer">
+                            <div class="button bold small_button">
+                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
+                        <!-- Visit -->
+                        <a href="https://not-the.github.io/Loading-Screens/">
+                            <div class="button bold button_blue">
+                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
+                                <div class="button_shade"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                <!-- JS Pyramid -->
-                <div class="project_item">
-                    <a href="https://not-the.github.io/js-pyramid/"><div class="full_width full_height"></div></a>
-                    <div class="label flex">
-                        <h3>JS Pyramid</h3>
+            <!-- View more -->
+            <details>
+                <summary>Older projects</summary>
+
+                <div class="project" id="geolocation"style="background: var(--project-gradient), url(/assets/project/geolocation_big.png);">
+                    <div class="title_section flex">
+                        <div>
+                            <a href="/projects/geolocation" class="project_link"><div class="project_link_area"></div></a>
+                            <h3>Geolocation</h3>
+                        </div>
+                        <div class="title_buttons flex">
+                            <!-- Github -->
+                            <a href="https://github.com/not-the/geolocation-html" class="label_github" target="_blank" rel="noreferrer">
+                                <div class="button bold small_button">
+                                    <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
+                                    <div class="button_shade"></div>
+                                </div>
+                            </a>
+                            <!-- Visit -->
+                            <a href="https://not-the.github.io/geolocation-html/">
+                                <div class="button bold button_blue">
+                                    <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
+                                    <div class="button_shade"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project" id="leap-years">
+                    <div class="title_section flex">
+                        <div>
+                            <a href="/projects/leap-years" class="project_link"><div class="project_link_area"></div></a>
+                            <h3>Leap years list</h3>
+                        </div>
+                        <div class="title_buttons flex">
+                            <!-- Github -->
+                            <a href="https://github.com/not-the/LeapYear" class="label_github" target="_blank" rel="noreferrer">
+                                <div class="button bold small_button">
+                                    <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
+                                    <div class="button_shade"></div>
+                                </div>
+                            </a>
+                            <!-- Visit -->
+                            <a href="https://not-the.github.io/LeapYear/">
+                                <div class="button bold button_blue">
+                                    <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
+                                    <div class="button_shade"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project" id="js-pyramid">
+                    <div class="title_section flex">
+                        <div>
+                            <a href="/projects/js-pyramid" class="project_link"><div class="project_link_area"></div></a>
+                            <h3>JS Pyramid</h3>
+                        </div>
+                        <div class="title_buttons flex">
+                            <!-- Github -->
+                            <a href="https://github.com/not-the/js-pyramid" class="label_github" target="_blank" rel="noreferrer">
+                                <div class="button bold small_button">
+                                    <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
+                                    <div class="button_shade"></div>
+                                </div>
+                            </a>
+                            <!-- Visit -->
+                            <a href="https://not-the.github.io/js-pyramid/">
+                                <div class="button bold button_blue">
+                                    <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
+                                    <div class="button_shade"></div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </details>
+
         </div>
+
     </section>
 
     <!---------- Contact ---------->
@@ -262,8 +408,8 @@
         <h2>Contact</h2>
 
         <div id="contact_list">
-            <div class="contact_item flex">
-                <img src="./assets/icon/email.svg" alt="" class="icon">
+            <div class="contact_item flex" id="email">
+                <img src="/assets/icon/email.svg" alt="" class="icon">
                 <div>
                     <b class="emphasize">Email</b>
                     <a href="mailto:contact@notkal.com" target="_blank" rel="noreferrer"><p>contact@notkal.com</p></a>
@@ -271,7 +417,7 @@
             </div>
     
             <div class="contact_item flex">
-                <img src="./assets/icon/github.svg" alt="" class="icon">
+                <img src="/assets/icon/github.svg" alt="" class="icon">
                 <div>
                     <b class="emphasize">Github</b>
                     <a href="https://github.com/not-the" target="_blank" rel="noreferrer"><p>https://github.com/not-the</p></a>
@@ -308,7 +454,7 @@
                 <p class="emphasize">Ⓒ 2022 notkal.com</p>
             </div>
             <div class="column">
-                <a href="#" onclick="toTop()">Return to top</a>
+                <a href="/#top" onclick="toTop()">Return to top</a>
             </div>
         </div>
     </footer>
@@ -318,7 +464,7 @@
     <div id="backdrop"></div>
 
     <!-- JS -->
-    <script src="index.js"></script>
+    <script src="/index.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
     AOS.init({
