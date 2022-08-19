@@ -41,7 +41,7 @@
     text-align: justify;
     
     padding: 24px;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     background-color: var(--main-bg);
     border: 1px solid var(--border-color);
     border-radius: 6px;
@@ -81,6 +81,21 @@
     margin-right: 12px;
 }
 .user_card p { margin: 0; }
+
+iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    padding: 0 !important;
+
+    border: 1px solid var(--lighter-bg);
+    /* border: none; */
+    border-radius: 6px;
+
+    user-select: none;
+    -webkit-user-select: none;
+    display: block;
+}
 
 
 /* Mobile layout */

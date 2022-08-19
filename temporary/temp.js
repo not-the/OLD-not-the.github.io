@@ -59,6 +59,8 @@ const projects = {
         github_url: 'https://github.com/not-the/puzzle-cube',
         url: 'https://rubiks.notkal.com/',
         // url_label: false,
+        iframe: true,
+
         author: not,
         body: /* html */ `
             <h3>Description</h3>
@@ -75,6 +77,8 @@ const projects = {
         github_url: 'https://github.com/not-the/Mouse-Confetti',
         url: 'https://confetti.notkal.com/',
         // url_label: false,
+        iframe: true,
+
         author: not,
         body: body_no_desc,
     },
@@ -88,6 +92,8 @@ const projects = {
         github_url: 'https://github.com/not-the/TicTacToe',
         url: 'https://tictactoe.notkal.com/',
         // url_label: 'Play',
+        iframe: true,
+
         author: not,
         body: /* html */ `
             <h3>Description</h3>
@@ -173,6 +179,7 @@ function populatePage(id, fullpage=false) {
     let box_art_html = item.box_art ? `<img src="${item.box_art}" alt="Icon" id="box_art">` : '';
     // let box_art_html = `<img src="${item.box_art || '/assets/decoration/blank.png'}" alt="Icon" id="box_art">`;
     let background_src = item.header ? ` style="background-image: url(${item.header})` : '';
+    let iframe_html = item.iframe ? `<!-- iframe -->\n<iframe src="${item.url}" title="iframe : ${item.name}" class="container"></iframe>`: '';
 
     const html = /* html */ `<!DOCTYPE html>
 <html lang="en">
@@ -288,6 +295,7 @@ function populatePage(id, fullpage=false) {
             ${item.body}
         </div>
     </main>
+    ${iframe_html}
 
     <!---------- Footer ---------->
     <footer id="footer" class="flex">
