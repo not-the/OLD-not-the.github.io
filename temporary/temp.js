@@ -3,8 +3,13 @@ const not = {
     name: 'not-the',
     avatar: 'https://avatars.githubusercontent.com/u/87151784?v=4',
     github: 'https://github.com/not-the',
-    // role: 'Author',
     role: false,
+}
+const not_author = {
+    name: 'not-the',
+    avatar: 'https://avatars.githubusercontent.com/u/87151784?v=4',
+    github: 'https://github.com/not-the',
+    role: 'Author',
 }
 const body_early_project = `
 <h3>Description</h3>
@@ -15,11 +20,9 @@ const body_no_desc = `
 <h3>Description</h3>
 <p class="gray"><i>No description available</i></p>`;
 
-
 /** Project data */
 const projects = {
     'carrotclicker': {
-        path: 'carrot-clicker',
         name: 'Carrot Clicker',
         header: '/assets/project/carrot_clicker_big.png',
         // box_art: '',
@@ -31,11 +34,10 @@ const projects = {
         body: /* html */ `
             <h3>Description</h3>
             <p>
-                Carrot Clicker is an exponential clicker game inspired by titles like <a href="https://en.wikipedia.org/wiki/Cookie_Clicker" target="_blank" rel="noreferrer">Cookie Clicker</a> and <a href="https://en.wikipedia.org/wiki/Egg,_Inc." target="_blank" rel="noreferrer">Egg, Inc</a>, and has been an ongoing collaborative project between a friend and I since it got started in 2021. I had created a very simple clicker game to test my Javascript skills and the concept quickly evolved. The premise, gameplay, and characters all emerged from inside jokes as well as lore about a fictional religion my friend had created. Carrot Clicker is an admittedly flawed game that doesn't always follow best practices as far as web development goes, but it has taught me a lot about Javascript, and it was fun to create.
+                Carrot Clicker is an exponential clicker game inspired by titles like <a href="https://en.wikipedia.org/wiki/Cookie_Clicker" target="_blank" rel="noreferrer">Cookie Clicker</a> and <a href="https://en.wikipedia.org/wiki/Egg,_Inc." target="_blank" rel="noreferrer">Egg, Inc</a>.  It's been an ongoing collaborative project between a friend and I since it got started in 2021. I created a very simple clicker game to test my Javascript skills and the concept quickly evolved. The premise, gameplay, and characters all emerged from inside jokes as well as lore about a fictional religion my friend had created. Carrot Clicker is an admittedly flawed game that doesn't always follow best practices as far as web development goes, but it has taught me a lot about Javascript, and it was fun to create.
             </p>`,
     },
     'minecraftworlds': {
-        path: 'minecraft-worlds',
         name: 'Minecraft Worlds',
         header: '/assets/project/minecraft_worlds_big.png',
         // box_art: '',
@@ -51,7 +53,6 @@ const projects = {
             </p>`,
     },
     'rubiks': {
-        path: 'rubiks',
         name: 'Rubik\'s Cube',
         header: '/assets/project/rubiks_big.png',
         // box_art: '',
@@ -69,7 +70,6 @@ const projects = {
             </p>`,
     },
     'confetti': {
-        path: 'confetti',
         name: 'HTML Confetti',
         header: '/assets/project/confetti.png',
         // box_art: '',
@@ -83,7 +83,6 @@ const projects = {
         body: body_no_desc,
     },
     'tictactoe': {
-        path: 'tic-tac-toe',
         name: 'Tic Tac Toe',
         header: '/assets/project/ttt.png',
         // box_art: '',
@@ -98,11 +97,10 @@ const projects = {
         body: /* html */ `
             <h3>Description</h3>
             <p>
-                Basic Tic Tac With a fun user interface.
+                Basic Tic Tac Toe with a fun user interface.
             </p>`,
     },
     'cssloadingscreens': {
-        path: 'css-loading-screens',
         name: 'CSS Loading Screens',
         // header: false,
         // box_art: '',
@@ -120,7 +118,6 @@ const projects = {
 
     // View more
     'geolocation': {
-        path: 'geolocation',
         name: 'Geolocation',
         header: '/assets/project/geolocation_big.png',
         // box_art: '',
@@ -135,10 +132,10 @@ const projects = {
 
     // View more
     'leapyears': {
-        path: 'leap-years',
         name: 'Leap years list',
         // header: false,
         // box_art: '',
+        iframe: true,
 
         github_url: 'https://github.com/not-the/LeapYear',
         url: 'https://not-the.github.io/LeapYear/',
@@ -147,10 +144,10 @@ const projects = {
         body: body_early_project,
     },
     'jspyramid': {
-        path: 'js-pyramid',
         name: 'JS Pyramid',
         // header: false,
         // box_art: '',
+        iframe: true,
 
         github_url: 'https://github.com/not-the/js-pyramid',
         url: 'https://not-the.github.io/js-pyramid/',
@@ -160,6 +157,23 @@ const projects = {
     },
 }
 
+
+/** Post data */
+const posts = {
+    // HTML FILE EDITED INDEPENDENTLY
+    'carrotchangelog': {
+        type: 'Posts',
+        name: 'Carrot Clicker Changelog',
+        header: '/assets/project/carrot_clicker_big.png',
+    
+        author: not_author,
+        body: /* html */ `
+            <h3>Dev beta 1.16.5</h3>
+            <p>
+                lorem ipsum placeholder text
+            </p>`,
+    },
+}
 
 
 
@@ -175,11 +189,28 @@ function populatePage(id, fullpage=false) {
     const item = typeof id == 'string' ? projects?.[id] : id; // Get data
     if(item == undefined) return console.warn('Invalid ID');
 
-    let title = `notkal - Projects / ${item.name}`;
+    let path = item.name.replace(/[^a-z0-9 -]/gi, '').split(' ').join('-');
+    let title = `notkal - ${item.type || 'Projects'} / ${item.name}`;
     let box_art_html = item.box_art ? `<img src="${item.box_art}" alt="Icon" id="box_art">` : '';
     // let box_art_html = `<img src="${item.box_art || '/assets/decoration/blank.png'}" alt="Icon" id="box_art">`;
-    let background_src = item.header ? ` style="background-image: url(${item.header})` : '';
+    let background_src = item.header ? ` style="background-image: url(${item.header})"` : '';
     let iframe_html = item.iframe ? `<!-- iframe -->\n<iframe src="${item.url}" title="iframe : ${item.name}" class="container"></iframe>`: '';
+    let button_github_html = item.github_url ?
+    `<!-- Github -->
+    <a href="${item.github_url}" class="label_github" target="_blank" rel="noreferrer">
+        <div class="button bold small_button">
+            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
+            <div class="button_shade"></div>
+        </div>
+    </a>` : '';
+    let button_open_html = item.url ?
+    `<!-- Visit -->
+    <a href="${item.url}" rel="noreferrer">
+        <div class="button bold button_blue">
+            <p>${item.url_label || 'Open'} <img src="/assets/icon/external_link.svg" alt="" class="button_icon"></p>
+            <div class="button_shade"></div>
+        </div>
+    </a>` : '';
 
     const html = /* html */ `<!DOCTYPE html>
 <html lang="en">
@@ -195,7 +226,7 @@ function populatePage(id, fullpage=false) {
     <meta name="theme-color" content="#171718"/>
 
     <!-- Meta -->
-    <meta property="og:url" content="https://www.notkal.com/projects/${item.path}">
+    <meta property="og:url" content="https://www.notkal.com/${item.type.toLowerCase()}/${path}">
     <meta property="og:title" content="${title}">
     <!-- <meta property="og:description" content="${item.desc}"> -->
     <meta property="og:image" content="${item.header}">
@@ -248,31 +279,19 @@ function populatePage(id, fullpage=false) {
     <!-- Header -->
     <header>
         <!-- Banner image -->
-        <div id="banner" class="banner"${background_src};"></div>
+        <div id="banner" class="banner"${background_src}></div>
 
         <!-- Title -->
         <div class="title_section container flex">
             <div>
                 <h1>${item.name}</h1>
                 <p id="path" class="secondary_text gray">
-                    <a href="/">notkal</a> / <a href="/projects">Projects</a> / <a href="./">${item.name}</a>
+                    <a href="/">notkal</a> / <a href="/${item.type.toLowerCase()}">${item.type}</a> / <a href="./">${item.name}</a>
                 </p>
             </div>
             <div class="title_buttons flex">
-                <!-- Github -->
-                <a href="${item.github_url}" class="label_github" target="_blank" rel="noreferrer">
-                    <div class="button bold small_button">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                        <div class="button_shade"></div>
-                    </div>
-                </a>
-                <!-- Visit -->
-                <a href="${item.url}" rel="noreferrer">
-                    <div class="button bold button_blue">
-                        <p>${item.url_label || 'Open'} <img src="/assets/icon/external_link.svg" alt="" class="button_icon"></p>
-                        <div class="button_shade"></div>
-                    </div>
-                </a>
+                ${button_github_html}
+                ${button_open_html}
             </div>
         </div>
     </header>
@@ -359,10 +378,10 @@ function populateList(fullpage=false) {
         let item = projects[keys[i]];
         
         html += /* html */ `
-        <div class="project" id="${item.path}"${item.header ? `style="background: var(--project-gradient), url(${item.header});"` : ''}>
+        <div class="project" id="${path}"${item.header ? `style="background: var(--project-gradient), url(${item.header});"` : ''}>
             <div class="title_section flex">
                 <div>
-                    <a href="/projects/${item.path}" class="project_link"><div class="project_link_area"></div></a>
+                    <a href="/projects/${path}" class="project_link"><div class="project_link_area"></div></a>
                     <h3>${item.name}</h3>
                 </div>
                 <div class="title_buttons flex">

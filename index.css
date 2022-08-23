@@ -85,6 +85,9 @@
     --gradient-b:          #288cff;
 } */
 
+/* Shorthand */
+/* .align_right { float: right; } */
+
 /* Universal */
 * {
     font-family: var(--body-font);
@@ -651,7 +654,7 @@ nav .button_icon {
 }
 
 /* Projects - both item and page */
-.title_section, #title_section { justify-content: space-between; }
+.title_section { justify-content: space-between; }
 .title_buttons { margin-top: auto; }
 .title_buttons a { position: relative; }
 .title_buttons .button {
@@ -743,8 +746,8 @@ nav .button_icon {
 .doc p {
     margin-bottom: 12px;
     color: var(--secondary-text);
-    /* text-indent: 30px; */
 }
+p.indent { text-indent: 30px; }
 
 
 

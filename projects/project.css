@@ -5,8 +5,8 @@
 .light_header #nav.nav_transparent .button_icon { filter: none; }
 
 /* Header */
-.light_header #title_section h1 { color: black; }
-.light_header #title_section #path a { color: rgb(40, 40, 40); }
+.light_header .title_section h1 { color: black; }
+.light_header .title_section #path a { color: rgb(40, 40, 40); }
 
 /* Banner */
 #banner {
@@ -23,18 +23,18 @@
 }
 
 /* Title */
-#title_section {
+.title_section {
     margin-top: 200px;
     padding-bottom: 12px;
     text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
 }
-#title_section h1 {
+.title_section h1 {
     color: white;
     font-size: 32pt;
 }
-#title_section #path { margin-left: 3px; }
-#title_section #path a { color: rgb(190, 190, 190); }
-#title_section #path a:hover { color: white; }
+.title_section #path { margin-left: 3px; }
+.title_section #path a { color: rgb(190, 190, 190); }
+.title_section #path a:hover { color: white; }
 
 /* Main */
 #main {
@@ -69,8 +69,8 @@
 }
 .user_card {
     width: 100%;
-    background-color: var(--lighter-bg);
-    padding: 6px 12px;
+    /* background-color: var(--lighter-bg); */
+    /* padding: 6px 12px; */
     border-radius: 100px;
     align-items: center;
 }
@@ -102,7 +102,7 @@ iframe {
 @media screen and (max-width: 600px) {
     #banner { height: 400px; }
     #main,
-    #title_section { flex-direction: column; }
+    .title_section { flex-direction: column; }
     .title_buttons { padding-top: 6px; }
     #main {
         border-radius: 0;
