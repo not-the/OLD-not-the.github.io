@@ -164,7 +164,7 @@ const posts = {
     'carrotchangelog': {
         type: 'Posts',
         name: 'Carrot Clicker Changelog',
-        header: '/assets/project/carrot_clicker_big.png',
+        header: '/assets/banner/gradient_0.png',
     
         author: not_author,
         body: /* html */ `
@@ -226,7 +226,7 @@ function populatePage(id, fullpage=false) {
     <meta name="theme-color" content="#171718"/>
 
     <!-- Meta -->
-    <meta property="og:url" content="https://www.notkal.com/${item.type.toLowerCase()}/${path}">
+    <meta property="og:url" content="https://www.notkal.com/${item.type ? item.type.toLowerCase() : 'projects'}/${path}">
     <meta property="og:title" content="${title}">
     <!-- <meta property="og:description" content="${item.desc}"> -->
     <meta property="og:image" content="${item.header}">
@@ -286,7 +286,7 @@ function populatePage(id, fullpage=false) {
             <div>
                 <h1>${item.name}</h1>
                 <p id="path" class="secondary_text gray">
-                    <a href="/">notkal</a> / <a href="/${item.type.toLowerCase()}">${item.type}</a> / <a href="./">${item.name}</a>
+                    <a href="/">notkal</a> / <a href="/${item.type ? item.type.toLowerCase() : 'projects'}">${item.type}</a> / <a href="./">${item.name}</a>
                 </p>
             </div>
             <div class="title_buttons flex">
