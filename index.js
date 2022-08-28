@@ -83,6 +83,11 @@ menu_button.addEventListener('click', toggleMenu);
 backdrop.addEventListener('click', toggleMenu);
 theme_button.addEventListener('click', switchTheme);
 
+/** Click on figure image to enlarge */
+document.querySelectorAll('figure img').forEach(element => {
+    element.addEventListener('click', enlargeImage);
+})
+
 /** Enter acts as click */
 document.addEventListener("keypress", event => {
     // if(document.activeElement.tagName == 'details') return;

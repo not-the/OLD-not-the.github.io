@@ -32,7 +32,7 @@
     <!-- Animate on Scroll -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-<body class="light_header">
+<body>
     <!---------- Navigation ---------->
     <nav id="nav" class="overlay_element flex nav_transparent">
         <!-- Menu button -->
@@ -76,11 +76,11 @@
                     Hi, I'm<br/><span class="big_title_accent">not-the</span>
                 </h1>
                 <p class="tagline">Web developer</p><br/>
-                <p class="secondary_text">
-                    <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores vel sapiente quasi fugit temporibus. -->
-                </p>
-                <!-- <br/> -->
-                <a href="#projects" class="bold">My work 🡆</a>
+                <!-- <p class="secondary_text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores vel sapiente quasi fugit temporibus.
+                </p> -->
+                <!-- 🡆 -->
+                <a href="#projects" class="bold" style="font-family: var(--title-font)">My work -></a> 
             </div>
 
             <!-- More -->
@@ -106,67 +106,70 @@
     </main>
 
     <!---------- Skills ---------->
-    <section id="skills" class="container flex">
-        <div>
-            <h2>Skills & Experience</h2>
+    <div style="overflow-x: hidden;">
+        <section id="skills" class="container flex">
+            <div>
+                <h2>Skills & Experience</h2>
+        
+                <!-- List -->
+                <div id="skills_list">
+                    <!-- HTML -->
+                    <div class="skill" id="skill_html" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1500">
+                        <img src="/assets/image/html.png" alt="HTML5">
+                        <div>
+                            <h4>HTML5</h4>
+                        </div>
+                    </div>
+                    <!-- CSS -->
+                    <div class="skill" id="skill_css" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1100">
+                        <img src="/assets/image/css.png" alt="CSS3">
+                        <div>
+                            <h4>CSS</h4>
+                            <!-- <p>Experience creating visually pleasing & responsive websites</p> -->
+                        </div>
+                    </div>
+                    <!-- JS -->
+                    <div class="skill" id="skill_js" data-aos="fade-right" data-aos-delay="110" data-aos-duration="650">
+                        <img src="/assets/image/js.png" alt="JS">
+                        <div>
+                            <h4>Javascript</h4>
+                            <p>Experience with both frontend and backend Javascript</p>
+                        </div>
+                    </div>
+                    <!-- NodeJS -->
+                    <div class="skill" id="skill_node" data-aos="fade-left"data-aos-delay="150" data-aos-duration="900">
+                        <img src="/assets/image/nodejs.png" alt="NodeJS">
+                        <div>
+                            <h4>NodeJS</h4>
+                            <p>Experience creating web servers using NodeJS</p>
+                        </div>
+                    </div>
+                    <!-- Cloud Platforms -->
+                    <div class="skill" data-aos="fade-right">
+                        <img src="/assets/icon/cloud.svg" alt="Cloud" class="icon" data-aos-delay="160" data-aos-duration="1200">
+                        <div>
+                            <h4>Cloud Platforms</h4>
+                            <p>Experience with Amazon Web Services, Google Cloud Platform, Netlify, Heroku, & Cloudflare</p>
+                        </div>
+                    </div>
+                    <!-- Image Editing -->
+                    <div class="skill" id="skill_photoshop" data-aos="fade-left" data-aos-delay="170" data-aos-duration="1350">
+                        <img src="/assets/image/photoshop.png" alt="Photoshop">
+                        <div>
+                            <h4>Image Manipulation</h4>
+                            <p>Proficient in GIMP, Photoshop and MS Paint</p>
+                        </div>
+                    </div>
+                </div>
     
-            <!-- List -->
-            <div id="skills_list">
-                <!-- HTML -->
-                <div class="skill" id="skill_html" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1500">
-                    <img src="/assets/image/html.png" alt="HTML5">
-                    <div>
-                        <h4>HTML5</h4>
-                    </div>
-                </div>
-                <!-- CSS -->
-                <div class="skill" id="skill_css" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1100">
-                    <img src="/assets/image/css.png" alt="CSS3">
-                    <div>
-                        <h4>CSS</h4>
-                        <!-- <p>Experience creating visually pleasing & responsive websites</p> -->
-                    </div>
-                </div>
-                <!-- JS -->
-                <div class="skill" id="skill_js" data-aos="fade-right" data-aos-delay="110" data-aos-duration="650">
-                    <img src="/assets/image/js.png" alt="JS">
-                    <div>
-                        <h4>Javascript</h4>
-                        <p>Experience with both frontend and backend Javascript</p>
-                    </div>
-                </div>
-                <!-- NodeJS -->
-                <div class="skill" id="skill_node" data-aos="fade-left"data-aos-delay="150" data-aos-duration="900">
-                    <img src="/assets/image/nodejs.png" alt="NodeJS">
-                    <div>
-                        <h4>NodeJS</h4>
-                        <p>Experience creating web servers using NodeJS</p>
-                    </div>
-                </div>
-                <!-- Cloud Platforms -->
-                <div class="skill" data-aos="fade-right">
-                    <img src="/assets/icon/cloud.svg" alt="Cloud" class="icon" data-aos-delay="160" data-aos-duration="1200">
-                    <div>
-                        <h4>Cloud Platforms</h4>
-                        <p>Experience with Amazon Web Services, Google Cloud Platform, Netlify, Heroku, & Cloudflare</p>
-                    </div>
-                </div>
-                <!-- Image Editing -->
-                <div class="skill" id="skill_photoshop" data-aos="fade-left" data-aos-delay="170" data-aos-duration="1350">
-                    <img src="/assets/image/photoshop.png" alt="Photoshop">
-                    <div>
-                        <h4>Image Manipulation</h4>
-                        <p>Proficient in GIMP, Photoshop and MS Paint</p>
-                    </div>
+                <div id="visual_layer">
+                    <div class="circle"></div>
+                    <div class="triangle"></div>
                 </div>
             </div>
+        </section>
+    </div>
 
-            <div id="visual_layer">
-                <div class="circle"></div>
-                <div class="triangle"></div>
-            </div>
-        </div>
-    </section>
 
     <!---------- Projects ---------->
     <section id="projects" class="container">
@@ -481,7 +484,7 @@
         
 
         // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-        offset: 240, // offset (in px) from the original trigger point
+        offset: 120, // offset (in px) from the original trigger point
         delay: 0, // values from 0 to 3000, with step 50ms
         duration: 800, // values from 0 to 3000, with step 50ms
         easing: 'ease', // default easing for AOS animations

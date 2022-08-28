@@ -300,7 +300,7 @@ function populatePage(id, fullpage=false) {
     <!---------- Main ---------->
     <main id="main" class="doc container flex">
         <div class="info_column">
-        ${box_art_html}
+            ${box_art_html}
             <div class="user_card flex">
                 <img src="${item.author.avatar}" alt="">
                 <div>
@@ -308,7 +308,6 @@ function populatePage(id, fullpage=false) {
                     ${item.author.role ? `<p class="secondary_text">${item.author.role}</p>` : ''}
                 </div>
             </div>
-        </div>
         </div>
         <div class="body_column">
             ${item.body}
