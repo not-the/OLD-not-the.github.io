@@ -1,8 +1,8 @@
 /* Light header */
 /* Nav */
-.light_header #nav.nav_transparent { border-color: rgba(0, 0, 0, 0.5); }
-.light_header #nav.nav_transparent .nav_item { color: black; }
-.light_header #nav.nav_transparent .button_icon { filter: none; }
+.light_header #nav.nav_transparent:not(.menu_open) { border-color: rgba(0, 0, 0, 0.5); }
+.light_header #nav.nav_transparent:not(.menu_open) .nav_item { color: black; }
+.light_header #nav.nav_transparent:not(.menu_open) .button_icon { filter: none; }
 
 /* Header */
 .light_header .title_section h1 { color: black; }
