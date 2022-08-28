@@ -125,6 +125,11 @@ a {
 a:not(.nav_item):hover {
     text-decoration: underline;
 }
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+}
 
 /* Inputs */
 *[role="button"] {
@@ -174,10 +179,8 @@ button:hover .button_icon,
 .button:hover .button_icon {
     filter: none;
 }
-.button_blue {
-    background-color: var(--accent-color);
-    color: white;
-}
+.button_blue { background-color: var(--accent-color); }
+.button_red { background-color: rgb(236, 33, 67); }
 .small_button {
     padding: 8px;
     width: 39px !important;
@@ -197,9 +200,8 @@ button:hover .button_icon,
 
     position: absolute;
     z-index: 0;
-    left: 0;
-    bottom: 0;
-    transform: translateY(100%);
+    left: 0; bottom: 0;
+    transform: translateY(calc(100% + 1px));
 
     transition: transform 0.15s ease;
 }
@@ -664,7 +666,33 @@ nav .button_icon {
     width: 160px;
     margin-left: 6px;
 }
-.label_github::before {
+
+/* Hover labels */
+/* .doc a { position: relative; }
+.doc a::after {
+    content: attr(href);
+    color: var(--secondary-text);
+    width: max-content;
+    max-width: 300px;
+    overflow: hidden;
+    font-weight: normal;
+    text-align: center;
+
+
+    position: absolute;
+    top: calc(100% + 3px);
+    left: 50%;
+    transform: translate(-50%, 3px);
+    pointer-events: none;
+
+    background-color: var(--lighter-bg);
+    color: var(--text);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 6px 18px;
+} */
+
+.label_github::after {
     content: "View on Github";
     width: max-content;
 
@@ -680,17 +708,19 @@ nav .button_icon {
     border-radius: 4px;
     padding: 6px 18px;
 }
-.label_github::before,
-.project_link + h3:after {
+.label_github::after,
+.project_link + h3:after,
+.doc a::after {
     opacity: 0;
     transition-property: opacity, transform;
     transition-duration: 0.15s;
     transition-timing-function: ease;
 }
-.label_github:hover::before,
-.label_github:focus::before,
+.label_github:hover::after,
+.label_github:focus::after,
 .project_link:hover + h3:after,
-.project_link:focus + h3:after { opacity: 1; transform: translate(-50%, 0px); }
+.project_link:focus + h3:after,
+.doc a:hover::after { opacity: 1; transform: translate(-50%, 0px); }
 
 
 
@@ -766,6 +796,27 @@ nav .button_icon {
 p.indent { text-indent: 24px; }
 p.big_letter::first-letter { initial-letter: 3; color: white; }
 
+.doc blockquote {
+    font-size: 13pt;
+}
+.doc blockquote::before {
+    content: open-quote;
+    /* font-size: 40pt; */
+    vertical-align: middle;
+}
+.doc blockquote::after {
+    content: close-quote;
+    /* font-size: 40pt; */
+    vertical-align: middle;
+}
+cite {
+    display: block;
+    font-size: 12pt;
+    padding-top: 6px;
+    color: var(--secondary-text);
+}
+cite::before { content: "- "; }
+
 .doc article {
     border-left: 6px solid var(--border-color);
     padding-left: 12px;
@@ -793,11 +844,47 @@ p.big_letter::first-letter { initial-letter: 3; color: white; }
     color: var(--secondary-text);
     font-style: italic;
 }
+.gallery {
+    overflow-x: auto;
+    display: flex;
+    scroll-snap-type: x mandatory;
+}
+.gallery img {
+    margin-right: 12px;
+    max-height: 300px;
+    scroll-snap-align: start;
+}
 .doc button,
 .doc .button {
     margin-top: 12px;
 }
 
+.enlarged_image {
+    position: fixed;
+    top: 0; right: 0; left: 0;
+    height: 100vh;
+    z-index: 101;
+
+    background-color: var(--backdrop-color);
+    padding: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.enlarged_image img {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+    animation: enlarge_image 0.25s ease;
+}
+@keyframes enlarge_image {
+    from {
+        opacity: 0;
+        transform: translateY(60px)
+    }
+}
 
 
 /* Themes */
@@ -891,6 +978,12 @@ p.big_letter::first-letter { initial-letter: 3; color: white; }
     .project_item, .skill { width: 100%; }
 
     #projects_list .project .title_buttons { margin-left: auto; }
+
+
+    /* Blog format */
+    .enlarged_image {
+        padding: 0;
+    }
 }
 
 /* Reduced Motion */
