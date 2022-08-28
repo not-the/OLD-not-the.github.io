@@ -30,20 +30,15 @@ function switchTheme(animate=true) {
     theme = !theme;
     store('theme', `${theme}`); // Save in localStorage
     style(body, 'theme_light', theme); // Set theme
-
-    // Animate
-    if(!animate) { themeIcon(); return; };
+    if(!animate) return themeIcon(); // Animate
     theme_button_icon.classList.remove('a_rollout')
     theme_button_icon.classList.add('a_rollout');
     clearTimeout(ti1);
     clearTimeout(ti2);
     ti1 = setTimeout(themeIcon, 250);
     ti2 = setTimeout(() => { theme_button_icon.classList.remove('a_rollout'); }, 500);
-    function themeIcon() {
-        theme ? // Update theme button
-          theme_button_icon.src = '/assets/icon/sun.svg'
-        : theme_button_icon.src = '/assets/icon/moon.svg';
-    }
+    /** Update theme button */
+    function themeIcon() { theme_button_icon.src = theme ? '/assets/icon/sun.svg' : '/assets/icon/moon.svg'; }
 }
 /** Scrolls page to top */
 function toTop(closemenu=false) {
@@ -68,8 +63,7 @@ function toggleMotion() {
     });
 
     // Video play/pause
-    if(reducedMotion) video_main.pause();
-    else video_main.play();
+    if(reducedMotion) video_main.pause(); else video_main.play();
 }
 
 /** Updates parallax */
@@ -77,28 +71,36 @@ function toggleMotion() {
     
 // }
 
+/** Enlarge image */
+function enlargeImage(event) {
+    let p = document.querySelector('.enlarged_image'); // Enlarged image already exists
+    if(p != undefined) p.remove();
+    let [src, alt] = [event.srcElement.src, event.srcElement.alt]
+    let e = document.createElement('div');
+    e.classList.add('enlarged_image')
+    e.innerHTML = `<img src="${src}" alt="${alt}">`;
+    e.setAttribute('onclick', "this.remove()");
+    body.append(e);
+}
+
 // Event listeners
 //#region 
 menu_button.addEventListener('click', toggleMenu);
 backdrop.addEventListener('click', toggleMenu);
 theme_button.addEventListener('click', switchTheme);
-
 /** Click on figure image to enlarge */
-document.querySelectorAll('figure img').forEach(element => {
-    element.addEventListener('click', enlargeImage);
-})
-
+document.querySelectorAll('figure img').forEach(e => { e.addEventListener('click', enlargeImage); });
 /** Enter acts as click */
-document.addEventListener("keypress", event => {
+document.addEventListener("keypress", e => {
     // if(document.activeElement.tagName == 'details') return;
-    if(event.key === "Enter") document.activeElement.click();
+    if(e.key === "Enter") document.activeElement.click();
 });
 
 /** On scroll */
 window.onscroll = () => {
     // Nav bar
     let distance = document.documentElement.scrollTop || document.body.scrollTop;
-    style(nav, 'nav_transparent', (distance == 0));
+    style(nav, 'nav_transparent', (distance <= 120));
 };
 
 /** On resize */
