@@ -82,7 +82,7 @@
 }
 .user_card p { margin: 0; }
 
-iframe {
+iframe.container {
     width: 100%;
     max-width: 900px;
     height: 500px;
