@@ -72,9 +72,10 @@ function toggleMotion() {
 // }
 
 /** Enlarge image */
-function enlargeImage(event) {
+function enlargeImage(event, close=false) {
     let p = document.querySelector('.enlarged_image'); // Enlarged image already exists
     if(p != undefined) p.remove();
+    if(close) return;
     let [src, alt] = [event.srcElement.src, event.srcElement.alt]
     let e = document.createElement('div');
     e.classList.add('enlarged_image')
@@ -91,9 +92,10 @@ theme_button.addEventListener('click', switchTheme);
 /** Click on figure image to enlarge */
 document.querySelectorAll('figure img').forEach(e => { e.addEventListener('click', enlargeImage); });
 /** Enter acts as click */
-document.addEventListener("keypress", e => {
+document.addEventListener("keydown", e => {
     // if(document.activeElement.tagName == 'details') return;
     if(e.key === "Enter") document.activeElement.click();
+    else if(e.key === "Escape") enlargeImage(false, true);
 });
 
 /** On scroll */

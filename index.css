@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 { font-size: 2em; }
 h2 { font-size: 2em !important; }
-h3 { font-size: 16pt; padding-bottom: 4px; padding-top: 6px; }
+h3 { font-size: 16pt; padding-bottom: 4px; padding-top: 24px; }
 h4 { font-size: 1.17em; }
 
 a {
@@ -668,7 +668,7 @@ nav .button_icon {
 }
 
 /* Hover labels */
-/* .doc a { position: relative; }
+.doc a { position: relative; }
 .doc a::after {
     content: attr(href);
     color: var(--secondary-text);
@@ -690,7 +690,7 @@ nav .button_icon {
     border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: 6px 18px;
-} */
+}
 
 .label_github::after {
     content: "View on Github";
@@ -779,10 +779,9 @@ nav .button_icon {
 .doc p:not(.button p) {
     margin-bottom: 12px;
     color: var(--secondary-text);
-    initial-letter: 2;
+
 }
 .doc h2 {
-    /* padding-bottom: 4px; */
     margin-bottom: 6px;
     border-bottom: 1px solid var(--border-color);
 }
@@ -794,24 +793,35 @@ nav .button_icon {
     word-wrap: break-word;
 } */
 p.indent { text-indent: 24px; }
-p.big_letter::first-letter { initial-letter: 3; color: white; }
+p.big_letter::first-letter {
+    margin-right: 3px;
+    border-radius: 3px;
+    font-size: 54pt;
+    float: left;
+    color: var(--accent-color);
+    line-height: 0.8;
+}
 
 .doc blockquote {
-    font-size: 13pt;
+    font-size: 15pt;
+    padding: 32px 16px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
 }
 .doc blockquote::before {
     content: open-quote;
-    /* font-size: 40pt; */
-    vertical-align: middle;
-}
-.doc blockquote::after {
-    content: close-quote;
-    /* font-size: 40pt; */
-    vertical-align: middle;
+    font-size: 100pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--accent-color);
+    opacity: 0.7;
+    z-index: -1;
+    position: absolute;
+    top: -18px;
+    left: -16px;
 }
 cite {
     display: block;
-    font-size: 12pt;
     padding-top: 6px;
     color: var(--secondary-text);
 }
@@ -837,6 +847,7 @@ cite::before { content: "- "; }
 .doc figure {
     margin-top: 12px;
 }
+figure img { cursor: zoom-in; }
 .doc img {
     max-width: 100%;
 }

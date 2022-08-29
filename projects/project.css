@@ -38,7 +38,8 @@
 
 /* Main */
 #main {
-    text-align: justify;
+    width: 100%;
+    /* text-align: justify; */
     
     padding: 24px;
     margin-bottom: 24px;
@@ -48,10 +49,13 @@
 }
 /* Info */
 .info_column {
-    width: 320px;
+    width: 100%;
+    max-width: 220px;
     border-right: 1px solid var(--border-color);
     padding-right: 20px;
     padding-bottom: 20px;
+
+    flex-shrink: 0;
 }
 #box_art {
     background-color: var(--lighter-bg);
@@ -82,6 +86,9 @@
 }
 .user_card p { margin: 0; }
 
+iframe {
+    max-width: 100%;
+}
 iframe.container {
     width: 100%;
     max-width: 900px;
@@ -112,7 +119,8 @@ iframe.container {
     .info_column { 
         border: none;
         border-bottom: 1px solid var(--border-color);
-        width: 100%;
+        max-width: 100%;
+        margin-bottom: 12px;
     }
     .body_column { padding: 12px 6px 0; }
 }
