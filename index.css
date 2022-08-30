@@ -849,7 +849,7 @@ cite::before { content: "- "; }
     margin-bottom: 6px;
 }
 .doc figure {
-    margin-top: 12px;
+    margin: 24px 0 32px;
 }
 figure img { cursor: zoom-in; }
 .doc img {
@@ -867,6 +867,11 @@ figure img { cursor: zoom-in; }
 .gallery img {
     margin-right: 12px;
     max-height: 300px;
+    max-width: 100%;
+    object-fit: contain;
+
+    align-items: center;
+    justify-content: center;
     scroll-snap-align: start;
 }
 .doc button,

@@ -92,7 +92,9 @@ function articleCopyURL(event) {
     copy_text.value = url;
     body.appendChild(copy_text);
     let e = dom('copy_text');
-    e.select(); e.copy();
+    e.focus(); e.select();
+    document.execCommand("copy");
+    e.remove();
 }
 
 // Event listeners
