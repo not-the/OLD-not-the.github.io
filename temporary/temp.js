@@ -286,7 +286,7 @@ function populatePage(id, fullpage=false) {
             <div>
                 <h1>${item.name}</h1>
                 <p id="path" class="secondary_text gray">
-                    <a href="/">notkal</a> / <a href="/${item.type ? item.type.toLowerCase() : 'projects'}">${item.type}</a> / <a href="./">${item.name}</a>
+                    <a href="/">notkal</a> / <a href="/${item.type ? item.type.toLowerCase() : 'projects'}">${item.type ? item.type : 'projects'}</a> / <a href="./">${item.name}</a>
                 </p>
             </div>
             <div class="title_buttons flex">

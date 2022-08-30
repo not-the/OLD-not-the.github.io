@@ -96,20 +96,26 @@ iframe.container {
     padding: 0 !important;
 
     border: 1px solid var(--lighter-bg);
-    /* border: none; */
     border-radius: 6px;
 
+    display: block;
     user-select: none;
     -webkit-user-select: none;
-    display: block;
 }
+
+/* Article url button */
+.article_url_button {
+    opacity: 0;
+    transition: 0.075s opacity ease;
+}
+article h2:hover .article_url_button { opacity: 0.7; }
+article h2 .article_url_button:hover { opacity: 1; }
 
 
 /* Mobile layout */
 @media screen and (max-width: 600px) {
     #banner { height: 400px; }
-    #main,
-    .title_section { flex-direction: column; }
+    #main, .title_section { flex-direction: column; }
     .title_buttons { padding-top: 6px; }
     #main {
         border-radius: 0;

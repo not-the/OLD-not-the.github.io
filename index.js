@@ -84,6 +84,17 @@ function enlargeImage(event, close=false) {
     body.append(e);
 }
 
+/** Copy article URL */
+function articleCopyURL(event) {
+    let url = `${window.location.href}#${event.srcElement.parentNode.parentNode.id}`;
+    let copy_text = document.createElement('textarea');
+    copy_text.id = "copy_text";
+    copy_text.value = url;
+    body.appendChild(copy_text);
+    let e = dom('copy_text');
+    e.select(); e.copy();
+}
+
 // Event listeners
 //#region 
 menu_button.addEventListener('click', toggleMenu);
@@ -91,6 +102,7 @@ backdrop.addEventListener('click', toggleMenu);
 theme_button.addEventListener('click', switchTheme);
 /** Click on figure image to enlarge */
 document.querySelectorAll('figure img').forEach(e => { e.addEventListener('click', enlargeImage); });
+document.querySelectorAll('article .article_url_button').forEach(e => { e.addEventListener('click', articleCopyURL); });
 /** Enter acts as click */
 document.addEventListener("keydown", e => {
     // if(document.activeElement.tagName == 'details') return;
