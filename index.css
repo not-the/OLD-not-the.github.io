@@ -832,30 +832,37 @@ cite {
 cite::before { content: "- "; }
 
 .doc article {
-    border-left: 6px solid var(--border-color);
-    padding-left: 12px;
+    /* border-left: 6px solid var(--border-color); */
+    /* padding-left: 18px; */
     margin: 24px 0;
 
     transition-property: padding, border;
     transition-duration: 0.2s;
 }
-.doc article:target {
+/* .doc article:target {
+    padding-left: 18px;
     border-left: 10px solid var(--text);
-}
+} */
 .doc ol,
 .doc ul {
-    list-style-position: inside;
+    /* list-style-position: inside; */
     padding-left: 6px;
     margin-bottom: 6px;
 }
+.doc li {
+    padding-bottom: 4px;
+    margin-left: 18px;
+}
 .doc figure {
-    margin: 24px 0 32px;
+    margin: 12px 0;
 }
 figure img { cursor: zoom-in; }
 .doc img {
+    max-height: 360px;
     max-width: 100%;
 }
 .doc figcaption {
+    margin-top: 3px;
     color: var(--secondary-text);
     font-style: italic;
 }
@@ -866,13 +873,18 @@ figure img { cursor: zoom-in; }
 }
 .gallery img {
     margin-right: 12px;
-    max-height: 300px;
+    max-height: 360px;
     max-width: 100%;
     object-fit: contain;
 
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
+}
+.doc video {
+    max-width: 100%;
+    margin: 12px 0;
+    display: block;
 }
 .doc button,
 .doc .button {

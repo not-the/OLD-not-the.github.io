@@ -21,8 +21,8 @@
     <meta property="og:site_name" content="notkal">
 
     <!-- not-util -->
-    <link rel="stylesheet" href="https://not-the.github.io/not-util/not-util.css" crossorigin>
-    <script src="https://not-the.github.io/not-util/not-util.js" crossorigin></script>
+    <link rel="stylesheet" href="https://www.notkal.com/not-util/not-util.css" crossorigin>
+    <script src="https://www.notkal.com/not-util/not-util.js" crossorigin></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,16 +98,58 @@
 
             <p class="emphasize">
                 Posted <span>8/22/2022</span><br/>
-                <i class="secondary_text">Last updated <span>8/22/2022</span></i>
+                <i class="secondary_text">Last updated <span>8/31/2022</span></i>
             </p>
 
         </div>
         <div class="body_column">
             <p>Update history for <a href="https://carrot.notkal.com/">Carrot Clicker</a></p>
+            
             <article id="dev-beta-1_16_5">
-                <h2>Dev beta 1.16.5 <img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id officiis illum quibusdam provident accusamus maxime, quae natus alias obcaecati nisi?</p>
+                <h2>Dev beta 1.16.8 <img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></h2>
+                <p><i>not-the | 8/30/2022</i></p>
+                <ul>
+                    <li>
+                        Visual overhaul of the mini info section
+                        <figure>
+                            <div class="gallery">
+                                <img src="./mini info new.png" alt="">
+                                <img src="./mini info old.png" alt="">
+                            </div>
+                            <figcaption>Click to enlarge</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        All sliders in settings now have number inputs alongside them
+                        <figure>
+                            <div class="gallery">
+                                <img src="./slider new.png" alt="">
+                                <img src="./slider old.png" alt="">
+                            </div>
+                        </figure>
+                    </li>
+                    <li>Coins are now represented by the ⚬ symbol everywhere</li>
+                    <li>Fixed tips menu not loading</li>
+                    <li>Moved keybind handler function into the event listener</li>
+                    <li>
+                        Reduced the amount of CSS the oled theme uses and fixed some UI elements
+                        <figure>
+                            <div class="gallery">
+                                <img src="./oled NEW.png" alt="">
+                                <img src="./oled old.png" alt="">
+                            </div>
+                        </figure>
+                    </li>
+                    <br/>
+                    <h3>Dev tools:</h3>
+                    <li>
+                        Replaced character levels with input boxes that can only be interacted with in dev mode
+                        <video src="./setlevel.mp4" controls loop muted preload="meta"></video>
+                    </li>
+                    <li>Putting #log in the address bar will send console.log, console.warn, and console.error as toasts (experimental, and is very spammy)</li>
+                </ul>
             </article>
+
             <a href="https://carrot.notkal.com/changelog.txt">
                 <div class="button full_width bold">
                     <p>View older changes</p>
