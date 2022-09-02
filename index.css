@@ -882,6 +882,7 @@ figure img { cursor: zoom-in; }
     scroll-snap-align: start;
 }
 .doc video {
+    background-color: var(--lighter-bg);
     max-width: 100%;
     margin: 12px 0;
     display: block;
