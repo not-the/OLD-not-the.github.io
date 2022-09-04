@@ -938,22 +938,6 @@ figure img { cursor: zoom-in; }
 .theme_light #footer::before { filter: invert(); }
 
 
-/* noscript */
-#noscript {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 54px;
-
-    width: 400px;
-    max-width: 100%;
-    padding: 12px 18px;
-    border-radius: 12px;
-
-    background-color: var(--text);
-    color: var(--main-bg);
-}
-
 /* Media queries */
 
 /* Mobile layout */
