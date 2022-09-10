@@ -24,6 +24,7 @@
 
 /* Title */
 .title_section {
+    /* height: 83px; */
     margin-top: 200px;
     padding-bottom: 12px;
     text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
@@ -109,7 +110,8 @@ iframe.container {
     transition: 0.075s opacity ease;
 }
 article h2:hover .article_url_button { opacity: 0.7; }
-article h2 .article_url_button:hover { opacity: 1; }
+article h2 .article_url_button:hover,
+article h2 .article_url_button:focus-visible { opacity: 1; }
 #copy_text { opacity: 0; position: fixed; pointer-events: none; height: 1px; width: 1px; }
 
 

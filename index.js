@@ -103,7 +103,7 @@ menu_button.addEventListener('click', toggleMenu);
 backdrop.addEventListener('click', toggleMenu);
 theme_button.addEventListener('click', switchTheme);
 /** Click on figure image to enlarge */
-document.querySelectorAll('figure img').forEach(e => { e.addEventListener('click', enlargeImage); });
+document.querySelectorAll('figure img').forEach(e => { e.setAttribute("tabindex", "0"); e.addEventListener('click', enlargeImage); });
 document.querySelectorAll('article .article_url_button').forEach(e => { e.addEventListener('click', articleCopyURL); });
 /** Enter acts as click */
 document.addEventListener("keydown", e => {

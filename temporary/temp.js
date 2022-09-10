@@ -69,19 +69,6 @@ const projects = {
                 My goal with this project was to create a digital Rubik's cube using only HTML, CSS and Javascript over a weekend. No canvases or 3D libraries are used.
             </p>`,
     },
-    'confetti': {
-        name: 'HTML Confetti',
-        header: '/assets/project/confetti.png',
-        // box_art: '',
-
-        github_url: 'https://github.com/not-the/Mouse-Confetti',
-        url: 'https://confetti.notkal.com/',
-        // url_label: false,
-        iframe: true,
-
-        author: not,
-        body: body_no_desc,
-    },
     'tictactoe': {
         name: 'Tic Tac Toe',
         header: '/assets/project/ttt.png',
@@ -99,6 +86,19 @@ const projects = {
             <p>
                 Basic Tic Tac Toe with a fun user interface.
             </p>`,
+    },
+    'confetti': {
+        name: 'HTML Confetti',
+        header: '/assets/project/confetti.png',
+        // box_art: '',
+
+        github_url: 'https://github.com/not-the/Mouse-Confetti',
+        url: 'https://confetti.notkal.com/',
+        // url_label: false,
+        iframe: true,
+
+        author: not,
+        body: body_no_desc,
     },
     'cssloadingscreens': {
         name: 'CSS Loading Screens',

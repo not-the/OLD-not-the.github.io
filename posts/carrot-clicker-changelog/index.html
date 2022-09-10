@@ -77,6 +77,20 @@
             </div>
             <div class="title_buttons flex">
                 
+                <a href="https://carrot.notkal.com/changelog.txt" target="_blank" rel="noreferrer" data-label="View older changes">
+                    <div class="button bold">
+                        <!-- <img src="/assets/icon/hamburger.svg" alt="" class="button_icon"> -->
+                        <p>Older changes <img src="/assets/icon/external_link.svg" alt="" class="button_icon"></p>
+                        <div class="button_shade"></div>
+                    </div>
+                </a>
+                <!-- <a href="/projects/carrot-clicker/" rel="noreferrer">
+                    <div class="button bold">
+                        <p>Carrot Clicker <img src="/assets/icon/external_link.svg" alt="" class="button_icon"></p>
+                        <div class="button_shade"></div>
+                    </div>
+                </a> -->
+
             </div>
         </div>
     </header>
@@ -93,7 +107,7 @@
                     <p class="secondary_text">Author</p>
                 </div>
             </div>
-            
+
             <br/>
 
             <p class="emphasize">
@@ -104,8 +118,163 @@
         </div>
         <div class="body_column">
             <p>Update history for <a href="https://carrot.notkal.com/">Carrot Clicker</a></p>
+
+            <article id="dev-beta-1_16_11">
+                <h2>Dev beta 1.16.11 <img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></h2>
+                <p><i>not-the | 9/9/2022</i></p>
+
+                <ul>
+                    <li>Added a navigation bar that appears by default on mobile</li>
+                    <li>Updated the favicon</li>
+                    <li>Classic theme now has the old mini info style</li>
+                    <li>Falling carrots now have multitouch support</li>
+                    <li>Moved "All Bill" cosmetic back to the bill_lvl_100 achievement (was bill_lvl_500)</li>
+                    <li>New achievement: IOU - Have fewer than 1000 carrots while Greg is crafting</li>
+                    <li>Fixed crafting not updating the carrot count</li>
+                    <li>Fixed tool highlighting not updating when earnCarrots runs <a href="https://github.com/not-the/Carrot-Clicker/issues/69">(Issue #69)</a></li>
+                    <li>Toggling full numbers will now update some major numbers instantly</li>
+                    <li>Hopefully fixed an issue where extreme crafting speeds could drain your carrots instead of stopping at the price of the tool</li>
+                    <li>Different tools now have different crafting speeds</li>
+                    <li>Footer links now open in a new tab</li>
+                    <br/>
+
+                    <b>Balance changes:</b>
+                    <li>
+                        Tool crafting speeds
+                        <table>
+                            <tr>
+                                <th>Tool</th>
+                                <th>Old</th>
+                                <th>New value</th>
+                            </tr>
+                            <tr>
+                                <td>Hoe</td>
+                                <td>0.01</td>
+                                <td>0.06</td>
+                            </tr>
+                            <tr>
+                                <td>Sturdy Hoe</td>
+                                <td>0.01</td>
+                                <td>0.03</td>
+                            </tr>
+                            <tr>
+                                <td>Scythe</td>
+                                <td>0.01</td>
+                                <td>0.01 (Unchanged)</td>
+                            </tr>
+                            <tr>
+                                <td>Plough</td>
+                                <td>0.01</td>
+                                <td>0.009</td>
+                            </tr>
+                            <tr>
+                                <td>Gilded Hoe</td>
+                                <td>0.01</td>
+                                <td>0.007</td>
+                            </tr>
+                            <tr>
+                                <td>Tool 6</td>
+                                <td>0.01</td>
+                                <td>0.005</td>
+                            </tr>
+                        </table>        
+                    </li>
+                </ul>
+            </article>
+
+            <article id="dev-beta-1_16_10">
+                <h2>Dev beta 1.16.10 <img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></h2>
+                <p><i>not-the | 9/7/2022</i></p>
+
+                <ul>
+                    <li>
+                        New new tool sprites
+                        <ul>
+                            <li>No tool 6 yet though</li>
+                        </ul>
+                        <figure>
+                            <img src="./new_tools_solid_bg.png" alt="New tool sprites">
+                            <figcaption>Left to right: Hoe, Sturdy Hoe, Scythe, Plough, Gilded Hoe</figcaption>
+                        </figure>
+                    </li>
+                    <li>Tool tooltips</li>
+                </ul>
+            </article>
+
+            <article id="dev-beta-1_16_9_1">
+                <h2>Dev beta 1.16.9.1 <img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></h2>
+                <p><i>not-the | 9/5/2022</i></p>
+
+                <ul>
+                    <li>Fixed a crash</li>
+                    <li>Dev panel: "Auto-update save while in debug mode" option now functions as expected</li>
+                    <li>The footer is now visible at all times instead of just in settings</li>
+                </ul>
+            </article>
+
+            <article id="dev-beta-1_16_9">
+                <h2>Dev beta 1.16.9 <img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></h2>
+                <p><i>not-the | 9/5/2022</i></p>
+
+                <b>Touchscreen support</b><br/>
+                <ul>
+                    <li>Reenabled farmable cosmetics being able to change the name of the item you're farming, and condensed the setCosmetic function</li>
+                    <li>Fixed character levels being the wrong color in safari</li>
+                    <li>Tool numbers now change color instead of display as "MAX" when full</li>
+                    <li>Fixed a bug where buying a trinket would prevent it from greying out once it became too expensive</li>
+                    <li>Replaced main button item's titles with tooltips</li>
+                    <li>Slightly reworked the prestige menu
+                        <ul>
+                            <li>Prestige menu now shows you the exact prestige bonus you recieve from tomes</li>
+                            <li>Added a "Buy tomes" button that opens Charles</li>
+                        </ul>
+                    </li>
+                    <li>Renamed function: onClick -> carrotClicker</li>
+                    <li>Clicking the carrot now supports:
+                        <ul>
+                            <li>Multi touch</li>
+                            <li>Number popup now follows your finger</li>
+                        </ul>
+                    </li>
+                    <li>- Misc changes to improve SEO/appropriate use of semantic tags</li>
+                    
+                    <b>Balance changes:</b>
+                    <li>
+                        Tomes
+                        <table>
+                            <tr>
+                                <td>IWC bonus</td>
+                                <td>1% -> 10%</td>
+                            </tr>
+                        </table>        
+                    </li>
+                    <li>
+                        Trinket prices (in coins)
+                        <table>
+                            <tr>
+                                <td>Magic keyboard</td>
+                                <td>200 -> 100</td>
+                            </tr>
+                            <tr>
+                                <td>Tool box</td>
+                                <td>(Has prices now)</td>
+                            </tr>
+                        </table>  
+                    </li>
+                    <li>
+                        Greg price scaling
+                        <table>
+                            <tr>
+                                <td>Levels 0-24</td>
+                                <td>0.21156 -> 0.17706</td>
+                            </tr>
+                        </table>
+                        The upgrade cost when a new tool is about to be unlocked is now always 1/3 the cost of that tool
+                    </li>
+                </ul>
+            </article>
             
-            <article id="dev-beta-1_16_5">
+            <article id="dev-beta-1_16_8">
                 <h2>Dev beta 1.16.8 <img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></h2>
                 <p><i>not-the | 8/30/2022</i></p>
                 <ul>
