@@ -162,6 +162,7 @@ select,
     transition: transform 0.1s ease;
     z-index: 1; /* Makes button_shade work in safari */
 }
+button, select { cursor: pointer; }
 /* button:hover,
 input:hover,
 textarea:hover,
@@ -170,6 +171,7 @@ select:hover,
 a:hover .button {
 
 } */
+button:hover,
 .button:hover,
 a:hover .button {
     text-decoration: none !important;
@@ -207,9 +209,12 @@ a:hover .button .button_icon {
     position: absolute;
     z-index: 0;
     left: 0; bottom: 0;
-    transform: translateY(calc(100% + 1px));
 
-    transition: transform 0.15s ease;
+
+    transform: translateY(calc(100% + 1px));
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
 }
 .button:hover .button_shade,
 a:hover .button .button_shade {
