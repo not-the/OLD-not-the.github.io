@@ -66,11 +66,6 @@ function toggleMotion() {
     if(reducedMotion) video_main.pause(); else video_main.play();
 }
 
-/** Updates parallax */
-// function updateParallax() {
-    
-// }
-
 /** Enlarge image */
 function enlargeImage(event, close=false) {
     let p = document.querySelector('.enlarged_image'); // Enlarged image already exists
@@ -112,11 +107,15 @@ document.addEventListener("keydown", e => {
     else if(e.key === "Escape") enlargeImage(false, true);
 });
 
+// let onscrollElement = video_main != null ? video_main : dom('banner');
 /** On scroll */
 window.onscroll = () => {
     // Nav bar
     let distance = document.documentElement.scrollTop || document.body.scrollTop;
     style(nav, 'nav_transparent', (distance <= 120));
+
+    // Parallax
+    // onscrollElement.style.transform = `translateY(${distance / 2.5}px)`;
 };
 
 /** On resize */

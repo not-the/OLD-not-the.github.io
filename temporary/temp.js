@@ -1,4 +1,5 @@
 // Author data
+//#region 
 const not = {
     name: 'not-the',
     avatar: 'https://avatars.githubusercontent.com/u/87151784?v=4',
@@ -19,6 +20,7 @@ const body_early_project = `
 const body_no_desc = `
 <h3>Description</h3>
 <p class="gray"><i>No description available</i></p>`;
+//#endregion
 
 /** Project data */
 const projects = {
@@ -157,7 +159,6 @@ const projects = {
     },
 }
 
-
 /** Post data */
 const posts = {
     // HTML FILE EDITED INDEPENDENTLY
@@ -174,14 +175,6 @@ const posts = {
             </p>`,
     },
 }
-
-
-
-
-
-
-
-
 
 
 /** Generate project page HTML */
