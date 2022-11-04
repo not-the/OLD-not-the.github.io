@@ -24,9 +24,19 @@ const body_no_desc = `
 
 /** Project data */
 const projects = {
+    'charactercreator': {
+        name: 'Character Creator',
+        header: '/assets/project/carrot_clicker_big.png',
+        // box_art: '',
+
+        github_url: 'https://github.com/not-the/Character-Creator',
+        url: 'https://www.notkal.com/Character-Creator/',
+        author: not,
+        body: body_no_desc,
+    },
     'carrotclicker': {
         name: 'Carrot Clicker',
-        header: '/assets/project/carrot_clicker_big.png',
+        header: '/assets/project/character_creator.png',
         // box_art: '',
 
         github_url: 'https://github.com/not-the/Carrot-Clicker',
