@@ -162,6 +162,11 @@ select,
     transition: transform 0.1s ease;
     z-index: 1; /* Makes button_shade work in safari */
 }
+button > *,
+.button > * {
+    display: inline-block;
+    vertical-align: middle;
+}
 button, select { cursor: pointer; }
 /* button:hover,
 input:hover,
