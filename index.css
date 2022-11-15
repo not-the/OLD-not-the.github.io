@@ -915,6 +915,10 @@ figure img { cursor: zoom-in; }
     justify-content: center;
     scroll-snap-align: start;
 }
+.gallery.pixel_gallery img {
+    image-rendering: pixelated;
+    width: 64px;
+}
 .doc video {
     background-color: var(--lighter-bg);
     max-width: 100%;
