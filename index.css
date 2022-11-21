@@ -198,6 +198,9 @@ a:hover .button .button_icon {
     min-width: unset !important;
     width: 39px;
 }
+select {
+    text-align: left;
+}
 
 
 /* Fancy button shade */
