@@ -433,6 +433,16 @@ nav .button_icon {
 .project_link:focus-visible + h3:after,
 .doc a:hover::after { opacity: 1; transform: translate(-50%, 0px); }
 
+/* Projects - both item and page */
+.title_section { justify-content: space-between; }
+.title_buttons { margin-top: auto; }
+.title_buttons a { position: relative; }
+.title_buttons .button {
+    width: max-content;
+    min-width: 160px;
+    margin-left: 6px;
+}
+
 
 
 /* Footer */

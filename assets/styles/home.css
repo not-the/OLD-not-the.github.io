@@ -314,16 +314,6 @@
     height: 120px;
 }
 
-/* Projects - both item and page */
-.title_section { justify-content: space-between; }
-.title_buttons { margin-top: auto; }
-.title_buttons a { position: relative; }
-.title_buttons .button {
-    width: max-content;
-    min-width: 160px;
-    margin-left: 6px;
-}
-
 /* Contact */
 #contact_list {
     background-color: var(--lighter-bg);
