@@ -44,8 +44,7 @@ function switchTheme(animate=true) {
 function toTop(closemenu=false) {
     window.scrollTo(0, 0);
     document.activeElement.blur(); // Move keyboard navigation back to start
-    if(!closemenu) return;
-    toggleMenu();
+    if(closemenu) toggleMenu();
 }
 
 /** Toggles "Reduce Motion" */
@@ -55,7 +54,7 @@ function toggleMotion() {
     style(body, 'reduced_motion', reducedMotion); // Set theme
     reduce_motion.innerText = reducedMotion ? '⏵︎ Reduce motion' : '⏸︎ Reduce motion';
 
-    // Disable AOS
+    // Disable/enable AOS
     let alternate = true;
     document.querySelectorAll('[data-aos]').forEach(element => {
         element.setAttribute("data-aos", reducedMotion ? "none" : alternate ? "fade-right" : "fade-left");
@@ -79,6 +78,27 @@ function enlargeImage(event, close=false) {
     body.append(e);
 }
 
+/** Dialog (enlarge image but for text) */
+function dialog(event) {
+    let content = event.srcElement.parentNode.lastElementChild;
+    if(content.className !== 'dialog_content') return console.warn('No content for dialog to show');
+
+    let p = document.querySelector('.dialog'); // Dialog already exists
+    if(p != undefined) p.remove();
+    let e = document.createElement('div');
+    e.classList.add('dialog')
+    e.innerHTML = `
+    <div class="dialog_content">
+        <button class="button bold dialog_close" style="float: right; width: 160px;" onclick="this.parentNode.parentNode.remove();">
+            <p>Done</p>
+            <div class="button_shade"></div>
+        </button>
+        ${content.innerHTML}
+    </div>`;
+    e.setAttribute('onclick', "if(event.srcElement.classList.contains('dialog')) this.remove();");
+    body.append(e);
+}
+
 /** Copy article URL */
 function articleCopyURL(event) {
     let url = `${window.location.href}#${event.srcElement.parentNode.parentNode.id}`;
@@ -99,7 +119,14 @@ backdrop.addEventListener('click', toggleMenu);
 theme_button.addEventListener('click', switchTheme);
 /** Click on figure image to enlarge */
 document.querySelectorAll('figure img').forEach(e => { e.setAttribute("tabindex", "0"); e.addEventListener('click', enlargeImage); });
+document.querySelectorAll('.dialog_trigger').forEach(e => { e.setAttribute("tabindex", "0"); e.addEventListener('click', dialog); });
 document.querySelectorAll('article .article_url_button').forEach(e => { e.addEventListener('click', articleCopyURL); });
+document.querySelector('#easter_egg').addEventListener('input', e => {
+    let root = document.querySelector(':root');
+    root.style.setProperty('--accent-color', e.srcElement.value);
+    root.style.setProperty('--link-color', e.srcElement.value);
+    root.style.setProperty('--gradient-b', e.srcElement.value);
+});
 /** Enter acts as click */
 document.addEventListener("keydown", e => {
     // if(document.activeElement.tagName == 'details') return;
