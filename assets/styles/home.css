@@ -27,9 +27,9 @@
     /* height: calc(100vh + var(--wave-offset)); */
     height: 100vh;
 }
-.theme_light #video_main {
+/* .theme_light #video_main {
     filter: invert() hue-rotate(180deg) brightness(90%);
-}
+} */
 .banner {
     animation: 2s banner_fade cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-delay: 0.5s;
