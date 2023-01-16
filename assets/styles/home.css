@@ -42,8 +42,6 @@
     position: relative;
     width: 100%;
     min-height: calc(100vh + 1px);
-    border-bottom: 1px solid var(--border-darker);
-
     overflow: hidden;
 }
 #home_center {
@@ -156,7 +154,7 @@
     --angle: 60deg;
     --start-percent: -500%;
     --end-color: transparent;
-    --end-percent: 200%;
+    --end-percent: 150%;
 
     /* CSS */
     position: relative;
@@ -350,7 +348,17 @@
     }
     .project_item, .skill { width: 100%; }
 
-    #projects_list .project .title_buttons { margin-left: auto; }
+    #projects_list .project .title_buttons {
+        margin-top: 9px;
+    }
+    
+    #projects_list .project .title_buttons .button {
+        max-width: unset;
+        width: 100%;
+    }
+    #projects_list .project .title_buttons a:first-of-type .button {
+        margin-left: 0;
+    }
 }
 
 @media print {

@@ -1,0 +1,7 @@
+1/15/2023
+- Replaced dialog JS with something simpler
+- Updated the way the projects section appears on mobile
+- Fixed the nav bar not changing opaque on pages other than Home
+- Article copy URL buttons now update the page URL, so they have functionality when JS is disabled
+- On project/blog pages the info column is now sticky (only applied to carrot-clicker-changelog and sample.html for the moment)
+- Improved :target CSS

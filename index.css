@@ -28,7 +28,7 @@
 }
 
 /* Light theme */
-.theme_light {
+body.theme_light {
     /* color-scheme: unset; */
 
     /* Background */
@@ -45,14 +45,14 @@
     /* Text and elements */
     --text:                black;
     --secondary-text:      rgb(40, 40, 40);
-    --link-color:          rgb(72, 143, 224);
+    --link-color:          rgb(35, 119, 214);
 
     /* Accents */
     /* --accent-color:        rgb(81, 162, 255); */
 }
 
 /* Just for fun */
-/* .theme_blue {
+/* body.theme_blue {
     --main-bg:             rgb(41, 41, 97);
     --lighter-bg:          rgb(34, 33, 36);
     --transparent-bg:      rgba(30, 30, 109, 0.8);
@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
 }
 h1 { font-size: 2em; }
-h2 { font-size: 2em !important; }
+h2 { font-size: 2em; }
 h3 { font-size: 16pt; padding-bottom: 4px; }
 h4 { font-size: 1.17em; }
 
@@ -181,9 +181,9 @@ a:hover .button .button_icon {
 .button_blue { background-color: var(--accent-color); }
 .button_red { background-color: rgb(236, 33, 67); }
 .small_button {
-    padding: 8px;
+    /* padding: 8px; */
     min-width: unset !important;
-    width: 39px;
+    /* width: 39px; */
 }
 select { text-align: left; }
 
@@ -246,8 +246,15 @@ section h2 {
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 12px;
 }
+.doc article:target h2,
 section:target h2 {
-    border-color: var(--text);
+    animation: 1.5s target_fade ease-in;
+}
+@keyframes target_fade {
+    from {
+        color: var(--text);
+        border-color: var(--accent-color);
+    }
 }
 .contact_item:target {
     outline: 1px solid var(--accent-color);
@@ -548,10 +555,6 @@ cite::before { content: "- "; }
     transition-property: padding, border;
     transition-duration: 0.2s;
 }
-/* .doc article:target {
-    padding-left: 18px;
-    border-left: 10px solid var(--text);
-} */
 .doc ol,
 .doc ul {
     /* list-style-position: inside; */
@@ -644,13 +647,12 @@ figure img { cursor: zoom-in; }
         transform: translateY(60px)
     }
 }
-.dialog_trigger:hover {
-    text-decoration: underline;
+.details_dialog > summary { width: unset; }
+.details_dialog > summary:hover { text-decoration: underline; }
+.details_dialog > summary::marker {
+    content: "";
 }
-.dialog_trigger > .dialog_content {
-    display: none;
-}
-.dialog > .dialog_content {
+.dialog_content {
     width: 100%;
     max-width: 640px;
     max-height: 100%;
@@ -660,6 +662,11 @@ figure img { cursor: zoom-in; }
     padding: 16px 18px;
     border-radius: 6px;
 }
+button.dialog_close {
+    float: right;
+    width: 160px;
+}
+
 
 
 /* Themes */

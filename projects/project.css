@@ -58,6 +58,10 @@
 
     flex-shrink: 0;
 }
+.info_content {
+    position: sticky;
+    top: 64px;
+}
 #box_art {
     background-color: var(--lighter-bg);
 
@@ -84,8 +88,9 @@
     width: 32px;
     border-radius: 50%;
     margin-right: 12px;
+    /* margin-bottom: 12px; */
 }
-.user_card p { margin: 0; }
+.user_card p { margin: 0 !important; }
 
 iframe {
     max-width: 100%;
