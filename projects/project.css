@@ -5,7 +5,7 @@
 .light_header #nav.nav_transparent:not(.menu_open) .button_icon { filter: none; }
 
 /* Header */
-.light_header .title_section h1 { color: black; }
+.light_header header .title_section h1 { color: black; }
 .light_header .title_section #path a { color: rgb(40, 40, 40); }
 
 /* Banner */
@@ -23,19 +23,19 @@
 }
 
 /* Title */
-.title_section {
+header .title_section {
     /* height: 83px; */
     margin-top: 200px;
     padding-bottom: 12px;
     text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
 }
-.title_section h1 {
+header .title_section h1 {
     color: white;
     font-size: 32pt;
 }
-.title_section #path { margin-left: 3px; }
-.title_section #path a { color: rgb(190, 190, 190); }
-.title_section #path a:hover { color: white; }
+header .title_section #path { margin-left: 3px; }
+header .title_section #path a { color: rgb(190, 190, 190); }
+header .title_section #path a:hover { color: white; }
 
 /* Main */
 #main {
@@ -123,7 +123,7 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
 /* Mobile layout */
 @media screen and (max-width: 600px) {
     #banner { height: 400px; }
-    #main, .title_section { flex-direction: column; }
+    #main, header .title_section { flex-direction: column; }
     .title_buttons { padding-top: 6px; }
     #main {
         border-radius: 0;

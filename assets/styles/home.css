@@ -242,12 +242,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
 } */
-#projects_list .project {
+.project {
     width: 100%;
     /* height: 120px; */
     /* width: 49.5%; */
     padding: 16px;
     margin-bottom: 12px;
+    min-height: 74px;
 
     color: white;
     background-color: rgb(34, 33, 36); /* lighter-bg */
@@ -263,18 +264,21 @@
     transition-duration: 0.2s;
     transition-timing-function: cubic-bezier(0.95, 0.55, 0.05, 0.445);
 }
-#projects_list .project:hover,
-#projects_list .project:focus,
-#projects_list .project:focus-within  {
+.project:hover,
+.project:focus,
+.project:focus-within  {
     border-color: white;
     box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.8);
     z-index: 1;
 }
-#projects_list .project .title_section {
+.project .title_section {
     margin-top: auto;
 }
-#projects_list .project h3 {
-    padding: 4px 0 0 0;
+.project .title_section > div {
+    align-items: center;
+}
+.project h3 {
+    padding: 0 0 2px 0;
     font-size: 18pt;
     text-shadow: 0 0 4px black;
 }
@@ -342,21 +346,21 @@
 
     /* Projects */
     /* #projects_list, */
-    #projects_list .project .title_section,
+    .project .title_section,
     #skills_list {
         flex-direction: column;
     }
-    .project_item, .skill { width: 100%; }
+    .skill { width: 100%; }
 
-    #projects_list .project .title_buttons {
+    .project .title_buttons {
         margin-top: 9px;
     }
     
-    #projects_list .project .title_buttons .button {
+    .project .title_buttons .button {
         max-width: unset;
         width: 100%;
     }
-    #projects_list .project .title_buttons a:first-of-type .button {
+    .project .title_buttons a:first-of-type .button {
         margin-left: 0;
     }
 }
