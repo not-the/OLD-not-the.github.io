@@ -471,6 +471,7 @@ nav .button_icon {
     /* width: 300px; */
 }
 /* #footer .column:first-of-type { margin-right: 16px; } */
+#footer > .container { z-index: 1; }
 
 #footer .icons { margin-bottom: 6px; }
 #footer .ee_icon {
