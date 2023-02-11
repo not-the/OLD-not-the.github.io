@@ -118,6 +118,7 @@ hr {
     border: none;
     height: 1px;
     background-color: var(--border-color);
+    margin-bottom: 3px;
 }
 
 /* Inputs */
@@ -667,6 +668,31 @@ button.dialog_close {
     float: right;
     width: 160px;
 }
+
+
+/* Toast Notification */
+/* #toast_container {
+    position: fixed;
+    z-index: 201;
+    bottom: 16px;
+    right: 24px;
+    
+    width: 100%;
+    max-width: 360px;
+}
+#toast_container .toast {
+    background-color: var(--lighter-bg);
+    outline: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px 15px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+}
+#toast_container .toast .dismiss {
+    color: var(--secondary-text);
+    position: absolute;
+    top: 12px;
+    right: 15px;
+} */
 
 
 

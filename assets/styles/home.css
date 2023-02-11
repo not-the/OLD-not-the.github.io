@@ -10,10 +10,16 @@
 
     /* Numbers/Misc */
     --project-gradient: linear-gradient(90deg, var(--main-bg) 0%, transparent 100%);
+    --project-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+    --project-box-shadow-hover: 6px 6px 16px rgba(0, 0, 0, 0.5);
 }
-.theme_light {
+body.theme_light {
     --gradient-a:          #00c257;
     --gradient-b:          #3765ff;
+
+    --project-gradient: linear-gradient(90deg, var(--main-bg) 20%, transparent 100%);
+    --project-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    --project-box-shadow-hover: 6px 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Landing */
@@ -250,11 +256,11 @@
     margin-bottom: 12px;
     min-height: 74px;
 
-    color: white;
-    background-color: rgb(34, 33, 36); /* lighter-bg */
+    /* color: white !important; */
+    background-color: var(--lighter-bg); /* lighter-bg */
     border: 1px solid var(--border-color);
     border-radius: 6px;
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--project-box-shadow);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -267,8 +273,8 @@
 .project:hover,
 .project:focus,
 .project:focus-within  {
-    border-color: white;
-    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.8);
+    border-color: var(--text); /* --text */
+    box-shadow: var(--project-box-shadow-hover);
     z-index: 1;
 }
 .project .title_section {
@@ -280,7 +286,7 @@
 .project h3 {
     padding: 0 0 2px 0;
     font-size: 18pt;
-    text-shadow: 0 0 4px black;
+    /* text-shadow: 0 0 4px black; */
 }
 .project_link_area {
     position: absolute;
