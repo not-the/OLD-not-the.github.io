@@ -153,7 +153,7 @@
     </main>
 
     <!---------- Skills ---------->
-    <div style="overflow-x: hidden;">
+    <div style="overflow-x: hidden;" id="skills_mouse_area">
         <div id="portfolio"></div>
         <section id="skills" class="container flex">
             <div>
@@ -162,50 +162,62 @@
                 <!-- List -->
                 <div id="skills_list">
                     <!-- HTML -->
-                    <div class="skill" id="skill_html" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1500">
-                        <img src="/assets/image/html.png" alt="HTML5">
-                        <div>
-                            <h4>HTML5</h4>
+                    <div class="skill mouse_glow" id="skill_html" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1500">
+                        <div class="skill_content">
+                            <img src="/assets/image/html.png" alt="HTML5">
+                            <div>
+                                <h4>HTML5</h4>
+                            </div>
                         </div>
                     </div>
                     <!-- CSS -->
-                    <div class="skill" id="skill_css" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1100">
-                        <img src="/assets/image/css.png" alt="CSS3">
-                        <div>
-                            <h4>CSS</h4>
-                            <!-- <p>Experience creating visually pleasing & responsive websites</p> -->
+                    <div class="skill mouse_glow" id="skill_css" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1100">
+                        <div class="skill_content">
+                            <img src="/assets/image/css.png" alt="CSS3">
+                            <div>
+                                <h4>CSS</h4>
+                                <!-- <p>Experience creating visually pleasing & responsive websites</p> -->
+                            </div>
                         </div>
                     </div>
                     <!-- JS -->
-                    <div class="skill" id="skill_js" data-aos="fade-right" data-aos-delay="110" data-aos-duration="650">
-                        <img src="/assets/image/js.png" alt="JS">
-                        <div>
-                            <h4>Javascript</h4>
-                            <p>Experience with both frontend and backend Javascript</p>
+                    <div class="skill mouse_glow" id="skill_js" data-aos="fade-right" data-aos-delay="110" data-aos-duration="650">
+                        <div class="skill_content">
+                            <img src="/assets/image/js.png" alt="JS">
+                            <div>
+                                <h4>Javascript</h4>
+                                <p>Experience with both frontend and backend Javascript</p>
+                            </div>
                         </div>
                     </div>
                     <!-- NodeJS -->
-                    <div class="skill" id="skill_node" data-aos="fade-left"data-aos-delay="150" data-aos-duration="900">
-                        <img src="/assets/image/nodejs.png" alt="NodeJS">
-                        <div>
-                            <h4>NodeJS</h4>
-                            <p>Experience creating web servers using NodeJS</p>
+                    <div class="skill mouse_glow" id="skill_node" data-aos="fade-left"data-aos-delay="150" data-aos-duration="900">
+                        <div class="skill_content">
+                            <img src="/assets/image/nodejs.png" alt="NodeJS">
+                            <div>
+                                <h4>NodeJS</h4>
+                                <p>Experience creating web servers using NodeJS</p>
+                            </div>
                         </div>
                     </div>
                     <!-- Cloud Platforms -->
-                    <div class="skill" data-aos="fade-right">
+                    <div class="skill mouse_glow" id="skill_cloud" data-aos="fade-right">
+                        <div class="skill_content">
                         <img src="/assets/icon/cloud.svg" alt="Cloud" class="icon" data-aos-delay="160" data-aos-duration="1200">
-                        <div>
-                            <h4>Cloud Platforms</h4>
-                            <p>Experience with Amazon Web Services, Google Cloud Platform, Netlify, Heroku, & Cloudflare</p>
+                            <div>
+                                <h4>Cloud Platforms</h4>
+                                <p>Experience with Amazon Web Services, Google Cloud Platform, Netlify, Heroku, & Cloudflare</p>
+                            </div>
                         </div>
                     </div>
                     <!-- Image Editing -->
-                    <div class="skill" id="skill_photoshop" data-aos="fade-left" data-aos-delay="170" data-aos-duration="1350">
-                        <img src="/assets/image/photoshop.png" alt="Photoshop">
-                        <div>
-                            <h4>Image Manipulation</h4>
-                            <p>Proficient in GIMP, Photoshop and MS Paint</p>
+                    <div class="skill mouse_glow" id="skill_photoshop" data-aos="fade-left" data-aos-delay="170" data-aos-duration="1350">
+                        <div class="skill_content">
+                            <img src="/assets/image/photoshop.png" alt="Photoshop">
+                            <div>
+                                <h4>Image Manipulation</h4>
+                                <p>Proficient in GIMP, Photoshop and MS Paint</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -640,6 +652,7 @@
             <a href="/#top" onclick="toTop()">Return to top</a>
         </div>
     </footer>
+    <div id="footer_gradient"></div>
 
 
     <!---------- Overlays ---------->

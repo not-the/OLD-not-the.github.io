@@ -148,6 +148,7 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
         border-bottom: 1px solid var(--border-color);
         max-width: 100%;
         margin-bottom: 12px;
+        padding-bottom: 0;
     }
     .body_column { padding: 12px 6px 0; }
     .info_content {
@@ -156,6 +157,6 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
     }
     
     .table_of_contents {
-        max-height: 200px;
+        max-height: 190px;
     }
 }

@@ -1,13 +1,13 @@
 // HTML
-const body              = $('body');
-const nav               = dom('nav');
-const menu_button       = dom('menu_button');
-const hamburger_menu    = dom('hamburger_menu');
-const theme_button      = dom('theme_button');
-const theme_button_icon = dom('theme_button_icon');
-const video_main        = dom('video_main');
-const reduce_motion     = dom('reduce_motion');
-const backdrop          = dom('backdrop');
+const body        = $('body'),
+nav               = dom('nav'),
+menu_button       = dom('menu_button'),
+hamburger_menu    = dom('hamburger_menu'),
+theme_button      = dom('theme_button'),
+theme_button_icon = dom('theme_button_icon'),
+video_main        = dom('video_main'),
+reduce_motion     = dom('reduce_motion'),
+backdrop          = dom('backdrop');
 
 // Variables
 const mobile_layout_width = 600;
@@ -174,6 +174,17 @@ try {
         root.style.setProperty('--link-color', e.srcElement.value);
         root.style.setProperty('--gradient-b', e.srcElement.value);
     });
-} catch (error) {
-    console.warn(error);
+} catch (error) { console.warn(error); }
+
+
+// Mouse highlight
+// Inspired by https://codepen.io/Hyperplexed/pen/MWQeYLW
+document.getElementById("skills_mouse_area").onmousemove = event => {
+    requestAnimationFrame(() => {
+        for(element of document.getElementsByClassName("mouse_glow")) {
+            let rect = element.getBoundingClientRect();
+            element.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
+            element.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
+        };
+    });
 }

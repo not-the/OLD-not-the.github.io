@@ -97,18 +97,27 @@
                 <br/>
 
                 <p class="emphasize">
-                    Posted <span>1/1/1970</span><br/>
-                    <!-- <i class="secondary_text">Last updated <span>1/1/1970</span></i> -->
+                    <p class="emphasize">
+                        Posted <span>1/1/1970</span><br/>
+                        <i class="secondary_text">Last updated <span>1/1/1970</span></i>
+                    </p>
+                    <br/>
+    
+                    <div class="table_of_contents">
+                        <b>Table of contents</b>
+                        <hr>
+                        <a href="#article"><p>Article Tag</p></a>
+                        <a href="#another_article"><p>Another Article</p></a>
+                    </div>
                 </p>
             </div>
         </div>
         <div class="body_column">
-
-            <h2>Title 2</h2>
-            <h3>Title 3</h3>
-            <!-- <h4>Title 4</h4>
-            <h5>Title 5</h5>
-            <h6>Title 6</h6> -->
+            <h2>Header 2</h2>
+            <h3>Header 3</h3>
+            <!-- <h4>Header 4</h4>
+            <h5>Header 5</h5>
+            <h6>Header 6</h6> -->
             <p>
                 Normal paragraph. <a href="#">Link to somewhere</a>. You can have <b>bold</b>, <span class="emphasize">emphasized</span>, or <b class="emphasize">bold & emphasized text</b>, <i>italicized text</i>, <sup>Superscript</sup> and <sub>subsscript</sub> too. 
             </p>
@@ -124,6 +133,15 @@
                 This is a blockquote, meaning the contents of this element are from a source other than this website.
                 <cite>Unknown</cite>
             </blockquote>
+
+<code data-lang="js"><span class="code-comment">// Code block containing code
+
+/** Scrolls page to top */</span>
+<span class="code-boolean">function</span> <span class="code-function">toTop</span>(<span class="code-variable">closemenu</span>=<span class="code-boolean">false</span>) {
+    <span class="code-variable">window</span>.<span class="code-function">scrollTo</span>(<span class="code-number">0</span>, <span class="code-number">0</span>);
+    <span class="code-variable">document</span>.<span class="code-variable">activeElement</span>.<span class="code-function">blur</span>(); <span class="code-comment">// Move keyboard navigation back to start</span>
+    <span class="code-keyword">if</span>(<span class="code-variable">closemenu</span>) <span class="code-function">toggleMenu</span>();
+}</code>
 
             <h3>&lt;hr&gt; tag</h3>
             <hr>
@@ -150,31 +168,12 @@
                 <a href="#article">Link to article - article gets special formatting</a>
             </article>
             <article id="another_article">
-                <h2>Another Article <a href="#article"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <h2>Another Article <a href="#another_article"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
                 <p>Article content</p>
                 <a href="#another_article">Link to article - article gets special formatting</a>
             </article>
-            
-            <figure>
-                <img src="/assets/project/minecraft_worlds_big.png" alt="Image caption">
-                <figcaption>Image caption</figcaption>
-            </figure>
 
-            <figure>
-                <div class="gallery">
-                    <img src="/assets/project/carrot_clicker_big.png" alt="Image caption">
-                    <img src="/assets/project/minecraft_worlds_big.png" alt="Image caption">
-                    <img src="/assets/project/confetti.png" alt="Image caption">
-                    <img src="/assets/project/minecraft_worlds_big.png" alt="Image caption">
-                    <img src="/assets/project/minecraft_worlds_big.png" alt="Image caption">
-                </div>
-                <figcaption>Horizontal image gallery</figcaption>
-            </figure>
-
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-            <br/>
+            <h3>Buttons</h3>
             <a href="#">
                 <div class="button full_width bold">
                     <p>URL Button</p>
@@ -197,6 +196,49 @@
                 <p>Normal Button</p>
                 <div class="button_shade"></div>
             </button>
+
+            <h3>Inputs</h3>
+            <p>
+                <label for="sample_checkbox">
+                    <input type="checkbox" name="sample_checkbox" id="sample_checkbox"> Checkbox
+                </label>
+            </p>
+        
+            <p>
+                <b class="emphasize">Choose one:</b><br/>
+                <label for="sample_radio">
+                    <input type="radio" name="sample_radio" id="sample_radio"> Radio button
+                </label><br/>
+                <label for="sample_radio_2">
+                    <input type="radio" name="sample_radio" id="sample_radio_2"> Another radio button
+                </label>
+            </p>
+
+            <select name="sample_select" class="full_width">
+                <option selected="true" disabled="disabled">Choose one...</option>
+                <option value="Option 1">Option 1</option>
+                <option value="Option 1">Option 2</option>
+                <option value="Option 1">Option 3</option>
+            </select>
+
+            <h2>Images & Video</h2>
+            <figure>
+                <img src="/assets/project/minecraft_worlds_big.png" alt="Image caption">
+                <figcaption>Image caption</figcaption>
+            </figure>
+
+            <figure>
+                <div class="gallery">
+                    <img src="/assets/project/carrot_clicker_big.png" alt="Image caption">
+                    <img src="/assets/project/minecraft_worlds_big.png" alt="Image caption">
+                    <img src="/assets/project/confetti.png" alt="Image caption">
+                    <img src="/assets/project/minecraft_worlds_big.png" alt="Image caption">
+                    <img src="/assets/project/minecraft_worlds_big.png" alt="Image caption">
+                </div>
+                <figcaption>Horizontal image gallery</figcaption>
+            </figure>
+
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </main>
     

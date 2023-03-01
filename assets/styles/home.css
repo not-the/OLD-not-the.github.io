@@ -21,6 +21,9 @@ body.theme_light {
     --project-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
     --project-box-shadow-hover: 6px 6px 16px rgba(0, 0, 0, 0.2);
 }
+body.theme_light .mouse_glow {
+    --glow-color: 81, 162, 255
+}
 
 /* Landing */
 #video_main {
@@ -159,7 +162,7 @@ body.theme_light {
     /* Variables */
     --angle: 60deg;
     --start-percent: -500%;
-    --end-color: transparent;
+    --end-color: var(--lighter-bg);
     --end-percent: 150%;
 
     /* CSS */
@@ -172,50 +175,93 @@ body.theme_light {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
 .skill {
-    width: 49.5%;
-    height: 100%;
+    width: calc(50% - 6px);
+    height: auto;
     min-height: 88px;
-    padding: 12px 16px;
+    padding: 1px;
     margin-top: 12px;
     border-radius: 6px;
 
-    background-color: var(--lighter-bg);
-    background-image: linear-gradient(var(--angle), var(--border-color) var(--start-percent), var(--end-color) var(--end-percent));
-    border: 1px solid var(--border-color);
+    /* background-color: var(--lighter-bg); */
+    /* border: 1px solid var(--border-color); */
+    background-color: var(--border-color);
+}
+.skill > .skill_content {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    padding: 12px 16px;
+    /* background: var(--lighter-bg); */
+    background: linear-gradient(var(--angle), var(--border-color) var(--start-percent), var(--end-color) var(--end-percent));
+
+    position: relative;
+    z-index: 1;
 
     display: flex;
     align-items: center;
+
+    --border-color: var(--lighter-bg);
 }
+
+/* Hover glow */
+.mouse_glow {
+    position: relative;
+
+    --glow-color: 255, 255, 255;
+}
+.mouse_glow::after,
+.mouse_glow::before {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    transition: opacity 0.2s ease;
+    opacity: 0;
+
+    background: radial-gradient(
+        720px circle at var(--mouse-x) var(--mouse-y),
+        rgba(var(--glow-color), 0.1),
+        transparent 40%
+    );
+    z-index: 1;
+}
+.mouse_glow::before {
+    background: radial-gradient(
+        560px circle at var(--mouse-x) var(--mouse-y),
+        rgba(var(--glow-color), 0.6),
+        transparent 40%
+    );
+    z-index: 0;
+}
+.mouse_glow::before, .mouse_glow:hover::after {
+    opacity: 1;
+}
+
 .skill img {
     height: 48px;
     width: 48px;
     margin-right: 16px;
     border-radius: 6px;
 }
+
 /* Skill colors */
 /* #region */
 #skill_html img { background-color: var(--color-html); }
-#skill_html {
-    background-image: linear-gradient(var(--angle), var(--color-html) var(--start-percent), var(--end-color) var(--end-percent));
-    border-color: var(--color-html);
-}
+#skill_html, #skill_html > .skill_content { --border-color: var(--color-html); }
 #skill_css img  { background-color: var(--color-css); }
-#skill_css {
-    background-image: linear-gradient(var(--angle), var(--color-css) var(--start-percent), var(--end-color) var(--end-percent));
-    border-color: var(--color-css);
-}
+#skill_css, #skill_css > .skill_content { --border-color: var(--color-css); }
 #skill_js img   { background-color: var(--color-js); }
-#skill_js {
-    background-image: linear-gradient(var(--angle), var(--color-js) var(--start-percent), var(--end-color) var(--end-percent));
-    border-color: var(--color-js);
-}
+#skill_js, #skill_js > .skill_content { --border-color: var(--color-js); }
 #skill_node img { background-color: var(--color-node); }
-#skill_node {
-    background-image: linear-gradient(var(--angle), var(--color-node) var(--start-percent), var(--end-color) var(--end-percent));
-    border-color: var(--color-node);
-}
-#skill_photoshop img { background-color: #001e36; border: 2px solid #31a8ff }
+#skill_node, #skill_node > .skill_content { --border-color: var(--color-node); }
+#skill_photoshop img { background-color: #001e36; border: 2px solid #31a8ff; }
 /* #endregion */
 
 /* Shapes */
@@ -344,31 +390,15 @@ body.theme_light {
 @media screen and (max-width: 600px) {
     /* Main */
     #home { padding: 0 12px; }
-    #home .home_block {
-        width: 100%;
-        margin: 0;
-    }
+    #home .home_block { width: 100%; margin: 0; }
     #home .home_hello { margin-bottom: 12px; }
-
-    /* Projects */
-    /* #projects_list, */
-    .project .title_section,
-    #skills_list {
-        flex-direction: column;
-    }
     .skill { width: 100%; }
 
-    .project .title_buttons {
-        margin-top: 9px;
-    }
-    
-    .project .title_buttons .button {
-        max-width: unset;
-        width: 100%;
-    }
-    .project .title_buttons a:first-of-type .button {
-        margin-left: 0;
-    }
+    /* Projects */
+    .project .title_section, #skills_list { flex-direction: column; }
+    .project .title_buttons { margin-top: 9px; }
+    .project .title_buttons .button { max-width: unset; width: 100%; }
+    .project .title_buttons a:first-of-type .button { margin-left: 0; }
 }
 
 @media print {
