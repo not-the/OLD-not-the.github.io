@@ -289,60 +289,7 @@ body.theme_light .mouse_glow {
     right: -72px;
 }
 
-/* Projects */
-/* #projects_list {
-    flex-wrap: wrap;
-    justify-content: space-between;
-} */
-.project {
-    width: 100%;
-    /* height: 120px; */
-    /* width: 49.5%; */
-    padding: 16px;
-    margin-bottom: 12px;
-    min-height: 74px;
-
-    /* color: white !important; */
-    background-color: var(--lighter-bg); /* lighter-bg */
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    box-shadow: var(--project-box-shadow);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-    position: relative;
-    transition-property: transform, box-shadow, border-color, background-size, filter;
-    transition-duration: 0.2s;
-    transition-timing-function: cubic-bezier(0.95, 0.55, 0.05, 0.445);
-}
-.project:hover,
-.project:focus,
-.project:focus-within  {
-    border-color: var(--text); /* --text */
-    box-shadow: var(--project-box-shadow-hover);
-    z-index: 1;
-}
-.project .title_section {
-    margin-top: auto;
-}
-.project .title_section > div {
-    align-items: center;
-}
-.project h3 {
-    padding: 0 0 2px 0;
-    font-size: 18pt;
-    /* text-shadow: 0 0 4px black; */
-}
-.project_link_area {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-}
-.project_link + h3:after {
-    content: "->";
-    padding-left: 8px;
-}
-
+/* Projects list */
 /* View more */
 #projects_list summary {
     background-color: var(--main-bg);
