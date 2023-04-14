@@ -175,16 +175,3 @@ try {
         root.style.setProperty('--gradient-b', e.srcElement.value);
     });
 } catch (error) { console.warn(error); }
-
-
-// Mouse highlight
-// Inspired by https://codepen.io/Hyperplexed/pen/MWQeYLW
-document.getElementById("skills_mouse_area").onmousemove = event => {
-    requestAnimationFrame(() => {
-        for(element of document.getElementsByClassName("mouse_glow")) {
-            let rect = element.getBoundingClientRect();
-            element.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
-            element.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
-        };
-    });
-}
