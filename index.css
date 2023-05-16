@@ -485,7 +485,8 @@ nav .button_icon {
     box-shadow: var(--project-box-shadow);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center !important;
+    /* background-position: center bottom !important; */
 
     position: relative;
     transition-property: transform, box-shadow, border-color, background-size, filter;
