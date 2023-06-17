@@ -161,7 +161,7 @@ window.onload = event => {
 
     // Theme
     let t = store('theme');
-    if(t == null || t == 'false') return;
+    if(t === null || t === 'false') return;
     switchTheme(false);
 };
 //#endregion

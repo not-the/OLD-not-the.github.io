@@ -542,10 +542,16 @@ nav .button_icon {
 /* #footer .column:first-of-type { margin-right: 16px; } */
 #footer > .container { z-index: 1; }
 
-#footer .icons { margin-bottom: 6px; }
+#footer #easter_egg {
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    min-width: unset;
+}
+#footer .icons { margin-bottom: 12px; display: flex; align-items: center; }
 #footer .ee_icon {
     display: inline-block;
-    margin-right: 3px;
+    margin-right: 12px;
 
     width: 28px;
     height: 28px;
@@ -584,6 +590,7 @@ nav .button_icon {
 }
 .doc h2:not(h2:first-child) { padding-top: 24px; }
 .doc h3:not(h3:first-child) { padding-top: 18px; }
+.doc h4 { padding: 9px 0 3px; }
 /* .doc pre {
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;

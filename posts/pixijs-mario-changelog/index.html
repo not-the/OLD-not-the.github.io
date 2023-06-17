@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notkal - Posts / PIXI.JS Mario Changelog</title>
+
+    <!-- Visual -->
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/projects/project.css">
+    <meta name="theme-color" content="#171718"/>
+
+    <!-- Meta -->
+    <meta property="og:url" content="https://www.notkal.com/posts/PIXIJS-Mario-Changelog">
+    <meta property="og:title" content="notkal - Posts / PIXI.JS Mario Changelog">
+    <!-- <meta property="og:description" content="undefined"> -->
+    <meta property="og:image" content="/assets/project/piximario_gradient_blur.png">
+    <!-- <meta name="twitter:image:alt" content="Alt text for image"> -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="notkal">
+
+    <!-- not-util -->
+    <link rel="stylesheet" href="https://www.notkal.com/not-util/not-util.css" crossorigin>
+    <script src="https://www.notkal.com/not-util/not-util.js" crossorigin></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body >
+    <!---------- Navigation ---------->
+    <nav id="nav" class="overlay_element flex nav_transparent">
+        <!-- Menu button -->
+        <div role="button" tabindex="0" id="menu_button" class="nav_button">
+            <img src="/assets/icon/hamburger.svg" alt="Menu" id="menu_button_icon" class="icon button_icon">
+        </div>
+
+        <!-- Page name -->
+        <h1 class="nav_item page_title">notkal</h1>
+
+        <div class="flex" id="hamburger_menu">
+            <!-- Nav items -->
+            <div id="nav_list" class="flex">
+                <a href="/" class="nav_item">Home</a>
+                <a href="/#projects" class="nav_item">Projects</a>
+                <a href="/#contact" class="nav_item">Contact</a>    
+            </div>
+            
+            <!-- Additional buttons -->
+            <div class="nav_item nav_right flex">
+                <a href="https://github.com/not-the" target="_blank" rel=”noreferrer” title="Github">
+                    <div class="nav_button">
+                        <img src="/assets/icon/github.svg" alt="Github" class="icon button_icon">
+                    </div>
+                </a>
+                <div role="button" tabindex="0" id="theme_button" class="nav_button">
+                    <img src="/assets/icon/moon.svg" alt="Change Theme" id="theme_button_icon" class="icon button_icon">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <!-- Banner image -->
+        <div id="banner" class="banner" style="background-image: url(/assets/banner/gradient_3.png)"></div>
+
+        <!-- Title -->
+        <div class="title_section container flex">
+            <div>
+                <h1>PIXI.JS Mario Changelog</h1>
+                <p id="path" class="secondary_text gray">
+                    <a href="/">notkal</a> / <a href="/posts">Posts</a> / <a href="./">PIXI.JS Mario Changelog</a>
+                </p>
+            </div>
+            <div class="title_buttons flex">
+
+                <!-- <a href="https://carrot.notkal.com/changelog.txt" target="_blank" rel="noreferrer">
+                    <div class="button bold">
+                        <p>Older changes <img src="/assets/icon/external_link.svg" alt="" class="button_icon"></p>
+                        <div class="button_shade"></div>
+                    </div>
+                </a> -->
+
+            </div>
+        </div>
+    </header>
+    
+
+    <!---------- Main ---------->
+    <main id="main" class="doc container flex">
+        <div class="info_column">
+            <div class="info_content">
+                <div class="user_card flex">
+                    <img src="https://avatars.githubusercontent.com/u/87151784?v=4" alt="">
+                    <div>
+                        <a href="https://github.com/not-the" target="_blank" rel="noreferrer" class="emphasize bold">not-the</a>
+                        <p class="secondary_text">Author</p>
+                    </div>
+                </div>
+    
+                <br/>
+    
+                <p class="emphasize">
+                    Posted <span>6/17/2023</span><br/>
+                    <!-- <i class="secondary_text">Last updated <span>6/17/2023</span></i> -->
+                </p>
+                <br/>
+
+                <div class="table_of_contents">
+                    <b>Table of contents</b>
+                    <hr>
+                    <a href="#update_v0_16"><p>Update v0.16</p></a>
+                    <a href="#update_v0_15"><p>Update v0.15</p></a>
+                    <a href="#update_v0_14"><p>Update v0.14</p></a>
+                    <a href="#update_v0_13"><p>Update v0.13</p></a>
+                    <a href="#update_v0_12"><p>Update v0.12</p></a>
+                    <a href="#update_v0_11"><p>Update v0.11</p></a>
+                    <a href="#update_v0_10"><p>Update v0.10</p></a>
+                    <a href="#update_v0_9"><p>Update v0.9</p></a>
+                    <a href="#update_v0_8"><p>Update v0.8</p></a>
+                    <a href="#update_v0_7"><p>Update v0.7</p></a>
+                    <a href="#update_v0_6"><p>Update v0.6</p></a>
+                    <a href="#update_v0_5"><p>Update v0.5</p></a>
+                    <a href="#update_v0_4"><p>Update v0.4</p></a>
+                    <a href="#update_v0_3"><p>Update v0.3</p></a>
+                    <a href="#update_v0_2"><p>Update v0.2</p></a>
+                    <a href="#update_v0_1"><p>Update v0.1</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="body_column">
+            <p>Update history for <a href="https://mario.notkal.com/">PIXI.JS Mario</a></p>
+
+            <article id="update_v0_16">
+                <h2>Update v0.16 <a href="#update_v0_16"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 5/26/2023</i></p>
+
+                <ul>
+                    <h4>Sub-levels</h4>
+                    <li>Sub-level support (import only, needs to be manually added to JSON file after exporting 2 levels)</li>
+                    <li>Dying with only one player onscreen will now reset the level. Dying with more than 1 will respawn you at the location of the most recently spawned player</li>
+                    <li>Added autoscroll functionality</li>
+                    <li>Temporary fix for upward/downward camera movement not working in editor mode</li>
+                    <li>Fixed projectiles (fireballs/lemons) becoming infinite</li>
+                    <li>Fixed editor camera panning not working if the player is deleted, or more are added</li>
+                    <li>Fixed items inside of containers not appearing in editor mode</li>
+                    <li>Fixed editor ghosts being clickable</li>
+
+                    <h4>Tiles:</h4>
+                    <li>Horizontal pipes</li>
+                    <li>Cloud Platform</li>
+                    <li>Conveyor Belts</li>
+                    <li>Conveyor Belts (Fast)</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_15">
+                <h2>Update v0.15 <a href="#update_v0_15"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 5/26/2023</i></p>
+
+                <ul>
+                    <li>Option to change the stage background color</li>
+                    <li>Fixed coins acting as flagpoles</li>
+                    <h4>Objects:</h4>
+                        + SMB3 Mario
+                </ul>
+            </article>
+
+            <article id="update_v0_14">
+                <h2>Update v0.14 <a href="#update_v0_14"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 5/24/2023</i></p>
+
+                <ul>
+                    <li>Moved tile/object toolbox to be an overlay in the game. Open by clicking the block button in the editor</li>
+                    <li>"Q" can also be pressed to view the toolbox anywhere</li>
+                    <li>Added "Scroll behavior" in stage config </li>
+                    <li>Added a "Can't go left" option</li>
+                    <li>Flagpole behavior</li>
+                    <li>Fixed editor objects staying highlighted after deselected</li>
+                    <li>Fixed shells not bouncing off of walls</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_13">
+                <h2>Update v0.13 <a href="#update_v0_13"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 5/23/2023</i></p>
+
+                <ul>
+                    <h4>Level Editor</h4>
+                    <li>Basic editor mode (WIP)</li>
+                    <li>Made it so that you can no longer walk off the screen</li>
+                    <li>Clicking "identify" for a controller will now shake the icon on screen</li>
+                    <li>Freecam can no longer be panned outside the stage</li>
+                    <li>Freecam now correctly changes the culled/unculled region</li>
+                    <li>WASD now work for freecam, and freecam is now editor mode only</li>
+                    <li>Buffed Mario & Luigi's acceleration values (and by consequence their walk+run speeds), to be more in line with the games
+                        <table>
+                            <tr>
+                                <th>Stat</th>
+                                <th>Old</th>
+                                <th>New</th>
+                            </tr>
+                            <tr>
+                                <td>Mario acceleration</td>
+                                <td>0.075</td>
+                                <td>0.085</td>
+                            </tr>
+                        </table>
+                    </li>  
+                    <li>Mega Man:
+                        <table>
+                            <tr>
+                                <th>Stat</th>
+                                <th>Old</th>
+                                <th>New</th>
+                            </tr>
+                            <tr>
+                                <td>Walk</td>
+                                <td>2.15</td>
+                                <td>2.5</td>
+                            </tr>
+                            <tr>
+                                <td>Gravity</td>
+                                <td>1</td>
+                                <td>1.4</td>
+                            </tr>
+                            <tr>
+                                <td>Jump</td>
+                                <td>5.5</td>
+                                <td>7</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>Fixed the HUD (lives/coin counter) not panning up/down, occasionally jittering, and not being rendered on top</li>
+                    <li>Fixed players that weren't player 1 not bouncing off of enemies</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_12">
+                <h2>Update v0.12 <a href="#update_v0_12"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 5/20/2023</i></p>
+
+                <ul>
+                    <li>Added playable Mega Man (WIP)</li>
+                    <li>Players are now bounced instead of hurt if the block under them is hit</li>
+                    <li>Fixed a crash when bouncing a mushroom by hitting the block it's on</li>
+                    <li>Fixed a crash when a player-controlled enemy dies</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_11">
+                <h2>Update v0.11 <a href="#update_v0_11"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 5/19/2023</i></p>
+
+                <ul>
+                    <h4>Controller Support + Local Multiplayer</h4>
+                    
+                    <li>
+                        Controller support + local multiplayer
+                        <p><i>Mario is player 1 and Luigi is player 2, by default. They can both be assigned to players 3 and 4 through the console (for now)</i></p>
+                    </li>
+                    
+                    <li>Added a player/gamepad management UI</li>
+                    <li>Luigi parkour sprites</li>
+                    <li>Fixed vertical squashing at some resolutions</li>
+                    <li>Improved bounce function</li>
+
+                    <h4>Tiles:</h4>
+                        <li>Bridge</li>
+                        <li>Pole</li>
+                        <li>Pole (Top)</li>
+                    <h4>Objects:</h4>
+                        <li>Flag</li>
+                    <h4>Structures:</h4>
+                        <li>Flagpole</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_10">
+                <h2>Update v0.10 <a href="#update_v0_10"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 5/16/2023</i></p>
+
+                <ul>
+                    <li>Slight changes to the main menu</li>
+                    <li>Touch controls should no longer appear on non-touch devices</li>
+                    <li>Added a touch screen controls toggle to settings</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_9">
+                <h2>Update v0.9 <a href="#update_v0_9"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 5/16/2023</i></p>
+
+                <ul>
+                    <li>Vertical stage support</li>
+                    <li>HUD no longer disappears when the camera scrolls</li>
+                    <li>Fixed Luigi and Red Koopa causing a crash</li>
+                    <li>Fixed fireballs bouncing in midair</li>
+                    <li>Added a main menu/pause menu, and an HTML UI for level creation/importing/exporting</li>
+                    <li>Support for tiles that have collision on specific sides</li>
+                    <li>Unfinished slopes</li>
+                    <li>Added a page favicon</li>
+                    <li>Implemented a limit of 250 physics objects</li>
+                    <li>Gave stage width/height minimum and maximum values</li>
+                    <li>Added export button to menu, clicking it downloads the current level as a JSON file</li>
+                    <li>Drag and drop/upload level functionality + import menu</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_8">
+                <h2>Update v0.8 <a href="#update_v0_8"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 4/29/2023</i></p>
+
+                <ul>
+                    <li>Objects inside containers are now visible while the game is paused</li>
+                    <li>Objects placed while paused will now reflect the direction they are facing</li>
+                    <li>Using the eraser on a physics object will now work instantly while the game is paused</li>
+                    <li>Enemies on top of a question or brick block when it is hit will now take damage</li>
+                    <li>Reworked the way damage/interactions work</li>
+                    <li>Fixed some shell/player interactions being incorrect (WIP)</li>
+                    <li>Objects or enemies that aren't killed when hit from underneath (brick or ? hit with them on top) will now bounce</li>
+                    <li>Gave Starman a sprite and functionality</li>
+                    <li>Placing a structure partially out of bounds no longer throws errors</li>
+                    <li>Moved sprite data to sheet.json</li>
+                    <li>Fixed intangible objects colliding with tiles horizontally</li>
+                    <li>Enemies will now despawn when outside of the stage horizontally</li>
+                    <h4>General camera improvements</h4>
+                        <li>Position is an average of all player's positions</li>
+                        <li>Doesn't move when you are in the middle of the screen</li>
+                        <li>Doesn't pan outside of the stage</li>
+                        <li>Fixed camera not resetting on death</li>
+                    <h4>Objects</h4>
+                        <li>Cloud flower</li>
+                        <li>Bullet Bill</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_7">
+                <h2>Update v0.7 <a href="#update_v0_7"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 4/17/2023</i></p>
+
+                <ul>
+                    <li>Powerup that enables wall jumping & ground pounding</li>
+                    <li>Physics objects are now stored in an object instead of an array</li>
+                    <li>Pressing shift now increases the freecam pan speed</li>
+                    <li>Potential fix for sprites not despawning entirely</li>
+                    <li>Misc fixes</li>
+                    <h4>Objects</h4>
+                        <li>Parkour mushroom</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_6">
+                <h2>Update v0.6 <a href="#update_v0_6"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 4/13/2023</i></p>
+
+                <ul>
+                    <li>Off-screen tiles are now culled (horizontally only)</li>
+                    <li>Off-screen objects are now frozen and culled</li>
+                    <li>Fire Flower functionality</li>
+                    <li>Damage sources no longer instantly kill the player</li>
+                    <li>Invinicibility period after taking damage</li>
+                    <li>Coins and multi coins can now be inserted into containers</li>
+                    <li>Importing/exporting levels now saves container data</li>
+
+                    <h4>Fixes</h4>
+                        <li>Fixed vertical collision for 2 tall sprites</li>
+                        <li>Fixed block collision not being updated when a tile is set via the .set() method</li>
+                        <li>Fixed tile offset bug from running a tile animation before the last one was finished</li>
+                        <li>Fixed 2-tall sprites not sending collide/inside events</li>
+                    <h4>Tiles</h4>
+                        <li>Multi coin</li>
+                    <h4>Objects</h4>
+                        <li>Mount</li>
+                    <h4>Structures</h4>
+                        <li>Castle</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_5">
+                <h2>Update v0.5 <a href="#update_v0_5"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 4/10/2023</i></p>
+
+                <ul>
+                    <li>Bricks now correctly act as containers</li>
+                    <li>Jump height is now dependant on how long the jump button is held for</li>
+                    <li>Support for entity riding. Goombas will now form a stack when placed above one another</li>
+                    <li>Collision for 2 tall sprites</li>
+                    <li>Mushroom works now</li>
+                    <li>Players now bounce off of each other's heads</li>
+                    <li>General improvements to collision
+                        <ul>
+                            <li>You can now stand on the edge of a block</li>
+                            <li>You can collide into the bottom of multiple tiles at once</li>
+                            <li>Clipping into blocks horizontally is now harder</li>
+                        </ul>
+                    </li>
+
+                    <h4>Tiles:</h4>
+                        <li>Coin</li>
+                    <h4>Objects:</h4>
+                        <li>Flower</li>
+                        <li>Fireball</li>
+                </ul>
+            </article>
+
+            <article id="update_v0_4">
+                <h2>Update v0.4 <a href="#update_v0_4"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 4/8/2023</i></p>
+
+                <ul>
+                    <li>Basic touchscreen controls</li>
+                    <li>Interactions with bricks and ? boxes</li>
+                    <li>Ability to put items into containers (no visual feedback yet)</li>
+                    <li>Coin counter and coins in containers by default (no coin tiles yet)</li>
+                    <li>Overhauled the way object properties are handled, the spawn function can now override properties like texture and motion</li>
+                    <li>Fixes
+                        <ul>
+                            <li>Fixed tiles not animating correctly when importing a level</li>
+                            <li>Fixed turn_at_ledge ai turning in midair</li>
+                            <li>Fixed objects with collision disabled still interacting with other objects</li>
+                            <li>Generic fixes to shell physics</li>
+                        </ul>
+                    </li>
+                    <li>Tiles
+                        <ul>
+                            <li>Invisible Block</li>
+                            <li>Spikes</li>
+                        </ul>
+                    </li>
+                    <li>Objects
+                        <ul>
+                            <li>Luigi</li>
+                            <li>Mushroom</li>
+                            <li>Particle</li>
+                        </ul>
+                    </li>
+                    
+                    <br/>
+                    <h4>New</h4>
+                    <li>Levels
+                        <ul>
+                            <li>1-1</li>
+                        </ul>
+                    </li>
+                    <li>Playable characters
+                        <ul>
+                            <li>Luigi</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+
+            <article id="update_v0_3">
+                <h2>Update v0.3 <a href="#update_v0_3"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 4/7/2023</i></p>
+
+                <ul>
+                    <li>Pressing escape pauses the game</li>
+                    <li>Added placeable structures</li>
+                    <li>Import/export level functionality</li>
+                    <li>The erase tool now works on physics objects</li>
+                    <li>Unique enemy death animation when killed by something that isn't a player (like a shell)</li>
+                    <li>The game should now run at the same speed for both 60 and 120hz screens (game physics still run at 120)</li>
+                    <li>New stage element selection</li>
+                    <li>
+                        Tiles
+                        <ul>
+                            <li>Bush (Medium)</li>
+                            <li>Bush (Large)</li>
+                            <li>Cloud</li>
+                            <li>Hill</li>
+                            <li>Hill (Large)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Structures
+                        <ul>
+                            <li>Pipe</li>
+                            <li>Pipe neck</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Objects
+                        <ul>
+                            <li>Koopa</li>
+                            <li>Shell</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+
+            <article id="update_v0_2">
+                <h2>Update v0.2 <a href="#update_v0_2"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 4/7/2023</i></p>
+
+                <ul>
+                    <li>Interactions between the player and enemies</li>
+                    <li>Basic horizontal camera panning</li>
+                    <li>Draw tool support for spawning physics objects</li>
+                    <li>Mouse wheel to zoom and arrow keys to freecam</li>
+                    <li>The player now has a lives stat</li>
+                    <li>Falling off the bottom of the screen will now kill you</li>
+                    <li>Fixed an issue where the player would act as if inside a block while off the top of the screen</li>
+                    <li>
+                        Tiles
+                        <ul>
+                            <li>Brick</li>
+                            <li>Question box</li>
+                            <li>Bush</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+
+            <article id="update_v0_1">
+                <h2>Update v0.1 <a href="#update_v0_1"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+                <p><i>not-the | 4/5/2023</i></p>
+
+                <ul>
+                    <li>Collision</li>
+                    <li>Reworked physics objects (such as the player) into a class</li>
+                    <li>Added a basic enemy AI</li>
+                    <li>Dropdown for selecting tile to draw</li>
+                    <li>General tweaks/improvements to the controls + physics</li>
+                    <li>& More</li>
+                </ul>
+            </article>
+
+        </div>
+    </main>
+    
+
+    <!---------- Footer ---------->
+    <footer id="footer" class="flex">
+        <div class="container">
+            <div class="column">
+                <!-- Attribution -->
+                <p class="emphasize bold">Image attribution</p>
+                <p>
+                    <a href="https://www.pexels.com/video/changes-in-form-and-appearance-of-a-submerged-material-3163534/" target="_blank" rel="noreferrer">Header video</a> from <a href="https://www.pexels.com/">pexels.com</a>
+                </p>
+                <p>
+                    <a href="https://commons.wikimedia.org/wiki/File:Hamburger_icon.svg" target="_blank" rel="noreferrer">Hamburger icon</a> by Timothy Miller, Public domain, via Wikimedia Commons
+                </p>
+                <p>
+                    <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-sun.svg" target="_blank" rel="noreferrer">Sun</a> and <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-moon.svg" target="_blank" rel="noreferrer">Moon</a> icons by Cole Bemis, <a href="http://opensource.org/licenses/mit-license.php" target="_blank" rel="noreferrer">MIT</a>, via Wikimedia Commons
+                </p>
+                <p>
+                    <a href="https://commons.wikimedia.org/wiki/File:Aiga_mail_inverted_nobg.svg" target="_blank" rel="noreferrer">Envelope icon</a> by US DoT - AIGA, Public domain, via Wikimedia Commons
+                </p>
+                <p>
+                    <a href="https://commons.wikimedia.org/wiki/File:Antu_folder-cloud.svg" target="_blank" rel="noreferrer">Cloud Icon</a> by Fabián Alexis, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>, via Wikimedia Commons
+                </p>
+                <p>
+                    <a href="https://commons.wikimedia.org/wiki/File:Echo_link-blue_icon_slanted.svg">Link Icon</a> from MGalloway (WMF), WMF User Experience Design group, <a href="http://opensource.org/licenses/mit-license.php">MIT</a>, via Wikimedia Commons
+                </p>
+                <br/>
+    
+                <!-- Copyright -->
+                <p class="emphasize">Ⓒ 2022 notkal.com</p>
+            </div>
+            <div class="column">
+                <a href="/#top" onclick="toTop()">Return to top</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!---------- Overlays ---------->
+    <div id="backdrop"></div>
+
+    <!-- JS -->
+    <script src="/index.js"></script>
+</body>
+</html>

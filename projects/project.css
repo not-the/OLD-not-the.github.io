@@ -122,8 +122,13 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
 #copy_text { opacity: 0; position: fixed; pointer-events: none; height: 1px; width: 1px; }
 
 /* Table of contents */
+.table_of_contents {
+    background-color: var(--lighter-bg);
+    padding: 12px;
+    border-radius: 6px;
+}
 .table_of_contents p {
-    padding: 3px 6px;
+    padding: 3px 0;
     margin: 0 !important;
     border-radius: 6px;
 }
@@ -154,9 +159,7 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
     .info_content {
         position: unset;
         top: 64px;
-    }
-    
-    .table_of_contents {
-        max-height: 190px;
+        max-height: 312px;
+        overflow: auto;
     }
 }
