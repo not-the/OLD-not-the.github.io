@@ -629,7 +629,11 @@
                 <img src="/assets/icon/email.svg" alt="" class="icon">
                 <div>
                     <b class="emphasize">Email</b>
-                    <a href="mailto:contact@notkal.com" target="_blank" rel="noreferrer"><p>contact@notkal.com</p></a>
+                    <!-- <a href="" target="_blank" rel="noreferrer" data-obfuscated><p>Click to reveal (Enable Javascript)</p></a> -->
+                    <button class="button" style="margin-left: 12px;" data-obfuscated>
+                        <p>Click to reveal</p>
+                        <div class="button_shade"></div>
+                    </button>
                 </div>
             </div>
     
@@ -751,6 +755,15 @@
             };
         });
     }
+    // Obfuscation
+    document.querySelector('[data-obfuscated]').addEventListener("click", e => {
+        let value = '&#x63;&#x6F;&#x6E;&#x74;&#x61;&#x63;&#x74;&#x40;&#x6E;&#x6F;&#x74;&#x6B;&#x61;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;';
+        const button = e.currentTarget;
+        let element = document.createElement('a', { href: `mailto:${value}` });
+        element.innerHTML = `<p>${value}</p>`;
+        button.parentNode.appendChild(element);
+        button.remove();
+    })
     </script>
 </body>
 </html>
