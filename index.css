@@ -277,7 +277,7 @@ section:target h2 {
     }
 }
 .contact_item:target {
-    outline: 1px solid var(--accent-color);
+    outline: 2px solid var(--accent-color);
     /* border-left: 8px solid var(--accent-color); */
     /* background-color: var(--nav-button-hover-bg); */
 }
