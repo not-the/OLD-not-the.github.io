@@ -1,8 +1,5 @@
 :root {
     /* Home */
-    --gradient-a:          #48ff9a;
-    --gradient-b:          #5b81ff;
-
     --color-html:          #e44c26;
     --color-css:           #379ad6;
     --color-js:            #f7e018;
@@ -14,9 +11,6 @@
     --project-box-shadow-hover: 6px 6px 16px rgba(0, 0, 0, 0.5);
 }
 body.theme_light {
-    --gradient-a:          #00c257;
-    --gradient-b:          #3765ff;
-
     --project-gradient: linear-gradient(90deg, var(--main-bg) 20%, transparent 100%);
     --project-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
     --project-box-shadow-hover: 6px 6px 16px rgba(0, 0, 0, 0.2);

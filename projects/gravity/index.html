@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>notkal - Projects / Gravity</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icon.png">
 
     <!-- Visual -->
     <link rel="stylesheet" href="/index.css">
@@ -28,8 +29,8 @@
     <meta property="og:site_name" content="notkal">
 
     <!-- not-util -->
-    <link rel="stylesheet" href="https://www.notkal.com/not-util/not-util.css" crossorigin>
-    <script src="https://www.notkal.com/not-util/not-util.js" crossorigin></script>
+    <link rel="stylesheet" href="https://code.notkal.com/not-util.css" crossorigin>
+    <script src="https://code.notkal.com/not-util.js" crossorigin></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,34 +113,61 @@
     <!---------- Footer ---------->
     <footer id="footer" class="flex">
         <div class="container">
-            <div class="column">
-                <!-- Attribution -->
-                <p class="emphasize bold">Image attribution</p>
-                <p>
-                    <a href="https://www.pexels.com/video/changes-in-form-and-appearance-of-a-submerged-material-3163534/" target="_blank" rel="noreferrer">Header video</a> from <a href="https://www.pexels.com/">pexels.com</a>
-                </p>
-                <p>
-                    <a href="https://commons.wikimedia.org/wiki/File:Hamburger_icon.svg" target="_blank" rel="noreferrer">Hamburger icon</a> by Timothy Miller, Public domain, via Wikimedia Commons
-                </p>
-                <p>
-                    <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-sun.svg" target="_blank" rel="noreferrer">Sun</a> and <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-moon.svg" target="_blank" rel="noreferrer">Moon</a> icons by Cole Bemis, <a href="http://opensource.org/licenses/mit-license.php" target="_blank" rel="noreferrer">MIT</a>, via Wikimedia Commons
-                </p>
-                <p>
-                    <a href="https://commons.wikimedia.org/wiki/File:Aiga_mail_inverted_nobg.svg" target="_blank" rel="noreferrer">Envelope icon</a> by US DoT - AIGA, Public domain, via Wikimedia Commons
-                </p>
-                <p>
-                    <a href="https://commons.wikimedia.org/wiki/File:Antu_folder-cloud.svg" target="_blank" rel="noreferrer">Cloud Icon</a> by Fabián Alexis, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>, via Wikimedia Commons
-                </p>
-                <br/>
-    
-                <!-- Copyright -->
-                <p class="emphasize">Ⓒ 2022 notkal.com</p>
+            <div class="icons">
+                <div class="ee_icon"><input type="color" name="easter_egg" id="easter_egg" value="#51a2ff" title="Click me!"></div>
+                <div>
+                    <a href="/">Home</a> | 
+                    <a href="/#projects">Projects</a> | 
+                    <a href="/#contact">Contact</a> | 
+                    <a href="/posts">Posts</a>
+                </div>
             </div>
-            <div class="column">
-                <a href="#" onclick="toTop()">Return to top</a>
-            </div>
+
+            <!-- Attribution -->
+            <details class="details_dialog">
+                <summary>
+                    <a class="emphasize bold hover_underline">Image attribution</a>
+                </summary>
+                <div class="dialog">
+                    <div class="dialog_content">
+                        <button class="button bold dialog_close">
+                            <p>Done</p>
+                            <div class="button_shade"></div>
+                        </button>
+                        <p class="emphasize bold">Image attribution</p>
+                        <p>
+                            <a href="https://www.pexels.com/video/changes-in-form-and-appearance-of-a-submerged-material-3163534/" target="_blank" rel="noreferrer">Header video</a> from <a href="https://www.pexels.com/">pexels.com</a>
+                        </p>
+                        <p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hamburger_icon.svg" target="_blank" rel="noreferrer">Hamburger icon</a> - Timothy Miller, Public domain, via Wikimedia Commons
+                        </p>
+                        <p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-sun.svg" target="_blank" rel="noreferrer">Sun</a> and <a href="https://commons.wikimedia.org/wiki/File:Feather-weather-moon.svg" target="_blank" rel="noreferrer">Moon</a> icons - Cole Bemis, <a href="http://opensource.org/licenses/mit-license.php" target="_blank" rel="noreferrer">MIT</a>, via Wikimedia Commons
+                        </p>
+                        <p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Aiga_mail_inverted_nobg.svg" target="_blank" rel="noreferrer">Envelope icon</a> - US DoT - AIGA, Public domain, via Wikimedia Commons
+                        </p>
+                        <p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Antu_folder-cloud.svg" target="_blank" rel="noreferrer">Cloud Icon</a> - Fabián Alexis, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>, via Wikimedia Commons
+                        </p>
+                        <p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Echo_link-blue_icon_slanted.svg">Link Icon</a> - MGalloway (WMF), WMF User Experience Design group, <a href="http://opensource.org/licenses/mit-license.php">MIT</a>, via Wikimedia Commons
+                        </p>
+                        <p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Font_Awesome_5_regular_clock.svg">Clock Icon</a> - Font Awesome Free 5.2.0 by @fontawesome - https://fontawesome.com, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons
+                        </p>
+                    </div>
+                </div>
+            </details>
+            <br/>
+
+            <!-- Copyright -->
+            <p class="emphasize">Ⓒ 2023 notkal.com</p>
+            <br/>
+            <a href="/#top" onclick="toTop()">Return to top</a>
         </div>
     </footer>
+    <div id="footer_gradient"></div>
 
 
     <!---------- Overlays ---------->

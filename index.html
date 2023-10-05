@@ -22,8 +22,8 @@
     <meta property="og:site_name" content="notkal">
 
     <!-- not-util -->
-    <link rel="stylesheet" href="https://www.notkal.com/not-util/not-util.css" crossorigin>
-    <script src="https://www.notkal.com/not-util/not-util.js" crossorigin></script>
+    <link rel="stylesheet" href="https://code.notkal.com/not-util.css" crossorigin>
+    <script src="https://code.notkal.com/not-util.js" crossorigin></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,7 +54,8 @@
                 <a href="/#top" class="nav_item" onclick="toTop(true);">Home</a>
                 <!-- <a href="/#portfolio" class="nav_item" onclick="toggleMenu()">Portfolio</a> -->
                 <a href="/#projects" class="nav_item" onclick="toggleMenu()">Projects</a>
-                <a href="/#contact" class="nav_item" onclick="toggleMenu()">Contact</a>    
+                <a href="/#contact" class="nav_item" onclick="toggleMenu()">Contact</a>
+                <!-- <a href="/posts/" class="nav_item" onclick="toggleMenu()">Posts</a>  -->
             </div>
             
             <!-- Additional buttons -->
@@ -698,7 +699,7 @@
             <!-- Copyright -->
             <p class="emphasize">Ⓒ 2023 notkal.com</p>
             <br/>
-            <a href="/#top" onclick="toTop()">Return to top</a>
+            <a role="button" tabindex="0" onclick="toTop()">Return to top</a>
         </div>
     </footer>
     <div id="footer_gradient"></div>

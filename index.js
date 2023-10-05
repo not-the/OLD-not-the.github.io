@@ -42,7 +42,7 @@ function switchTheme(animate=true) {
 }
 /** Scrolls page to top */
 function toTop(closemenu=false) {
-    window.scrollTo(0, 0);
+    window.scrollTo({top:0, behavior:'smooth'})
     document.activeElement.blur(); // Move keyboard navigation back to start
     if(closemenu) toggleMenu();
 }
