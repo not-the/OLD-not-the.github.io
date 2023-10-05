@@ -256,7 +256,7 @@ function populatePage(id, fullpage=false) {
         </div>
 
         <!-- Page name -->
-        <h1 class="nav_item page_title">notkal</h1>
+        <p class="nav_item page_title">notkal</p>
 
         <div class="flex" id="hamburger_menu">
             <!-- Nav items -->
