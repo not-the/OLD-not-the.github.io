@@ -9,6 +9,7 @@
     /* Background */
     --main-bg:             rgb(23, 23, 24); /* rgba(20, 20, 20, 1) */
     --lighter-bg:          rgb(34, 33, 36);
+    --lightest-bg:         rgb(44, 44, 46);
     --transparent-bg:      rgb(23, 23, 24, 0.8);
     --backdrop-color:      rgba(0, 0, 0, 0.5);
 
@@ -36,6 +37,7 @@ body.theme_light {
     /* Background */
     --main-bg:             rgb(230, 232, 235);
     --lighter-bg:          white;
+    --lightest-bg:         white;
     --transparent-bg:      rgba(255, 255, 255, 0.85);
 
     /* Misc */
@@ -217,6 +219,19 @@ input[type="radio"] {
     height: 16px;
     margin: 0 3px 6px 0;
 }
+input[type="text"] {
+    background-color: var(--lighter-bg);
+    color: var(--text);
+    border-color: rgb(54, 54, 54);
+    border-radius: 15px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+}
+input[type="text"]:focus {
+    border-color: var(--border-color);
+    background-color: var(--lightest-bg);
+}
 
 
 /* Fancy button shade */
@@ -229,19 +244,21 @@ input[type="radio"] {
     background-color: white;
     width: 100%;
     height: 100%;
+    border-radius: 32px 32px 0 0;
 
     position: absolute;
     z-index: 0;
     left: 0; bottom: 0;
 
     transform: translateY(calc(100% + 1px));
-    transition-property: transform;
+    transition-property: transform, border-radius;
     transition-duration: 0.15s;
     transition-timing-function: ease;
 }
 .button:hover .button_shade,
 a:hover .button .button_shade {
     transform: translateY(0);
+    border-radius: 6px 6px 0 0;
 }
 
 summary { cursor: pointer; }
@@ -249,6 +266,7 @@ summary { cursor: pointer; }
 
 .bold { font-weight: bold; }
 .secondary_text { color: var(--secondary-text); }
+.center { text-align: center; }
 .gray { color: gray; }
 .emphasize { color: var(--text) !important;}
 .accent_color { color: var(--accent-color); }
@@ -776,11 +794,11 @@ code[data-lang="js"] span.code-number { color: var(--js-number); }
 code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
 
 /* Enlarged images/text */
-.dialog,
-.enlarged_image {
+.overlay,
+.dialog {
     position: fixed;
-    top: 0; right: 0; left: 0;
-    height: 100vh;
+    top: 0; right: 0; left: 0; bottom: 0;
+    /* height: 100vh; */
     z-index: 101;
 
     background-color: var(--backdrop-color);
@@ -813,16 +831,63 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
     width: 100%;
     max-width: 640px;
     max-height: 100%;
-    overflow-x: auto;
+    overflow: auto;
     background-color: var(--main-bg);
     border: 1px solid var(--border-darker);
-    padding: 16px 18px;
-    border-radius: 6px;
+    padding: 18px 24px;
+    border-radius: 12px;
+    position: relative;
 }
-button.dialog_close {
+.dialog_content > button.dialog_close {
     float: right;
     width: 160px;
 }
+
+/* Palette */
+.palette > .palette_inner {
+    width: 100%;
+    max-width: 640px;
+    height: 475px;
+    max-height: 95vh;
+}
+.palette .dialog_content {
+    animation: palette_in 0.2s cubic-bezier(0.86, 0, 0.07, 1);
+}
+@keyframes palette_in {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.99, 0.99);
+    }
+}
+.palette input[type="text"] {
+    font-size: 14pt;
+    top: 0;
+    position: sticky;
+}
+.palette .palette_results {
+    margin-top: 18px;
+}
+.palette .palette_results .item {
+    color: var(--secondary-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border: 2px solid transparent;
+    padding: 9px 18px;
+    border-radius: 9px;
+}
+.palette .palette_results .item.active,
+.palette .palette_results .item:hover,
+.palette .palette_results .item:focus-visible {
+    background-color: var(--lighter-bg);
+    --secondary-text: var(--text);
+    border-color: var(--accent-color);
+}
+.palette .palette_results .item > img { width: 24px; height: 24px; margin-right: 12px; }
+.palette .palette_results .item > img:not([src]) { visibility: hidden; }
+.palette .palette_results .item p { margin-left: auto; }
+.palette .palette_results .item .ext { height: 18px; margin-left: 4px; }
+.palette .palette_results .item .ext path { fill: var(--secondary-text); }
 
 
 /* Toast Notification */

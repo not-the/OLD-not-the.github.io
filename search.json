@@ -1,0 +1,197 @@
+[
+    {
+        "name": "Home",
+        "icon": "/assets/icon.png",
+        "url": "/",
+        "type": ""
+    },
+    {
+        "name": "Projects",
+        "icon": "/assets/icon.png",
+        "url": "/#projects",
+        "type": "Home"
+    },
+    {
+        "name": "Contact",
+        "icon": "/assets/icon.png",
+        "url": "/#contact",
+        "type": "Home"
+    },
+    {
+        "name": "not-the on Github",
+        "icon": "/assets/icon/github.svg",
+        "url": "https://github.com/not-the",
+        "type": "Home"
+    },
+
+
+
+    {
+        "name": "Carrot Clicker",
+        "icon": "https://carrot.notkal.com/assets/stats/carrot.png",
+        "url": "https://carrot.notkal.com",
+        "type": "url"
+    },
+    {
+        "name": "PIXI.JS Mario",
+        "icon": "https://mario.notkal.com/favicon.png",
+        "url": "https://mario.notkal.com",
+        "type": "url"
+    },
+    {
+        "name": "Character Creator",
+        "url": "https://notkal.com/Character-Creator",
+        "type": "url"
+    },
+    {
+        "name": "Rubik's Cube",
+        "icon": "https://rubiks.notkal.com/icon.png",
+        "url": "https://rubiks.notkal.com/",
+        "type": "url"
+    },
+    {
+        "name": "Gravity",
+        "url": "https://www.notkal.com/Gravity-PIXIJS/",
+        "type": "url"
+    },
+    {
+        "name": "Maze Algorithm",
+        "url": "https://www.notkal.com/Maze-Algorithm/",
+        "type": "url"
+    },
+    {
+        "name": "Pong",
+        "url": "https://www.notkal.com/Pong/",
+        "type": "url"
+    },
+    {
+        "name": "Tic Tac Toe",
+        "url": "https://tictactoe.notkal.com/",
+        "type": "url"
+    },
+    {
+        "name": "HTML Confetti",
+        "url": "https://confetti.notkal.com/",
+        "type": "url"
+    },
+    {
+        "name": "CSS Loading Screens",
+        "url": "https://not-the.github.io/Loading-Screens/",
+        "type": "url"
+    },
+    {
+        "name": "ISS Tracker",
+        "url": "https://www.notkal.com/iss-tracker-app/",
+        "type": "url"
+    },
+    {
+        "name": "Geolocation",
+        "url": "https://not-the.github.io/geolocation-html/",
+        "type": "url"
+    },
+    {
+        "name": "JS Pyramid",
+        "url": "https://not-the.github.io/js-pyramid/",
+        "type": "url"
+    },
+    {
+        "name": "Leap years list",
+        "url": "https://not-the.github.io/LeapYear/",
+        "type": "url"
+    },
+
+
+
+
+    {
+        "name": "PIXI.JS Mario",
+        "url": "http://localhost:5500/pixijs-mario",
+        "type": "About project"
+    },
+    {
+        "name": "Character Creator",
+        "url": "https://www.notkal.com/Character-Creator/",
+        "type": "About project"
+    },
+    {
+        "name": "Carrot Clicker",
+        "url": "http://localhost:5500/projects/carrot-clicker",
+        "type": "About project"
+    },
+    {
+        "name": "Rubik's Cube",
+        "url": "http://localhost:5500/projects/rubiks-cube",
+        "type": "About project"
+    },
+    {
+        "name": "Gravity",
+        "url": "http://localhost:5500/projects/gravity",
+        "type": "About project"
+    },
+    {
+        "name": "Maze Algorithm",
+        "url": "http://localhost:5500/projects/maze",
+        "type": "About project"
+    },
+    {
+        "name": "Pong",
+        "url": "http://localhost:5500/projects/pong",
+        "type": "About project"
+    },
+    {
+        "name": "Tic Tac Toe",
+        "url": "http://localhost:5500/projects/tic-tac-toe",
+        "type": "About project"
+    },
+    {
+        "name": "Minecraft Worlds",
+        "url": "http://localhost:5500/projects/minecraft-worlds",
+        "type": "About project"
+    },
+    {
+        "name": "HTML Confetti",
+        "url": "http://localhost:5500/projects/html-confetti",
+        "type": "About project"
+    },
+    {
+        "name": "CSS Loading Screens",
+        "url": "http://localhost:5500/projects/css-loading-screens",
+        "type": "About project"
+    },
+    {
+        "name": "ISS Tracker",
+        "url": "http://localhost:5500/projects/iss-tracker",
+        "type": "About project"
+    },
+    {
+        "name": "Geolocation",
+        "url": "http://localhost:5500/projects/geolocation",
+        "type": "About project"
+    },
+    {
+        "name": "JS Pyramid",
+        "url": "http://localhost:5500/projects/js-pyramid",
+        "type": "About project"
+    },
+    {
+        "name": "Leap years list",
+        "icon": "/assets/icon/info.svg", "filter_icon": true,
+        "url": "http://localhost:5500/projects/leap-years-list",
+        "type": "About project"
+    },
+
+
+
+
+
+    {
+        "name": "Carrot Clicker Changelog",
+        "url": "/posts/carrot-clicker-changelog",
+        "type": "Blog post"
+    },
+    {
+        "name": "PIXI.JS Mario Changelog",
+        "url": "/posts/pixijs-mario-changelog",
+        "type": "Blog post"
+    }
+]

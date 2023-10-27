@@ -68,14 +68,126 @@ function toggleMotion() {
 /** Enlarge image */
 function enlargeImage(event, close=false) {
     let p = document.querySelector('.enlarged_image'); // Enlarged image already exists
-    if(p != undefined) p.remove();
+    if(p !== null) p.remove();
     if(close) return;
     let [src, alt] = [event.srcElement.src, event.srcElement.alt]
     let e = document.createElement('div');
-    e.classList.add('enlarged_image')
+    e.className = 'overlay enlarged_image';
     e.innerHTML = `<img src="${src}" alt="${alt}">`;
-    e.setAttribute('onclick', "this.remove()");
+    e.addEventListener('click', this.remove);
     body.append(e);
+}
+
+function get(url, parse){
+    var rq = new XMLHttpRequest(); // a new request
+    rq.open("GET", url, false);
+    rq.send(null);
+    return parse ? JSON.parse(rq.responseText) : rq.responseText;          
+}
+const searchdata = get('/search.json', true);
+
+
+/** Palette */
+function palette(close) {
+    let p = document.querySelector('.palette'); // Palette already open
+    if(p !== null || close) return p.remove();
+    // if(close) return;
+    let e = document.createElement('div');
+    e.className = 'overlay palette';
+
+    // HTML
+    e.innerHTML = `
+    <div class="palette_inner">
+        <div class="dialog_content">
+            <input type="text" name="palette_search" id="palette_search" placeholder="Type to search" autocomplete="off">
+            <div class="palette_results"></div>
+        </div>
+    </div>
+    `;
+    e.addEventListener('click', event => { if(event.target.classList.contains('overlay')) document.querySelector('.palette').remove(); });
+    body.append(e);
+
+    // Focus
+    let palette = document.querySelector('.palette');
+    let search_bar = document.getElementById('palette_search');
+    let results = document.querySelector('.palette_results');
+    search_bar.focus();
+    search_bar.addEventListener('keyup', search);
+
+    /** Number min/max */
+    function clamp(value, min, max) {
+        if(value < min) value = min;
+        else if(value > max) value = max;
+        return value;
+    }
+
+    // Arrow keys
+    let items; // Results list
+    let index = 0;
+    let active = 0;
+    search_bar.addEventListener('keydown', event => {
+        if(event.key === 'Enter') items[active].click(); // Enter
+        if(!event.key.startsWith('Arrow')) return;
+        items.forEach(item => item.classList.remove('active')); // Reset
+        if(event.key === 'ArrowDown') active++;
+        else if(event.key === 'ArrowUp') active--;
+        active = clamp(active, 0, items.length);
+        items[active].classList.add('active');
+    })
+    // search();
+
+    /** Populate search results */
+    function search(event) {
+        if(event.key.startsWith('Arrow')) return;
+        let html = '';
+        let term = search_bar.value;
+        let unsorted = [];
+        index = 0;
+        active = 0;
+        for(data of searchdata) {
+            let includes = data.name.toLowerCase().includes(term);
+            // let threshold = includes ? 1 : 3;
+            let threshold = 3;
+            // Typo correction
+            let proximity = levenshtein(term.toLowerCase(), data.name.toLowerCase());
+            let word_proximity = false;
+            for(let word of data.name.split(' ')) if(levenshtein(term.toLowerCase(), word.toLowerCase()) <= threshold-1) word_proximity = true;
+
+            // Matches search term
+            if(
+                // term === '' || // Is empty
+                term !== '' && // Isn't empty
+                (includes // Includes search term
+                || word_proximity || proximity <= threshold) // Typo proximity
+            ) {
+                let src = data.icon ? `src="${data.icon}" alt="" ${data.filter_icon ? 'class="icon"' : ''}` : '';
+                let external = data.type === 'url';
+                proximity -= includes ? 10 : 0; // Increase rank if there is an exact match
+                let item = `
+                <a class="item" href="${data.url}">
+                    <img ${src}>
+                    <h4>${data.name}</h4>
+                    <p class="secondary_text">
+                        ${external ? data.url.replace(/https:\/\//g,'') : data.type}
+                    </p>
+                    ${external ? '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="ext"><path d="M6 2H4C2.89543 2 2 2.89543 2 4V10C2 11.1046 2.89543 12 4 12H10C11.1046 12 12 11.1046 12 10V8H10V10H4V4H6V2Z" fill="white"/><path d="M9.20711 1H12.5C12.7761 1 13 1.22386 13 1.5V4.79289C13 5.23835 12.4614 5.46143 12.1464 5.14645L11.182 4.18197L8.82493 6.53902C8.43441 6.92954 7.80124 6.92954 7.41072 6.53902C7.0202 6.14849 7.0202 5.51533 7.41072 5.1248L9.76776 2.76776L8.85355 1.85355C8.53857 1.53857 8.76165 1 9.20711 1Z" fill="white"/></svg>':''}
+                </a>`;
+
+                index++;
+                unsorted.push({item, proximity});
+            }
+        }
+
+        // Sort
+        unsorted = unsorted.sort((a, b) => a.proximity - b.proximity);
+        for(let item of unsorted) html += item.item;
+
+        // Update page
+        if(html === '' && term !== '') html = '<p class="secondary_text center">No results found</p>';
+        results.innerHTML = html;
+        items = Array.from(palette.querySelectorAll('.item'));
+        items[active].classList.add('active');
+    }
 }
 
 /** Dialog (enlarge image but for text) */
@@ -125,6 +237,7 @@ function articleCopyURL(event) {
 menu_button.addEventListener('click', toggleMenu);
 backdrop.addEventListener('click', toggleMenu);
 theme_button.addEventListener('click', switchTheme);
+document.getElementById('search_button').addEventListener('click', () => palette());
 /** Click on figure image to enlarge */
 document.querySelectorAll('figure img').forEach(e => { e.setAttribute("tabindex", "0"); e.addEventListener('click', enlargeImage); });
 // document.querySelectorAll('.dialog_trigger').forEach(e => { e.setAttribute("tabindex", "0"); e.addEventListener('click', dialog); });
@@ -132,8 +245,16 @@ document.querySelectorAll('article .article_url_button').forEach(e => { e.addEve
 /** Enter acts as click */
 document.addEventListener("keydown", e => {
     // if(document.activeElement.tagName == 'details') return;
-    if(e.key === "Enter") document.activeElement.click();
-    else if(e.key === "Escape") enlargeImage(false, true);
+    let key = e.key.toLowerCase();
+    if(key === "enter") document.activeElement.click();
+    else if(key === "escape") {
+        enlargeImage(false, true);
+        palette(true);
+    }
+    else if((e.ctrlKey || e.metaKey) && key === 'k') {
+        e.preventDefault();
+        palette();
+    }
 });
 
 // let parallaxElement = video_main != null ? video_main : dom('banner');
