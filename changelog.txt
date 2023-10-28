@@ -1,3 +1,14 @@
+10/28/2023
+- Search enterkeyhint
+
+10/27/2023
+- Search palette fixes + improvements
+    + Up/down buttons will now loop to the top/bottom if you've hit the end
+    + Now closes the palette when you choose an option assuming the destination is on the same page
+
+10/26/2023
+- Added a search palette
+
 2/10/2023
 - Projects list(s) match light theme
 - CC Changelog table of contents
