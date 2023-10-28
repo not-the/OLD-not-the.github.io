@@ -86,25 +86,36 @@ function get(url, parse){
 }
 const searchdata = get('/search.json', true);
 
+function clampLoop(value, max) {
+    if(Math.sign(value) === -1) value += max;
+    return value % max;
+}
 
 /** Palette */
 function palette(close) {
     let p = document.querySelector('.palette'); // Palette already open
-    if(p !== null || close) return p.remove();
+    if(p !== null || close) return p?.remove();
     // if(close) return;
     let e = document.createElement('div');
     e.className = 'overlay palette';
+    
+    function closePalette() {
+        document.querySelector('.palette')?.remove();
+    }
 
     // HTML
     e.innerHTML = `
     <div class="palette_inner">
         <div class="dialog_content">
-            <input type="text" name="palette_search" id="palette_search" placeholder="Type to search" autocomplete="off">
+            <label for="palette_search">
+                <svg class="palette_symbol" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M375.478-306.999q-114.087 0-193.544-79.457Q102.477-465.913 102.477-580q0-114.087 79.457-193.544 79.457-79.457 193.544-79.457 114.087 0 193.544 79.457Q648.479-694.087 648.479-580q0 45.13-12.87 83.283-12.869 38.152-34.608 67.021l219.478 220.044q14.956 15.522 14.956 37.326 0 21.805-15.522 36.761-14.956 14.957-37.043 14.957-22.088 0-37.044-14.957L526.913-354.477q-29.435 21.739-68.152 34.608-38.718 12.87-83.283 12.87Zm0-106.002q69.913 0 118.456-48.543Q542.477-510.087 542.477-580q0-69.913-48.543-118.456-48.543-48.543-118.456-48.543-69.913 0-118.456 48.543Q208.479-649.913 208.479-580q0 69.913 48.543 118.456 48.543 48.543 118.456 48.543Z"/></svg>
+                <input type="text" name="palette_search" id="palette_search" placeholder="Type to search" autocomplete="off">
+            </label>
             <div class="palette_results"></div>
         </div>
     </div>
     `;
-    e.addEventListener('click', event => { if(event.target.classList.contains('overlay')) document.querySelector('.palette').remove(); });
+    e.addEventListener('click', event => { let classes = event.target.classList; if(classes.contains('overlay') || classes.contains('palette_inner')) closePalette() });
     body.append(e);
 
     // Focus
@@ -126,13 +137,21 @@ function palette(close) {
     let index = 0;
     let active = 0;
     search_bar.addEventListener('keydown', event => {
-        if(event.key === 'Enter') items[active].click(); // Enter
+        if(event.key === 'Enter') {
+            items[active].click(); // Enter
+            closePalette();
+        }
         if(!event.key.startsWith('Arrow')) return;
         items.forEach(item => item.classList.remove('active')); // Reset
         if(event.key === 'ArrowDown') active++;
         else if(event.key === 'ArrowUp') active--;
-        active = clamp(active, 0, items.length);
+        active = clampLoop(active, items.length);
         items[active].classList.add('active');
+        items[active].scrollIntoView({
+            block:"nearest",
+            behavior:"smooth"
+        });
+        console.log(active);
     })
     // search();
 
@@ -237,7 +256,7 @@ function articleCopyURL(event) {
 menu_button.addEventListener('click', toggleMenu);
 backdrop.addEventListener('click', toggleMenu);
 theme_button.addEventListener('click', switchTheme);
-document.getElementById('search_button').addEventListener('click', () => palette());
+document.getElementById('search_button')?.addEventListener('click', () => palette());
 /** Click on figure image to enlarge */
 document.querySelectorAll('figure img').forEach(e => { e.setAttribute("tabindex", "0"); e.addEventListener('click', enlargeImage); });
 // document.querySelectorAll('.dialog_trigger').forEach(e => { e.setAttribute("tabindex", "0"); e.addEventListener('click', dialog); });

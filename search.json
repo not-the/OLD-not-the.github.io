@@ -105,7 +105,7 @@
 
     {
         "name": "PIXI.JS Mario",
-        "url": "http://localhost:5500/pixijs-mario",
+        "url": "/pixijs-mario",
         "type": "About project"
     },
     {
@@ -115,68 +115,68 @@
     },
     {
         "name": "Carrot Clicker",
-        "url": "http://localhost:5500/projects/carrot-clicker",
+        "url": "/projects/carrot-clicker",
         "type": "About project"
     },
     {
         "name": "Rubik's Cube",
-        "url": "http://localhost:5500/projects/rubiks-cube",
+        "url": "/projects/rubiks-cube",
         "type": "About project"
     },
     {
         "name": "Gravity",
-        "url": "http://localhost:5500/projects/gravity",
+        "url": "/projects/gravity",
         "type": "About project"
     },
     {
         "name": "Maze Algorithm",
-        "url": "http://localhost:5500/projects/maze",
+        "url": "/projects/maze",
         "type": "About project"
     },
     {
         "name": "Pong",
-        "url": "http://localhost:5500/projects/pong",
+        "url": "/projects/pong",
         "type": "About project"
     },
     {
         "name": "Tic Tac Toe",
-        "url": "http://localhost:5500/projects/tic-tac-toe",
+        "url": "/projects/tic-tac-toe",
         "type": "About project"
     },
     {
         "name": "Minecraft Worlds",
-        "url": "http://localhost:5500/projects/minecraft-worlds",
+        "url": "/projects/minecraft-worlds",
         "type": "About project"
     },
     {
         "name": "HTML Confetti",
-        "url": "http://localhost:5500/projects/html-confetti",
+        "url": "/projects/html-confetti",
         "type": "About project"
     },
     {
         "name": "CSS Loading Screens",
-        "url": "http://localhost:5500/projects/css-loading-screens",
+        "url": "/projects/css-loading-screens",
         "type": "About project"
     },
     {
         "name": "ISS Tracker",
-        "url": "http://localhost:5500/projects/iss-tracker",
+        "url": "/projects/iss-tracker",
         "type": "About project"
     },
     {
         "name": "Geolocation",
-        "url": "http://localhost:5500/projects/geolocation",
+        "url": "/projects/geolocation",
         "type": "About project"
     },
     {
         "name": "JS Pyramid",
-        "url": "http://localhost:5500/projects/js-pyramid",
+        "url": "/projects/js-pyramid",
         "type": "About project"
     },
     {
         "name": "Leap years list",
         "icon": "/assets/icon/info.svg", "filter_icon": true,
-        "url": "http://localhost:5500/projects/leap-years-list",
+        "url": "/projects/leap-years-list",
         "type": "About project"
     },
 
