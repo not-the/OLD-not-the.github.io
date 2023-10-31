@@ -109,11 +109,6 @@
         "type": "About project"
     },
     {
-        "name": "Character Creator",
-        "url": "https://www.notkal.com/Character-Creator/",
-        "type": "About project"
-    },
-    {
         "name": "Carrot Clicker",
         "url": "/projects/carrot-clicker",
         "type": "About project"
@@ -141,11 +136,6 @@
     {
         "name": "Tic Tac Toe",
         "url": "/projects/tic-tac-toe",
-        "type": "About project"
-    },
-    {
-        "name": "Minecraft Worlds",
-        "url": "/projects/minecraft-worlds",
         "type": "About project"
     },
     {

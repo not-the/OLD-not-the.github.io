@@ -378,8 +378,8 @@ a.nav_item {
     -webkit-user-select: none;
 }
 a.nav_item:hover,
-.nav_button:hover,
 a.nav_item:focus-visible,
+.nav_button:hover,
 .nav_button:focus-visible {
     /* background-color: var(--nav-button-hover-bg); */
     border-color: var(--accent-color);
@@ -398,8 +398,8 @@ a.nav_item::before {
     transition: transform 0.1s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.1s ease, border-radius 0.25s ease;
 }
 a.nav_item:hover::before,
-.nav_button:hover::before,
 a.nav_item:focus-visible::before,
+.nav_button:hover::before,
 .nav_button:focus-visible::before {
     opacity: 1;
     transform: none;
@@ -599,8 +599,11 @@ nav .button_icon {
     opacity: 0;
     cursor: pointer;
     width: 100%;
+    padding: 0;
     min-width: unset;
+    background-color: transparent; backdrop-filter: none;
 }
+#footer #easter_egg:focus-visible { opacity: 1;  }
 #footer .icons { margin-bottom: 12px; display: flex; align-items: center; }
 #footer .ee_icon {
     display: inline-block;
