@@ -15,7 +15,8 @@
 
     /* Additional colors */
     --dark-border-color:   rgba(199, 199, 199, 0.3);
-    --border-color:        rgba(199, 199, 199, 0.3);
+    /* --border-color:        rgba(199, 199, 199, 0.3); */
+    --border-color:        #525050;
     --border-darker:       rgba(255, 255, 255, 0.1);
     --nav-button-hover-bg: rgb(255, 255, 255, 0.1);
 
@@ -257,7 +258,9 @@ input[type="text"]:focus {
     transition-timing-function: ease;
 }
 .button:hover .button_shade,
-a:hover .button .button_shade {
+a:hover .button .button_shade,
+.button:focus-visible .button_shade,
+a:focus-visible .button .button_shade {
     transform: translateY(0);
     border-radius: 6px 6px 0 0;
 }
