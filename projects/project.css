@@ -76,8 +76,8 @@ header .title_section #path a:hover { color: white; }
 /* Body */
 .body_column {
     width: 100%;
-    padding-left: 20px;
 }
+.body_column:not(:only-child) { padding-left: 20px; }
 .user_card {
     width: 100%;
     /* background-color: var(--lighter-bg); */

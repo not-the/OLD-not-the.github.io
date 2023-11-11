@@ -1,5 +1,12 @@
+11/11/2023
+- Added an about page at /about/ with a privacy & cookie policy
+- Cookie consent
+- Toast notification support
+- search.json is now only loaded when the search palette is opened
+- White button CSS
+
 10/28/2023
-- Search enterkeyhint
+- Search palette enterkeyhint
 
 10/27/2023
 - Search palette fixes + improvements

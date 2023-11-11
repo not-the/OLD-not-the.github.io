@@ -124,15 +124,12 @@ body.theme_light .mouse_glow {
 
 /* Reduce Motion */
 #home #reduce_motion {
-    width: auto;
     padding: 8px 16px;
-    border-radius: 50px;
 
     position: absolute;
     right: 32px;
-    bottom:32px;
-
-    animation: none;
+    bottom: 32px;
+    text-shadow: 1px 1px 4px black;
 }
 #home #reduce_motion:hover { color: var(--text); }
 /* .wave_decoration {

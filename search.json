@@ -18,6 +18,18 @@
         "type": "Home"
     },
     {
+        "name": "All Posts",
+        "icon": "/assets/icon.png",
+        "url": "/posts",
+        "type": "/posts"
+    },
+    {
+        "name": "About",
+        "icon": "/assets/icon.png",
+        "url": "/about",
+        "type": "/about"
+    },
+    {
         "name": "not-the on Github",
         "icon": "/assets/icon/github.svg",
         "url": "https://github.com/not-the",
@@ -104,67 +116,67 @@
 
 
     {
-        "name": "PIXI.JS Mario",
+        "name": "Projects / PIXI.JS Mario",
         "url": "/pixijs-mario",
         "type": "About project"
     },
     {
-        "name": "Carrot Clicker",
+        "name": "Projects / Carrot Clicker",
         "url": "/projects/carrot-clicker",
         "type": "About project"
     },
     {
-        "name": "Rubik's Cube",
+        "name": "Projects / Rubik's Cube",
         "url": "/projects/rubiks-cube",
         "type": "About project"
     },
     {
-        "name": "Gravity",
+        "name": "Projects / Gravity",
         "url": "/projects/gravity",
         "type": "About project"
     },
     {
-        "name": "Maze Algorithm",
+        "name": "Projects / Maze Algorithm",
         "url": "/projects/maze",
         "type": "About project"
     },
     {
-        "name": "Pong",
+        "name": "Projects / Pong",
         "url": "/projects/pong",
         "type": "About project"
     },
     {
-        "name": "Tic Tac Toe",
+        "name": "Projects / Tic Tac Toe",
         "url": "/projects/tic-tac-toe",
         "type": "About project"
     },
     {
-        "name": "HTML Confetti",
+        "name": "Projects / HTML Confetti",
         "url": "/projects/html-confetti",
         "type": "About project"
     },
     {
-        "name": "CSS Loading Screens",
+        "name": "Projects / CSS Loading Screens",
         "url": "/projects/css-loading-screens",
         "type": "About project"
     },
     {
-        "name": "ISS Tracker",
+        "name": "Projects / ISS Tracker",
         "url": "/projects/iss-tracker",
         "type": "About project"
     },
     {
-        "name": "Geolocation",
+        "name": "Projects / Geolocation",
         "url": "/projects/geolocation",
         "type": "About project"
     },
     {
-        "name": "JS Pyramid",
+        "name": "Projects / JS Pyramid",
         "url": "/projects/js-pyramid",
         "type": "About project"
     },
     {
-        "name": "Leap years list",
+        "name": "Projects / Leap years list",
         "icon": "/assets/icon/info.svg", "filter_icon": true,
         "url": "/projects/leap-years-list",
         "type": "About project"

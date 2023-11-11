@@ -193,6 +193,7 @@ button:focus-visible .button_icon,
 a:focus-visible .button .button_icon {
     filter: none;
 }
+.button_white { background-color: rgba(255, 255, 255, 0.85); color: black; }
 .button_blue { background-color: var(--accent-color); }
 .button_red { background-color: rgb(236, 33, 67); }
 .small_button {
@@ -914,28 +915,40 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
 
 
 /* Toast Notification */
-/* #toast_container {
+#toast_container {
     position: fixed;
+    bottom: 0; right: 0;
     z-index: 201;
-    bottom: 16px;
-    right: 24px;
+    overflow: hidden;
+    pointer-events: none;
+
+    padding: 4px 24px 16px 4px;
     
     width: 100%;
-    max-width: 360px;
+    max-width: 400px;
 }
 #toast_container .toast {
     background-color: var(--lighter-bg);
+    backdrop-filter: blur(12px);
     outline: 1px solid var(--border-color);
     border-radius: 6px;
     padding: 12px 15px;
+    margin-top: 12px;
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+    pointer-events: initial;
+    animation: toast_in 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+/* #toast_container .toast.toast_out { pointer-events: none; animation-direction: reverse; outline: 2px solid red; } */
+@keyframes toast_in {
+    from { transform: translateX(120px); opacity: 0; }
 }
 #toast_container .toast .dismiss {
     color: var(--secondary-text);
     position: absolute;
     top: 12px;
     right: 15px;
-} */
+}
+#toast_container .toast div.flex > *:not(:last-child) { margin-right: 9px; }
 
 
 

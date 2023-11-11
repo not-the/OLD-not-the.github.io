@@ -1,21 +1,37 @@
 // HTML
 const body        = $('body'),
-nav               = dom('nav'),
-menu_button       = dom('menu_button'),
-hamburger_menu    = dom('hamburger_menu'),
-theme_button      = dom('theme_button'),
-theme_button_icon = dom('theme_button_icon'),
-video_main        = dom('video_main'),
-reduce_motion     = dom('reduce_motion'),
-backdrop          = dom('backdrop');
+nav               = document.getElementById('nav'),
+menu_button       = document.getElementById('menu_button'),
+hamburger_menu    = document.getElementById('hamburger_menu'),
+theme_button      = document.getElementById('theme_button'),
+theme_button_icon = document.getElementById('theme_button_icon'),
+video_main        = document.getElementById('video_main'),
+reduce_motion     = document.getElementById('reduce_motion'),
+backdrop          = document.getElementById('backdrop');
 
 // Variables
 const mobile_layout_width = 600;
-var hamburger_open = false;
-var theme = false; // true = light
-var reducedMotion = false;
-var ti1; // Timeout 1
-var ti2; // Timeout 2
+let cookies = store('nk_allow_cookies');
+let hamburger_open = false;
+let theme = false; // true = light
+let reducedMotion = false;
+let ti1; // Timeout 1
+let ti2; // Timeout 2
+let searchdata;
+
+// Utility functions
+/** Loops a number within a min and max value */
+function clampLoop(value, max) {
+    if(Math.sign(value) === -1) value += max;
+    return value % max;
+}
+/** Fetch a JSON file using XMLHttpRequest */
+function get(url, parse){
+    var rq = new XMLHttpRequest(); // a new request
+    rq.open("GET", url, false);
+    rq.send(null);
+    return parse ? JSON.parse(rq.responseText) : rq.responseText;          
+}
 
 // Functions
 /** Hamburger menu toggle */
@@ -28,7 +44,7 @@ function toggleMenu() {
 /** Toggle between dark/light mode */
 function switchTheme(animate=true) {
     theme = !theme;
-    store('theme', `${theme}`); // Save in localStorage
+    if(cookies) store('theme', `${theme}`); // Save in localStorage
     style(body, 'theme_light', theme); // Set theme
     if(!animate) return themeIcon(); // Animate
     theme_button_icon.classList.remove('a_rollout')
@@ -50,9 +66,9 @@ function toTop(closemenu=false) {
 /** Toggles "Reduce Motion" */
 function toggleMotion() {
     reducedMotion = !reducedMotion;
-    store('reducedMotion', `${reducedMotion}`); // Save in localStorage
+    if(cookies) store('reducedMotion', `${reducedMotion}`); // Save in localStorage
     style(body, 'reduced_motion', reducedMotion); // Set theme
-    reduce_motion.innerText = reducedMotion ? '⏵︎ Reduce motion' : '⏸︎ Reduce motion';
+    reduce_motion.innerText = reducedMotion ? 'Reduce motion ⏵︎' : 'Reduce motion ⏸︎';
 
     // Disable/enable AOS
     let alternate = true;
@@ -78,27 +94,59 @@ function enlargeImage(event, close=false) {
     body.append(e);
 }
 
-function get(url, parse){
-    var rq = new XMLHttpRequest(); // a new request
-    rq.open("GET", url, false);
-    rq.send(null);
-    return parse ? JSON.parse(rq.responseText) : rq.responseText;          
-}
-const searchdata = get('/search.json', true);
+/** Toast notification */
+const toast = {
+    container: document.body.appendChild(Object.assign(document.createElement('div'),{id:"toast_container"})),
+    id: 0,
+    new(title='', desc='', ...buttons) {
+        let t = document.createElement('div');
+        t.className = 'toast toast_in';
+        t.dataset.toastId = this.id;
 
-function clampLoop(value, max) {
-    if(Math.sign(value) === -1) value += max;
-    return value % max;
+        // HTML
+        let buttonHTML = '';
+        if(buttonHTML !== undefined) {
+            buttonHTML += '<div class="flex" style="margin-top: 12px;">';
+            for(let button of buttons) {
+                buttonHTML += `
+                <button class="button full_width ${button.classes ?? ''}" onclick="${button.func}">
+                    <p>${button.label}</p>
+                    <div class="button_shade"></div>
+                </button>`;
+            }
+            buttonHTML += '</div>';
+        }
+
+        t.innerHTML = `
+        <h3>${title}</h3>
+        <div class="dismiss hover_underline" tabindex="0" role="button" onclick="toast.remove(this)">Dismiss</div>
+        <p class="secondary_text">
+            ${desc}
+        </p>
+        ${buttonHTML}`;
+        this.container.appendChild(t);
+        this.id++;
+    },
+    remove(target) {
+        let t = target.closest('.toast');
+        t.remove();
+        // t.classList.remove('toast_in');
+        // t.classList.add('toast_out');
+        // setTimeout(() => t.remove(), 300);
+    }
 }
 
 /** Palette */
 function palette(close) {
     let p = document.querySelector('.palette'); // Palette already open
     if(p !== null || close) return p?.remove();
+
+    if(searchdata === undefined) searchdata = get('/search.json', true);
+
     // if(close) return;
     let e = document.createElement('div');
     e.className = 'overlay palette';
-    
+
     function closePalette() {
         document.querySelector('.palette')?.remove();
     }
@@ -230,6 +278,19 @@ function palette(close) {
 //     body.append(e);
 // }
 
+// Cookie notice
+let privacy_policy_version = 1;
+if(!cookies) {
+    toast.new(
+        'Cookie Usage',
+        'This website uses cookies to remember your settings and save game progress. It also uses third-party cookies to serve personalized ads on some pages. <a href="/about/#privacy">Privacy Policy</a>',
+        { label:'Accept', classes:'button_white', func:`store('nk_allow_cookies', ${privacy_policy_version}); cookies=${privacy_policy_version}; toast.remove(this);` },
+        { label:'Reject', func:'toast.remove(this)' }
+    )
+} else if(privacy_policy_version > cookies) {
+    toast.new('Our privacy policy has been updated');
+}
+
 /** closeDetails - Replacement for dialog function */
 document.querySelectorAll('.dialog_close').forEach(element => {
     element.addEventListener('click', event => {
@@ -245,7 +306,7 @@ function articleCopyURL(event) {
     copy_text.id = "copy_text";
     copy_text.value = url;
     body.appendChild(copy_text);
-    let e = dom('copy_text');
+    let e = document.getElementById('copy_text');
     e.focus(); e.select();
     document.execCommand("copy");
     e.remove();
@@ -276,8 +337,8 @@ document.addEventListener("keydown", e => {
     }
 });
 
-// let parallaxElement = video_main != null ? video_main : dom('banner');
-let parallaxElement2 = dom('home_center');
+// let parallaxElement = video_main != null ? video_main : document.getElementById('banner');
+let parallaxElement2 = document.getElementById('home_center');
 /** On scroll */
 window.onscroll = () => {
     // Nav bar
