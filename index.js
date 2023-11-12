@@ -12,6 +12,7 @@ backdrop          = document.getElementById('backdrop');
 // Variables
 const mobile_layout_width = 600;
 let cookies = store('nk_allow_cookies');
+cookies = cookies === '-1' ? undefined : cookies; // Opted out
 let hamburger_open = false;
 let theme = false; // true = light
 let reducedMotion = false;
@@ -98,6 +99,7 @@ function enlargeImage(event, close=false) {
 const toast = {
     container: document.body.appendChild(Object.assign(document.createElement('div'),{id:"toast_container"})),
     id: 0,
+
     new(title='', desc='', ...buttons) {
         let t = document.createElement('div');
         t.className = 'toast toast_in';
@@ -280,24 +282,51 @@ function palette(close) {
 
 // Cookie notice
 let privacy_policy_version = 1;
-if(!cookies) {
+if(!cookies && cookies !== undefined) {
     toast.new(
         'Cookie Usage',
         'This website uses cookies to remember your settings and save game progress. It also uses third-party cookies to serve personalized ads on some pages. <a href="/about/#privacy">Privacy Policy</a>',
         { label:'Accept', classes:'button_white', func:`store('nk_allow_cookies', ${privacy_policy_version}); cookies=${privacy_policy_version}; toast.remove(this);` },
-        { label:'Reject', func:'toast.remove(this)' }
+        { label:'Reject', func:"store('nk_allow_cookies', -1); toast.remove(this);" }
     )
-} else if(privacy_policy_version > cookies) {
-    toast.new('Our privacy policy has been updated');
+} else {
+    function createElementFromHTML(htmlString) {
+        let div = document.createElement('div');
+        div.innerHTML = htmlString.trim();
+        return div.firstChild;
+    }
+
+    // Updated policy notice
+    if(privacy_policy_version > cookies) {
+        toast.new('Our privacy policy has been updated');
+    }
+    if(cookies === undefined) {
+        console.log('rejected cookies');
+        let div = createElementFromHTML(`
+        <div role="button" tabindex="0" class="nav_button" title="Consent to additional cookies" id="nav_accept_cookies">
+            <img src="/assets/icon/cookie_off_FILL1_wght500_GRAD0_opsz24.svg" alt="Consent to additional cookies" class="icon button_icon">
+        </div>`);
+        div.addEventListener('click', () => {
+            cookies = privacy_policy_version;
+            store('nk_allow_cookies', cookies);
+            toast.new('Cookies', 'Optional cookies enabled');
+            document.getElementById("nav_accept_cookies").remove();
+        });
+
+        // Rejected cookies button
+        document.querySelector('.nav_right').prepend(div);
+    }
 }
 
+
+
 /** closeDetails - Replacement for dialog function */
-document.querySelectorAll('.dialog_close').forEach(element => {
-    element.addEventListener('click', event => {
-        let details = event.currentTarget.parentNode.parentNode.parentNode;
-        details.open = !details.open;
-    })
-});
+// document.querySelectorAll('.dialog_close').forEach(element => {
+//     element.addEventListener('click', event => {
+//         let details = event.currentTarget.parentNode.parentNode.parentNode;
+//         details.open = !details.open;
+//     })
+// });
 
 /** Copy article URL */
 function articleCopyURL(event) {

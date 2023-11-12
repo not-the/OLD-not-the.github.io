@@ -922,7 +922,7 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
     overflow: hidden;
     pointer-events: none;
 
-    padding: 4px 24px 16px 4px;
+    padding: 4px 24px 16px 24px;
     
     width: 100%;
     max-width: 400px;
