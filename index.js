@@ -11,7 +11,7 @@ backdrop          = document.getElementById('backdrop');
 
 // Variables
 const mobile_layout_width = 600;
-let cookies = store('nk_allow_cookies');
+let cookies = store('main_allow_cookies');
 cookies = cookies === '-1' ? undefined : cookies; // Opted out
 let hamburger_open = false;
 let theme = false; // true = light
@@ -45,7 +45,7 @@ function toggleMenu() {
 /** Toggle between dark/light mode */
 function switchTheme(animate=true) {
     theme = !theme;
-    if(cookies) store('theme', `${theme}`); // Save in localStorage
+    if(cookies) store('main_theme', `${theme}`); // Save in localStorage
     style(body, 'theme_light', theme); // Set theme
     if(!animate) return themeIcon(); // Animate
     theme_button_icon.classList.remove('a_rollout')
@@ -67,7 +67,7 @@ function toTop(closemenu=false) {
 /** Toggles "Reduce Motion" */
 function toggleMotion() {
     reducedMotion = !reducedMotion;
-    if(cookies) store('reducedMotion', `${reducedMotion}`); // Save in localStorage
+    if(cookies) store('main_reduce_motion', `${reducedMotion}`); // Save in localStorage
     style(body, 'reduced_motion', reducedMotion); // Set theme
     reduce_motion.innerText = reducedMotion ? 'Reduce motion ⏵︎' : 'Reduce motion ⏸︎';
 
@@ -286,8 +286,8 @@ if(!cookies && cookies !== undefined) {
     toast.new(
         'Cookie Usage',
         'This website uses cookies to remember your settings and save game progress. It also uses third-party cookies to serve personalized ads on some pages. <a href="/about/#privacy">Privacy Policy</a>',
-        { label:'Accept', classes:'button_white', func:`store('nk_allow_cookies', ${privacy_policy_version}); cookies=${privacy_policy_version}; toast.remove(this);` },
-        { label:'Reject', func:"store('nk_allow_cookies', -1); toast.remove(this);" }
+        { label:'Accept', classes:'button_white', func:`store('main_allow_cookies', ${privacy_policy_version}); cookies=${privacy_policy_version}; toast.remove(this);` },
+        { label:'Reject', func:"store('main_allow_cookies', -1); toast.remove(this);" }
     )
 } else {
     function createElementFromHTML(htmlString) {
@@ -308,7 +308,7 @@ if(!cookies && cookies !== undefined) {
         </div>`);
         div.addEventListener('click', () => {
             cookies = privacy_policy_version;
-            store('nk_allow_cookies', cookies);
+            store('main_allow_cookies', cookies);
             toast.new('Cookies', 'Optional cookies enabled');
             document.getElementById("nav_accept_cookies").remove();
         });
@@ -385,12 +385,12 @@ window.onresize = () => { if(hamburger_open && window.innerWidth > mobile_layout
 /** On load */
 window.onload = event => {
     // Reduced motion
-    let m = store('reducedMotion');
+    let m = store('main_reduce_motion');
     const reduce_motion_preference = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
     if(m == 'true' || m == null && reduce_motion_preference) toggleMotion();
 
     // Theme
-    let t = store('theme');
+    let t = store('main_theme');
     if(t === null || t === 'false') return;
     switchTheme(false);
 };
