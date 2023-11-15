@@ -1,6 +1,12 @@
-11/12/2023
+11/14/2023
+- Options panel, better options toggle support
+- Retracting cookie consent in options removes all main page cookies
 - Added Apple-style toggle switch (alternate styling for checkboxes)
 - Added localStorage breakdown to the about page
+- Fixed before and after elements not being targeted by the reduced_motion class
+- Made dark and light theme CSS variables available at all times
+- System theme option (default)
+- Red theme
 
 11/11/2023 Part 2
 - Updated the nav bar and footer on all pages

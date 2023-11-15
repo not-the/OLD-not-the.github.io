@@ -20,7 +20,7 @@ body.theme_light .mouse_glow {
 }
 
 /* Landing */
-#video_main {
+#banner.video_main {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,7 +30,7 @@ body.theme_light .mouse_glow {
     /* height: calc(100vh + var(--wave-offset)); */
     height: 100vh;
 }
-/* .theme_light #video_main {
+/* .theme_light #banner.video_main {
     filter: invert() hue-rotate(180deg) brightness(90%);
 } */
 .banner {
@@ -123,15 +123,19 @@ body.theme_light .mouse_glow {
 #home p.tagline { font-size: 16pt; }
 
 /* Reduce Motion */
-#home #reduce_motion {
-    padding: 8px 16px;
-
+/* #home #reduce_motion {
     position: absolute;
     right: 32px;
     bottom: 32px;
     text-shadow: 1px 1px 4px black;
-}
-#home #reduce_motion:hover { color: var(--text); }
+
+    width: 100%;
+    max-width: 300px;
+    padding: 8px 16px;
+    background-color: var(--transparent-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border-darker);
+} */
 /* .wave_decoration {
     background-image: url(./assets/decoration/wave.png);
     background-size: 100%;

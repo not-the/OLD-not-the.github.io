@@ -74,27 +74,16 @@
                         <img src="/assets/icon/github.svg" alt="Github" class="icon button_icon">
                     </div>
                 </a>
-                <div role="button" tabindex="0" id="theme_button" class="nav_button">
-                    <img src="/assets/icon/moon.svg" alt="Change Theme" class="icon button_icon">
-                </div>
-                <!-- <div role="button" tabindex="0" id="options_button" class="nav_button">
+                <div role="button" tabindex="0" id="options_button" class="nav_button">
                     <img src="/assets/icon/settings.svg" alt="Options" class="icon button_icon">
-                </div> -->
+                </div>
             </div>
         </div>
     </nav>
-<!-- 
-    <div id="options">
-        <h3>Options</h3>
-        <hr/><br/>
-        <label for="setting_reduce_motion">
-            <input type="checkbox" name="setting_reduce_motion" id="setting_reduce_motion"> Reduced motion
-        </label>
-    </div> -->
 
     <!---------- Main ---------->
     <main id="home">
-        <video src="/assets/video/abstract_ds.mp4" id="video_main" class="banner" autoplay loop muted webkit-playsinline playsinline></video>
+        <video src="/assets/video/abstract_ds.mp4" id="banner" class="banner video_main" autoplay loop muted webkit-playsinline playsinline></video>
         <div id="home_center">
             <!-- Hello -->
             <div class="home_block home_hello">
@@ -103,10 +92,6 @@
                     <span class="big_title_accent">not-the</span>
                 </h1>
                 <p class="tagline">Web developer</p><br/>
-                <!-- <p class="secondary_text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores vel sapiente quasi fugit temporibus.
-                </p> -->
-                <!-- 🡆 -->
                 <a href="#projects" class="bold" style="font-family: var(--title-font)">My work -></a> 
             </div>
 
@@ -132,8 +117,8 @@
 
             <!-- CSS -->
             <style type="text/css">
-                #theme_button,
-                #reduce_motion {
+                #reduce_motion,
+                #search_button {
                     filter: brightness(50%);
                     cursor: unset;
                 }
@@ -160,10 +145,18 @@
             </style>
         </noscript>
 
-        <!-- Reduce Motion -->
-        <div class="secondary_text pointer" id="reduce_motion" role="button" tabindex="0" onclick="toggleMotion()">
-            Reduce motion ⏸︎
-        </div>
+        <!-- <div class="options" id="reduce_motion">
+            <div class="item">
+                <img src="/assets/icon/motion_mode_FILL0_wght600_GRAD0_opsz20.svg" class="icon">
+                <p>Reduce motion</p>
+                <label class="switch">
+                    <input type="checkbox" data-option="reduce_motion">
+                    <span></span>
+                    <div class="off">O</div>
+                    <div class="on">I</div>
+                </label>
+            </div>
+        </div> -->
 
         <!-- Wave SVG -->
         <!-- <div class="wave_decoration white_icon"></div> -->
@@ -287,7 +280,7 @@
                 </div>
             </div>
 
-            <div class="project" id="character-creator" style="background: var(--project-gradient), url(/assets/project/character_creator.png);">
+            <div class="project" id="character-creator" style="background: var(--project-gradient), url(/assets/project/character_creator_2.png);">
                 <div class="title_section flex">
                     <div class="flex">
                         <a href="https://www.notkal.com/Character-Creator/" class="project_link"><div class="project_link_area"></div></a>

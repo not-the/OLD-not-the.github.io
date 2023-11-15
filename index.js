@@ -4,21 +4,17 @@ nav               = document.getElementById('nav'),
 menu_button       = document.getElementById('menu_button'),
 hamburger_menu    = document.getElementById('hamburger_menu'),
 theme_button      = document.getElementById('theme_button'),
-theme_button_icon = document.getElementById('theme_button_icon'),
-video_main        = document.getElementById('video_main'),
+video_main        = document.querySelector('.video_main'),
 reduce_motion     = document.getElementById('reduce_motion'),
 backdrop          = document.getElementById('backdrop');
 
 // Variables
 const mobile_layout_width = 600;
-let cookies = store('main_allow_cookies');
-cookies = cookies === '-1' ? undefined : cookies; // Opted out
 let hamburger_open = false;
-let theme = false; // true = light
-let reducedMotion = false;
 let ti1; // Timeout 1
 let ti2; // Timeout 2
 let searchdata;
+let privacy_policy_version = 1;
 
 // Utility functions
 /** Loops a number within a min and max value */
@@ -42,44 +38,163 @@ function toggleMenu() {
     style(nav, 'menu_open', hamburger_open);    // Open navbar
     style(backdrop, 'visible', hamburger_open); // Show backdrop
 }
+/** Option values and methods */
+const options = {
+    cookies: JSON.parse(store('main_cookies')) ?? undefined,
+    theme: false,
+    reduce_motion: false,
+    policy_version: store('main_policy_version'),
+    list: ['cookies', 'theme', 'reduce_motion'],
+    set(name, state, save=true) {
+        console.log(name, state);
+
+        if(save) this.save(name, state);
+        document.querySelectorAll(`[data-option="${name}"]`).forEach(element => {
+            console.log(element.tagName);
+            let property = element.tagName === 'SELECT' ? 'value' : 'checked';
+            element[property] = state
+        }) // Update all checkboxes on page
+        
+        // Run after function
+        let func = this.after[name];
+        if(func !== undefined) func(state);
+    },
+    save(name, state) {
+        this[name] = state;
+        if(this.cookies || name === 'cookies') store(`main_${name}`, `${this[name]}`); // Save in localStorage
+    },
+    createListeners(parent=document, type='input') {
+        let listener_type = type === 'select' ? 'change' : 'click';
+        parent.querySelectorAll(`${type}[data-option]`).forEach(element => element.addEventListener(listener_type, function() {
+            let option_name = this.dataset.option;
+            options.set(option_name, type === 'select' ? this.value : this.checked);
+        }));
+    },
+    updateAll(save=true) {
+        for(let name of options.list) {
+            let value = store(`main_${name}`);
+            if(value == 'undefined') continue;
+            try { value = JSON.parse(value); } catch (error) {}
+            if(value) options.set(name, value, save);
+        }
+    },
+
+    menu(close) {
+        let menu = document.querySelector('#options'); // Palette already open
+        if(menu !== null || close) return menu?.remove();
+
+        let element = document.createElement('div');
+        element.id = 'options';
+        element.className = 'options';
+        element.innerHTML = `
+        <h3>Options</h3>
+        <hr/>
+        <div class="item">
+            <img src="/assets/icon/moon.svg" class="icon" id="theme_button_icon">
+            <p>Theme</p>
+            <select name="theme_dropdown" id="theme_dropdown" data-option="theme">
+                <option value="system">System (default)</option>
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+                <option value="red">Red</option>
+            </select>
+        </div>
+        <div class="item">
+            <img src="/assets/icon/motion_mode_FILL0_wght600_GRAD0_opsz20.svg" class="icon">
+            <p>Reduce motion</p>
+            <label class="switch">
+                <input type="checkbox" data-option="reduce_motion">
+                <span></span>
+                <div class="off">O</div>
+                <div class="on">I</div>
+            </label>
+        </div>
+        <div class="item">
+            <img src="/assets/icon/cookie_FILL1_wght600_GRAD0_opsz48.svg" class="icon cookie_icon">
+            <p>
+                Consent to cookies<br/>
+                <span class="secondary_text"><a href="/about/#privacy">Privacy policy</a></span>
+            </p>
+            <label class="switch">
+                <input type="checkbox" data-option="cookies">
+                <span></span>
+                <div class="off">O</div>
+                <div class="on">I</div>
+            </label>
+        </div>`;
+
+        body.append(element);
+        this.createListeners(element);
+        this.createListeners(element, 'select');
+        this.updateAll(false);
+    },
+
+    /** Unique code to run after an option is changed */
+    after: {
+        'cookies': state => {
+            options.set('policy_version', privacy_policy_version);
+            if(!state) {
+                for(let [key, value] of Object.entries(localStorage)) {
+                    if(key.startsWith('main_') && key !== 'main_cookies') localStorage.removeItem(key);
+                }
+                // toast.send(undefined, 'Settings cleared');
+            }
+            // document.querySelectorAll('.cookie_icon').forEach(element => element.src = state ? '/assets/icon/cookie_FILL1_wght600_GRAD0_opsz48.svg' : '/assets/icon/cookie_off_FILL1_wght500_GRAD0_opsz24.svg');
+        },
+        'theme': state => {
+            // Temporary
+            function removeClassByPrefix(element, prefix) {
+                var regx = new RegExp('\\b' + prefix + '.*?\\b', 'g');
+                element.className = element.className.replace(regx, '');
+                return element;
+            }
+
+            removeClassByPrefix(body, 'theme_'); // Reset
+            if(state !== 'system') body.classList.add(`theme_${state}`);
+
+            let iconsrc = options.theme === 'light' ? '/assets/icon/sun.svg' : '/assets/icon/moon.svg';
+            let theme_button_icon = document.getElementById('theme_button_icon');
+            if(!theme_button_icon) return;
+            if(theme_button_icon?.src?.endsWith?.(iconsrc)) return;
+
+            theme_button_icon.classList.remove('a_rollout')
+            theme_button_icon.classList.add('a_rollout');
+            clearTimeout(ti1);
+            clearTimeout(ti2);
+            ti1 = setTimeout(themeIcon, 300);
+            ti2 = setTimeout(() => theme_button_icon.classList.remove('a_rollout'), 600);
+            /** Update theme button */
+            function themeIcon() { theme_button_icon.src = iconsrc; }
+        },
+        'reduce_motion': state => {
+            style(body, 'reduced_motion', state); // Set theme
+            // reduce_motion.innerText = state ? 'Reduce motion ⏵︎' : 'Reduce motion ⏸︎';
+        
+            // Disable/enable AOS
+            let alternate = true;
+            document.querySelectorAll('[data-aos]').forEach(element => {
+                element.setAttribute("data-aos", state ? "none" : alternate ? "fade-right" : "fade-left");
+                alternate = !alternate;
+            });
+
+            // Video play/pause
+            if(video_main) state ? video_main.pause() : video_main.play();
+
+            // Icon
+            let theme_button_icon = document.getElementById('theme_button_icon');
+        }
+    }
+}
+
 /** Toggle between dark/light mode */
 function switchTheme(animate=true) {
-    theme = !theme;
-    if(cookies) store('main_theme', `${theme}`); // Save in localStorage
-    style(body, 'theme_light', theme); // Set theme
-    if(!animate) return themeIcon(); // Animate
-    theme_button_icon.classList.remove('a_rollout')
-    theme_button_icon.classList.add('a_rollout');
-    clearTimeout(ti1);
-    clearTimeout(ti2);
-    ti1 = setTimeout(themeIcon, 250);
-    ti2 = setTimeout(() => { theme_button_icon.classList.remove('a_rollout'); }, 500);
-    /** Update theme button */
-    function themeIcon() { theme_button_icon.src = theme ? '/assets/icon/sun.svg' : '/assets/icon/moon.svg'; }
+    console.log('placeholder');   
 }
 /** Scrolls page to top */
 function toTop(closemenu=false) {
     window.scrollTo({top:0, behavior:'smooth'})
     document.activeElement.blur(); // Move keyboard navigation back to start
     if(closemenu) toggleMenu();
-}
-
-/** Toggles "Reduce Motion" */
-function toggleMotion() {
-    reducedMotion = !reducedMotion;
-    if(cookies) store('main_reduce_motion', `${reducedMotion}`); // Save in localStorage
-    style(body, 'reduced_motion', reducedMotion); // Set theme
-    reduce_motion.innerText = reducedMotion ? 'Reduce motion ⏵︎' : 'Reduce motion ⏸︎';
-
-    // Disable/enable AOS
-    let alternate = true;
-    document.querySelectorAll('[data-aos]').forEach(element => {
-        element.setAttribute("data-aos", reducedMotion ? "none" : alternate ? "fade-right" : "fade-left");
-        alternate = !alternate;
-    });
-
-    // Video play/pause
-    if(reducedMotion) video_main.pause(); else video_main.play();
 }
 
 /** Enlarge image */
@@ -100,7 +215,7 @@ const toast = {
     container: document.body.appendChild(Object.assign(document.createElement('div'),{id:"toast_container"})),
     id: 0,
 
-    new(title='', desc='', ...buttons) {
+    send(title='', desc='', ...buttons) {
         let t = document.createElement('div');
         t.className = 'toast toast_in';
         t.dataset.toastId = this.id;
@@ -120,8 +235,8 @@ const toast = {
         }
 
         t.innerHTML = `
-        <h3>${title}</h3>
         <div class="dismiss hover_underline" tabindex="0" role="button" onclick="toast.remove(this)">Dismiss</div>
+        <h3>${title}</h3>
         <p class="secondary_text">
             ${desc}
         </p>
@@ -281,42 +396,25 @@ function palette(close) {
 // }
 
 // Cookie notice
-let privacy_policy_version = 1;
-if(!cookies && cookies !== undefined) {
-    toast.new(
+if(options.cookies === undefined) {
+    toast.send(
         'Cookie Usage',
         'This website uses cookies to remember your settings and save game progress. It also uses third-party cookies to serve personalized ads on some pages. <a href="/about/#privacy">Privacy Policy</a>',
-        { label:'Accept', classes:'button_white', func:`store('main_allow_cookies', ${privacy_policy_version}); cookies=${privacy_policy_version}; toast.remove(this);` },
-        { label:'Reject', func:"store('main_allow_cookies', -1); toast.remove(this);" }
+        { label:'Accept', classes:'button_white', func:`options.set('cookies', true); toast.remove(this);` },
+        { label:'Reject', func:"options.set('cookies', false); toast.remove(this);" }
     )
-} else {
-    function createElementFromHTML(htmlString) {
-        let div = document.createElement('div');
-        div.innerHTML = htmlString.trim();
-        return div.firstChild;
-    }
-
+}
+else {
     // Updated policy notice
-    if(privacy_policy_version > cookies) {
-        toast.new('Our privacy policy has been updated');
-    }
-    if(cookies === undefined) {
-        console.log('rejected cookies');
-        let div = createElementFromHTML(`
-        <div role="button" tabindex="0" class="nav_button" title="Consent to additional cookies" id="nav_accept_cookies">
-            <img src="/assets/icon/cookie_off_FILL1_wght500_GRAD0_opsz24.svg" alt="Consent to additional cookies" class="icon button_icon">
-        </div>`);
-        div.addEventListener('click', () => {
-            cookies = privacy_policy_version;
-            store('main_allow_cookies', cookies);
-            toast.new('Cookies', 'Optional cookies enabled');
-            document.getElementById("nav_accept_cookies").remove();
-        });
-
-        // Rejected cookies button
-        document.querySelector('.nav_right').prepend(div);
+    if(options.cookies !== 'false' && privacy_policy_version > options.policy_version) {
+        toast.send('Privacy Policy Updated', 'Our privacy policy has been updated.<br/><a href="/about/#privacy">Privacy Policy</a>');
     }
 }
+
+// Option toggles
+options.createListeners();
+options.createListeners(undefined, 'select');
+options.updateAll();
 
 
 
@@ -345,7 +443,8 @@ function articleCopyURL(event) {
 //#region 
 menu_button.addEventListener('click', toggleMenu);
 backdrop.addEventListener('click', toggleMenu);
-theme_button.addEventListener('click', switchTheme);
+// theme_button.addEventListener('click', switchTheme);
+document.getElementById('options_button').addEventListener('click', () => options.menu());
 document.getElementById('search_button')?.addEventListener('click', () => palette());
 /** Click on figure image to enlarge */
 document.querySelectorAll('figure img').forEach(e => { e.setAttribute("tabindex", "0"); e.addEventListener('click', enlargeImage); });
@@ -366,34 +465,32 @@ document.addEventListener("keydown", e => {
     }
 });
 
-// let parallaxElement = video_main != null ? video_main : document.getElementById('banner');
-let parallaxElement2 = document.getElementById('home_center');
-/** On scroll */
+// let parallaxElement = document.getElementById('banner');
+// let parallaxElement2 = document.getElementById('home_center');
+// /** On scroll */
 window.onscroll = () => {
     // Nav bar
     let distance = document.documentElement.scrollTop || document.body.scrollTop;
     style(nav, 'nav_transparent', (distance <= 120));
 
     // Parallax
-    // parallaxElement.style.transform = `translateY(${distance / 2.5}px)`;
-    // parallaxElement2.style.transform = `translate(-50%, calc(${distance / 10}px - 50%))`;
+    // parallaxElement.style.transform = `translateY(${distance / 2.3}px)`;
+    // parallaxElement2.style.transform = `translate(-50%, calc(${distance / 5}px - 50%))`;
 };
 
 /** On resize */
 window.onresize = () => { if(hamburger_open && window.innerWidth > mobile_layout_width) toggleMenu(); };
 
 /** On load */
-window.onload = event => {
+(() => {
     // Reduced motion
-    let m = store('main_reduce_motion');
     const reduce_motion_preference = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
-    if(m == 'true' || m == null && reduce_motion_preference) toggleMotion();
 
     // Theme
-    let t = store('main_theme');
-    if(t === null || t === 'false') return;
-    switchTheme(false);
-};
+    // let t = store('main_theme');
+    // if(t === null || t === 'false') return;
+    // switchTheme(false);
+})()
 //#endregion
 
 // Easter Egg
