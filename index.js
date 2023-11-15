@@ -404,8 +404,8 @@ if(options.cookies === undefined) {
         { label:'Reject', func:"options.set('cookies', false); toast.remove(this);" }
     )
 }
-else {
     // Updated policy notice
+else if(options.cookies !== false) {
     if(options.cookies !== 'false' && privacy_policy_version > options.policy_version) {
         toast.send('Privacy Policy Updated', 'Our privacy policy has been updated.<br/><a href="/about/#privacy">Privacy Policy</a>');
     }

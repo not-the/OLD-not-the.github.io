@@ -72,7 +72,7 @@
 
     /* Text and elements */
     --text:                var(--night-text);
-    --night-secondary-text:var(--night-secondary-text);
+    --secondary-text:      var(--night-secondary-text);
     --placeholder-text:    var(--night-placeholder-text);
     --link-color:          var(--night-link-color);
 

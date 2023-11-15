@@ -154,6 +154,7 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
         max-width: 100%;
         margin-bottom: 12px;
         padding-bottom: 0;
+        padding-right: 0;
     }
     .body_column { padding: 12px 6px 0; }
     .info_content {
