@@ -68,7 +68,7 @@
     --dark-border-color:   var(--night-dark-border-color);
     --border-color:        var(--night-border-color);
     --border-darker:       var(--night-border-darker);
-    --nav-button-hover-bg: var(--night-nav-button-hover);
+    --nav-button-hover-bg: var(--night-nav-button-hover-bg);
 
     /* Text and elements */
     --text:                var(--night-text);
