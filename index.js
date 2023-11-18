@@ -96,7 +96,8 @@ const options = {
                 <option value="system">System (default)</option>
                 <option value="dark">Dark</option>
                 <option value="light">Light</option>
-                <option value="red">Red</option>
+                <option value="red">Burgundy</option>
+                <option value="carrot">Carrot Clicker</option>
             </select>
         </div>
         <div class="item">

@@ -200,13 +200,39 @@ body.theme_red {
     --link-color:          #51a2ff; */
 
     --accent-color:        #51a2ff; /* #4687ff */
-    --gradient-a:          #2efff5;
-    --gradient-b:          #8e82ff;
+    /* --gradient-a:          #2efff5;
+    --gradient-b:          #8e82ff; */
 }
-body.theme_red .video_main {
+/* body.theme_red .video_main {
     filter: hue-rotate(140deg);
-}
+} */
+body.theme_carrot {
+    /* --body-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* --title-font: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
 
+    --main-bg:             #242222; /* rgba(20, 20, 20, 1) */
+    --lighter-bg:          #312e2e;
+    --lightest-bg:         #353535;
+    --transparent-bg:      #242222;
+    --backdrop-color:      rgba(0, 0, 0, 0.5);
+
+    --dark-border-color:   rgba(199, 199, 199, 0.3);
+    --border-color:        #4b4747; /* rgba(199, 199, 199, 0.3) */
+    --border-darker:       #4b4747;
+    --nav-button-hover-bg: rgb(255, 255, 255, 0.1);
+
+    --text:                white;
+    --secondary-text:      #c4c4c4;
+    --placeholder-text:    #757575;
+    --link-color:          rgb(137, 184, 255);
+
+    /* --accent-color:        rgb(137, 184, 255); */
+    /* --gradient-a:          #2efff5;
+    --gradient-b:          #8e82ff; */
+}
+body.theme_carrot #nav {
+    background-color: var(--lighter-bg);
+}
 /* Shorthand */
 /* .align_right { float: right; } */
 
