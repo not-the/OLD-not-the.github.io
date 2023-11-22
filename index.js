@@ -4,7 +4,6 @@ nav               = document.getElementById('nav'),
 menu_button       = document.getElementById('menu_button'),
 hamburger_menu    = document.getElementById('hamburger_menu'),
 theme_button      = document.getElementById('theme_button'),
-video_main        = document.querySelector('.video_main'),
 reduce_motion     = document.getElementById('reduce_motion'),
 backdrop          = document.getElementById('backdrop');
 
@@ -96,6 +95,7 @@ const options = {
                 <option value="system">System (default)</option>
                 <option value="dark">Dark</option>
                 <option value="light">Light</option>
+                <option value="oled">Dark (OLED)</option>
                 <option value="red">Burgundy</option>
                 <option value="carrot">Carrot Clicker</option>
             </select>
@@ -106,8 +106,8 @@ const options = {
             <label class="switch">
                 <input type="checkbox" data-option="reduce_motion">
                 <span></span>
-                <div class="off">O</div>
                 <div class="on">I</div>
+                <div class="off">O</div>
             </label>
         </div>
         <div class="item">
@@ -119,8 +119,8 @@ const options = {
             <label class="switch">
                 <input type="checkbox" data-option="cookies">
                 <span></span>
-                <div class="off">O</div>
                 <div class="on">I</div>
+                <div class="off">O</div>
             </label>
         </div>`;
 
@@ -179,10 +179,7 @@ const options = {
             });
 
             // Video play/pause
-            if(video_main) state ? video_main.pause() : video_main.play();
-
-            // Icon
-            let theme_button_icon = document.getElementById('theme_button_icon');
+            document.querySelectorAll('video[autoplay]:not([controls])').forEach(el => state ? el.pause() : el.play());
         }
     }
 }
@@ -211,12 +208,18 @@ function enlargeImage(event, close=false) {
     body.append(e);
 }
 
-/** Toast notification */
+/** Toast notification methods */
 const toast = {
     container: document.body.appendChild(Object.assign(document.createElement('div'),{id:"toast_container"})),
     id: 0,
 
-    send(title='', desc='', ...buttons) {
+    /** Display a toast notification on-screen
+     * @param {string} title 
+     * @param {string} desc 
+     * @param {number} expires Time until the toast auto-dismisses in seconds
+     * @param  {...object} buttons An object containing a "label" parameter (string) and a "func" parameter (function)
+     */
+    send(title='', desc='', expires=0, ...buttons) {
         let t = document.createElement('div');
         t.className = 'toast toast_in';
         t.dataset.toastId = this.id;
@@ -234,6 +237,7 @@ const toast = {
             }
             buttonHTML += '</div>';
         }
+        let expiresHTML = expires ? `<div class="expires" style="animation-duration: ${expires}s"></div>` : '';
 
         t.innerHTML = `
         <div class="dismiss hover_underline" tabindex="0" role="button" onclick="toast.remove(this)">Dismiss</div>
@@ -241,9 +245,13 @@ const toast = {
         <p class="secondary_text">
             ${desc}
         </p>
-        ${buttonHTML}`;
+        ${buttonHTML}
+        ${expiresHTML}`;
         this.container.appendChild(t);
         this.id++;
+
+        // Expiration
+        if(expires) setTimeout(() => this.remove(t), expires*1000);
     },
     remove(target) {
         let t = target.closest('.toast');
@@ -401,6 +409,7 @@ if(options.cookies === undefined) {
     toast.send(
         'Cookie Usage',
         'This website uses cookies to remember your settings and save game progress. It also uses third-party cookies to serve personalized ads on some pages. <a href="/about/#privacy">Privacy Policy</a>',
+        undefined,
         { label:'Accept', classes:'button_white', func:`options.set('cookies', true); toast.remove(this);` },
         { label:'Reject', func:"options.set('cookies', false); toast.remove(this);" }
     )

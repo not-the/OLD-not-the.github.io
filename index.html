@@ -55,8 +55,8 @@
                 <a href="/" class="nav_item">Home</a>
                 <!-- <a href="/#portfolio" class="nav_item" onclick="toggleMenu()">Portfolio</a> -->
                 <a href="/#projects" class="nav_item" onclick="toggleMenu()">Projects</a>
-                <a href="/#contact" class="nav_item" onclick="toggleMenu()">Contact</a>
-                <!-- <a href="/posts" class="nav_item">Posts</a>  -->
+                <!-- <a href="/#contact" class="nav_item" onclick="toggleMenu()">Contact</a> -->
+                <a href="/posts" class="nav_item">Blog</a> 
                 <a href="/about" class="nav_item">About</a> 
             </div>
 
@@ -84,11 +84,10 @@
             <!-- Hello -->
             <div class="home_block home_hello">
                 <h1 class="big_title">
-                    Hi, I'm<br/>
-                    <span class="big_title_accent">not-the</span>
-                </h1>
-                <p class="tagline">Web developer</p><br/>
-                <a href="#projects" class="bold" style="font-family: var(--title-font)">My work -></a> 
+                    I make<br/>
+                    <span class="big_title_accent">Websites</span>
+                </h1><br/>
+                <a href="#projects" class="bold" style="font-family: var(--title-font)">Projects -></a> 
             </div>
 
             <!-- More -->
@@ -148,8 +147,8 @@
                 <label class="switch">
                     <input type="checkbox" data-option="reduce_motion">
                     <span></span>
-                    <div class="off">O</div>
                     <div class="on">I</div>
+                    <div class="off">O</div>
                 </label>
             </div>
         </div> -->
@@ -611,7 +610,7 @@
                 <div>
                     <b class="emphasize">Email</b>
                     <a role="button" tabindex="0" data-obfuscated>
-                        <p>Click to reveal</p>
+                        Click to reveal
                     </a>
                 </div>
             </div>
@@ -620,7 +619,7 @@
                 <img src="/assets/icon/github.svg" alt="" class="icon">
                 <div>
                     <b class="emphasize">Github</b>
-                    <a href="https://github.com/not-the" rel="noreferrer"><p>https://github.com/not-the</p></a>
+                    <a href="https://github.com/not-the" rel="noreferrer">https://github.com/not-the</a>
                 </div>
             </div>
         </div>
@@ -661,6 +660,7 @@
     <!-- JS -->
     <script src="/index.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/obfuscate.js"></script>
     <script>
     AOS.init({
         // Global settings:
@@ -695,17 +695,6 @@
             };
         });
     }
-    // Obfuscation
-    document.querySelector('[data-obfuscated]').addEventListener("click", e => {
-        let value = '&#x63;&#x6F;&#x6E;&#x74;&#x61;&#x63;&#x74;&#x40;&#x6E;&#x6F;&#x74;&#x6B;&#x61;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;';
-        let [a, b, c, d] = ['al.com', '@notk', 'con', 'tact'];
-        const button = e.currentTarget;
-        let element = document.createElement('a');
-        [element.href, element.target, element.rel] = [`mailto:${c}${d}${b}${a}`, "_blank", "noreferrer"];
-        element.innerHTML = `<p>${value}</p>`;
-        button.parentNode.appendChild(element);
-        button.remove();
-    })
     </script>
 </body>
 </html>

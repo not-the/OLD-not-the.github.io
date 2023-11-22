@@ -49,8 +49,8 @@
                 <a href="/" class="nav_item">Home</a>
                 <!-- <a href="/#portfolio" class="nav_item" onclick="toggleMenu()">Portfolio</a> -->
                 <a href="/#projects" class="nav_item" onclick="toggleMenu()">Projects</a>
-                <a href="/#contact" class="nav_item" onclick="toggleMenu()">Contact</a>
-                <!-- <a href="/posts" class="nav_item">Posts</a>  -->
+                <!-- <a href="/#contact" class="nav_item" onclick="toggleMenu()">Contact</a> -->
+                <a href="/posts" class="nav_item">Blog</a> 
                 <a href="/about" class="nav_item">About</a> 
             </div>
 
@@ -205,6 +205,10 @@
                 <p>Normal Button</p>
                 <div class="button_shade"></div>
             </button>
+            <button class="button full_width bold" onclick="toast.send('Toast Notification', 'This is a toast notification', true)">
+                <p>Click to see a toast notification</p>
+                <div class="button_shade"></div>
+            </button>
 
             <h3>Inputs</h3>
             <p>
@@ -217,8 +221,8 @@
                 <label class="switch">
                     <input type="checkbox">
                     <span></span>
-                    <div class="off">O</div>
                     <div class="on">I</div>
+                    <div class="off">O</div>
                 </label>
                 <br/><br/>
         
@@ -243,7 +247,13 @@
                 <option value="Option 1">Option 1</option>
                 <option value="Option 1">Option 2</option>
                 <option value="Option 1">Option 3</option>
-            </select>
+            </select><br/><br/>
+
+            <p>
+                <b>Progress bars</b>
+                <progress max="100" value="60"></progress>
+                <progress></progress>
+            </p>
 
             <h2>Images & Video</h2>
             <figure>

@@ -1,3 +1,11 @@
+11/21/2023
+- Changed the main page text
+- OLED Dark theme
+- Fixed switch on/off labels being incorrect
+- "expires" parameter when sending toast notifications
+- Updated reduce motion to pause/play any autoplaying video instead of specifically looking for the main page background
+- Updated about with email
+
 11/14/2023
 - Options panel, better options toggle support
 - Retracting cookie consent in options removes all main page cookies
