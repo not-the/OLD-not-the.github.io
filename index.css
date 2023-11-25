@@ -962,6 +962,7 @@ nav .button_icon {
     color: var(--secondary-text);
     line-height: 1.6em;
 }
+.doc strong { color: var(--text); }
 .doc h2 {
     margin-bottom: 6px;
     border-bottom: 1px solid var(--border-color);
@@ -986,6 +987,14 @@ p.big_letter::first-letter {
     line-height: 0.8;
 }
 
+.doc q {
+    display: block;
+    color: var(--secondary-text);
+    quotes: none;
+    border-left: 3px solid var(--accent-color);
+    padding: 5px 0 7px 15px;
+    margin-bottom: 12px;
+}
 .doc blockquote {
     font-size: 15pt;
     padding: 32px 16px;
@@ -1021,14 +1030,14 @@ cite::before { content: "- "; }
 }
 .doc ol,
 .doc ul {
+    color: var(--secondary-text);
     /* list-style-position: inside; */
     padding-left: 6px;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
 }
 .doc ul ul { margin-bottom: 0; }
 .doc li {
-    padding-bottom: 4px;
+    padding-bottom: 6px;
     margin-left: 18px;
 }
 .doc table {
@@ -1082,6 +1091,7 @@ figure img { cursor: zoom-in; }
     margin-top: 12px;
 }
 
+code.block { display: block; }
 code {
     /* HTML
     808080 grey
@@ -1099,8 +1109,6 @@ code {
     --js-number: #b5cea8;
     --js-keyword: #c586c0;
 
-
-    display: block;
     white-space: break-spaces;
     word-wrap: break-word;
 
@@ -1108,6 +1116,7 @@ code {
 
     background-color: var(--lighter-bg);
     padding: 6px;
+    margin-bottom: 12px;
     border-radius: 6px;
 }
 code, code * { font-family: monospace; }

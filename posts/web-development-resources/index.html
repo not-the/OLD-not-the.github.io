@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Resources</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icon.png">
+
+    <!-- Visual -->
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/projects/project.css">
+    <meta name="theme-color" content="#171718"/>
+
+    <!-- Meta -->
+    <meta property="og:url" content="https://www.notkal.com/posts/web-development-resources">
+    <meta property="og:title" content="Web Development Resources">
+    <!-- <meta property="og:description" content="undefined"> -->
+    <!-- <meta property="og:image" content="/assets/project/carrot_clicker_big.png"> -->
+    <!-- <meta name="twitter:image:alt" content="Alt text for image"> -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="notkal">
+
+    <!-- not-util -->
+    <link rel="stylesheet" href="https://code.notkal.com/not-util.css" crossorigin>
+    <script src="https://code.notkal.com/not-util.js" crossorigin></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body >
+    <!---------- Navigation ---------->
+    <nav id="nav" class="overlay_element flex nav_transparent">
+        <!-- Menu button -->
+        <div role="button" tabindex="0" id="menu_button" class="nav_button">
+            <img src="/assets/icon/hamburger.svg" alt="Menu" id="menu_button_icon" class="icon button_icon">
+        </div>
+
+        <!-- Page name -->
+        <p class="nav_item page_title">notkal</p>
+
+        <div class="flex" id="hamburger_menu">
+            <!-- Nav items -->
+            <div id="nav_list" class="flex">
+                <a href="/" class="nav_item">Home</a>
+                <!-- <a href="/#portfolio" class="nav_item" onclick="toggleMenu()">Portfolio</a> -->
+                <a href="/#projects" class="nav_item" onclick="toggleMenu()">Projects</a>
+                <!-- <a href="/#contact" class="nav_item" onclick="toggleMenu()">Contact</a> -->
+                <a href="/posts" class="nav_item">Blog</a> 
+                <a href="/about" class="nav_item">About</a> 
+            </div>
+
+            <!-- Additional buttons -->
+            <div class="nav_item nav_right flex">
+                <div role="button" tabindex="0" id="search_button" class="nav_button">
+                    <img src="/assets/icon/search_FILL0_wght600_GRAD0_opsz24.svg" alt="Search" id="search_button" class="icon button_icon" style="transform: scale(1.3, 1.3) translateY(1px);">
+                </div>
+                <a href="https://github.com/not-the" rel="noreferrer" title="Github">
+                    <div class="nav_button">
+                        <img src="/assets/icon/github.svg" alt="Github" class="icon button_icon">
+                    </div>
+                </a>
+                <div role="button" tabindex="0" id="options_button" class="nav_button">
+                    <img src="/assets/icon/settings.svg" alt="Options" class="icon button_icon">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <!-- Banner image -->
+        <div id="banner" class="banner" style="background-image: url(/assets/banner/gradient_4.png)"></div>
+
+        <!-- Title -->
+        <div class="title_section container flex">
+            <div>
+                <h1>Web Development Resources</h1>
+                <p id="path" class="secondary_text gray">
+                    <a href="/">notkal</a> / <a href="/posts">Posts</a> / <a href="./">Web Development Resources</a>
+                </p>
+            </div>
+            <div class="title_buttons flex">
+
+            </div>
+        </div>
+    </header>
+    
+
+    <!---------- Main ---------->
+    <main id="main" class="doc container flex">
+        <div class="info_column">
+            <div class="info_content">
+                <div class="user_card flex">
+                    <img src="https://avatars.githubusercontent.com/u/87151784?v=4" alt="">
+                    <div>
+                        <a href="https://github.com/not-the" target="_blank" rel="noreferrer" class="emphasize bold">not-the</a>
+                        <p class="secondary_text">Author</p>
+                    </div>
+                </div>
+    
+                <br/>
+    
+                <p class="emphasize">
+                    Posted <span>November 24, 2023</span><br/>
+                    <!-- <i class="secondary_text">Last updated <span>11/16/2023</span></i> -->
+                </p>
+                <br/>
+
+                <div class="table_of_contents">
+                    <h4>Table of contents</h4>
+                    <hr>
+                    <ol>
+                        <li>
+                            <a href="#get-started-with-web-development"><p>Get Started With Web Development</p></a>
+                            <ul>
+                                <li><a href="#documentation"><p>Documentation</p></a></li>
+                                <li><a href="#tutorials-start-here"><p>Tutorials (Start Here)</p></a></li>
+                                <li><a href="#css-learning-resources"><p>CSS Learning Resources</p></a></li>
+                                <li><a href="#additional-resources"><p>Additional Resources</p></a></li>
+                            </ul>
+                        </li>
+
+    
+                        <li><a href="#code-editing-software"><p>Code Editing Software</p></a></li>
+    
+                        <li>
+                            <a href="#concepts"><p>Concepts</p></a>
+                            <ul>
+                                <li><a href="#css-concepts"><p>CSS Concepts</p></a></li>
+                                <li><a href="#accessibility"><p>Accessibility</p></a></li>
+                                <li><a href="#advanced-concepts"><p>Advanced concepts</p></a></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="body_column">
+            <h2 id="get-started-with-web-development">Get Started With Web Development</h2>
+            <p>
+                This is a list of websites, resources, and concepts to check out if you&#39;re getting started with web development.
+            </p>
+
+            <h4 id="documentation">Documentation</h4>
+            <p>If you want to learn about a specific HTML element, CSS property, or feature in JavaScript, you can find detailed  documentation for those features here</p>
+            <ul>
+                <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+                <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
+            </ul>
+
+            <h4 id="tutorials-start-here">Tutorials (Start Here)</h4>
+            <p>These are all good places to get started and get a handle on the basics. Some are interactive, some are videos, and some are written.</p>
+            <ul>
+                <li><a href="https://www.w3schools.com/html/html_intro.asp">W3Schools HTML Tutorial (Written &amp; Interactive)</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn">MDN Web Docs - Learn Web Development (Written)</a></li>
+                <li><a href="https://www.freecodecamp.org/">freeCodeCamp (Interactive)</a></li>
+                <li><a href="https://www.youtube.com/c/WebDevSimplified">Web Dev Simplified on Youtube</a>
+                    <ul>
+                        <li><a href="https://www.youtube.com/playlist?list=PLZlA0Gpn_vH9xx-RRVNG187ETT2ekWFsq">&quot;New Web Developers Start Here&quot; playlist</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://react-tutorial.app/">React Tutorial (Written &amp; Interactive)</a></li>
+            </ul>
+
+            <h4 id="css-learning-resources">CSS Learning Resources</h4>
+            <ul>
+                <li><a href="https://cssanimation.rocks/">https://cssanimation.rocks/</a></li>
+                <li><a href="https://flexboxfroggy.com/">https://flexboxfroggy.com/</a> - This is a game that teaches you CSS&#39;
+                    flexbox feature</li>
+            </ul>
+
+            <h4 id="additional-resources">Additional Resources</h4>
+            <ul>
+                <li><a href="https://fonts.google.com/">Google Fonts</a> - On top of fonts, they also have free to use icons.</li>
+                <li><a href="https://webaim.org/resources/contrastchecker/">Contrast Checker</a></li>
+                <li><a href="https://cubic-bezier.com/">cubic-bezier</a> - An easy, visual way to create cubic-bezier curves for CSS
+                    animations &amp; transitions.</li>
+                <li><a href="CSSGradient.io">https://cssgradient.io/</a></li>
+            </ul>
+
+            <h2 id="code-editing-software">Code Editing Software</h2>
+            <p>
+                You can start with something as simple as Notepad or a normal text editor. Just create a file with <code>.html</code> at the end and start writing HTML.
+            </p>
+            <p>
+                Ultimately I recommend <a href="(https://code.visualstudio.com/">Visual Studio code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a> plugin, which lets you view the page you&#39;re editing in real-time:
+            </p>
+
+            <h4 id="free-online-website-code-editors">Free Online Website Code Editors</h4>
+            <p>If you want a quick and easy way to play around with HTML/CSS/JS in your browser these are great options.</p>
+            <ul>
+                <li><a href="https://codepen.io/">CodePen.io</a></li>
+                <li><a href="https://jsfiddle.net/">JSFiddle</a></li>
+            </ul>
+
+            <h2 id="concepts">Concepts</h2>
+            <h4 id="html-concepts">HTML Concepts</h4>
+            <ul>
+                <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp">Semantic Elements</a> - While you can use only div elements for everything in a document, that will prevent some users and search engines from understanding the purpose or layout of your page.</li>
+            </ul>
+
+            <h4 id="css-concepts">CSS Concepts</h4>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">Pseudo Elements</a></li>
+                <li><a href="https://www.w3schools.com/css/css3_flexbox.asp">Flexbox</a></li>
+            </ul>
+                <h4 id="accessibility">Accessibility</h4>
+                <p>
+                    Accessibility is the idea of ensuring that your website accessible to all kinds of users, whether they are visually impaired or use keyboard navigation (as two examples)
+                </p>
+                
+            <ul>
+                <li><strong>Contrast:</strong> Text and clickable element colors should be easily distinguishable from the background color. <a href="https://webaim.org/resources/contrastchecker/">Contrast Checker Tool</a></li>
+                <li><strong>CSS content</strong>, like pseudo elements, will be ignored by screen readers. This means they&#39;re good for purely visual or aesthetic elements.</li>
+                <li><strong>JavaScript:</strong> If your page doesn&#39;t require JavaScript, it&#39;s a good idea to ensure it works with it disabled entirely. Modern CSS has more options than ever for creating functioning menus without the use of JS. There are plenty of reasons someone might want to disable JavaScript, and they shouldn&#39;t have to tinker with your page just to navigate it.</li>
+                <li><strong>Keyboard Navigation:</strong> Pages should be navigable via keyboard. By default, browsers allow you to press the tab key to cycle through the page. Make sure that everything that is clickable can also be focused and interacted with via keyboard, and that the order of elements in the HTML matches what appears on screen.</li>
+            </ul>
+
+            <h3 id="advanced-concepts">Advanced concepts</h3>
+            <ul>
+                <li><a href="https://xd.adobe.com/ideas/process/information-architecture/visual-hierarchy-principles-examples/">Visual hierarchy</a></li>
+                <li>
+                    <a href="https://www.w3schools.com/html/html_responsive.asp">Responsiveness</a>: These days it&#39;s common practice to make your website rearrange itself to fit different screen sizes. After all, desktops and phones have drastically different screen sizes and dimensions, so you need to ensure that all of your content fits on as many devices as possible. This is usually accomplished using <a href="https://www.w3schools.com/css/css3_mediaqueries_ex.asp">media queries</a>.
+                    <ul>
+                        <li>See also: <a href="https://www.w3schools.com/cssref/css_units.asp">CSS Units of Measurement</a></li>
+                    </ul>
+                </li>
+            </ul>
+    </main>
+    
+
+    <!---------- Footer ---------->
+    <footer id="footer" class="flex">
+        <div class="container">
+            <div class="icons">
+                <div class="ee_icon"><input type="color" name="easter_egg" id="easter_egg" value="#51a2ff" title="Click me!"></div>
+                <div>
+                    <a href="/">Home</a> | 
+                    <a href="/#projects">Projects</a> | 
+                    <a href="/#contact">Contact</a> | 
+                    <a href="/posts">Posts</a> |
+                    <a href="/about">About</a>
+                </div>
+            </div>
+
+            <!-- Attribution -->
+            <a href="/about/#copyright" class="emphasize bold hover_underline">Image attribution</a> | 
+            <a href="/about/#privacy" class="emphasize bold hover_underline">Privacy</a>
+            <br/><br/>
+
+            <!-- Copyright -->
+            <p class="emphasize">Ⓒ 2023 notkal.com</p>
+            <br/>
+            <a role="button" tabindex="0" onclick="toTop()">Return to top</a>
+        </div>
+    </footer>
+    <div id="footer_gradient"></div>
+
+
+    <!---------- Overlays ---------->
+    <div id="backdrop"></div>
+
+    <!-- JS -->
+    <script src="/index.js"></script>
+</body>
+</html>
