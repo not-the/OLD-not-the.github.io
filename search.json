@@ -18,7 +18,7 @@
         "type": "Home"
     },
     {
-        "name": "All Posts",
+        "name": "Blog",
         "icon": "/assets/icon.png",
         "url": "/posts",
         "type": "/posts"
@@ -62,8 +62,8 @@
         "type": "url"
     },
     {
-        "name": "Gravity",
-        "url": "https://www.notkal.com/Gravity-PIXIJS",
+        "name": "Gravity Toy",
+        "url": "/gravity-toy",
         "type": "url"
     },
     {
