@@ -79,50 +79,56 @@ const options = {
     },
 
     menu(close) {
-        let menu = document.querySelector('#options'); // Palette already open
+        let menu = document.querySelector('.options_overlay'); // Palette already open
         if(menu !== null || close) return menu?.remove();
 
         let element = document.createElement('div');
-        element.id = 'options';
-        element.className = 'options';
+        element.className = 'overlay options_overlay';
         element.innerHTML = `
-        <h3>Options</h3>
-        <hr/>
-        <div class="item">
-            <img src="/assets/icon/moon.svg" class="icon" id="theme_button_icon">
-            <p>Theme</p>
-            <select name="theme_dropdown" id="theme_dropdown" data-option="theme">
-                <option value="system">System (default)</option>
-                <option value="dark">Dark</option>
-                <option value="light">Light</option>
-                <option value="oled">Dark (OLED)</option>
-                <option value="red">Burgundy</option>
-                <option value="carrot">Carrot Clicker</option>
-            </select>
-        </div>
-        <div class="item">
-            <img src="/assets/icon/motion_mode_FILL0_wght600_GRAD0_opsz20.svg" class="icon">
-            <p>Reduce motion</p>
-            <label class="switch">
-                <input type="checkbox" data-option="reduce_motion">
-                <span></span>
-                <div class="on">I</div>
-                <div class="off">O</div>
-            </label>
-        </div>
-        <div class="item">
-            <img src="/assets/icon/cookie_FILL1_wght600_GRAD0_opsz48.svg" class="icon cookie_icon">
-            <p>
-                Consent to cookies<br/>
-                <span class="secondary_text"><a href="/about/#privacy">Privacy policy</a></span>
-            </p>
-            <label class="switch">
-                <input type="checkbox" data-option="cookies">
-                <span></span>
-                <div class="on">I</div>
-                <div class="off">O</div>
-            </label>
+        <div id="options">
+            <h3>Options</h3>
+            <hr/>
+            <div class="item">
+                <img src="/assets/icon/moon.svg" class="icon" id="theme_button_icon">
+                <p>Theme</p>
+                <select name="theme_dropdown" id="theme_dropdown" data-option="theme">
+                    <option value="system">System (default)</option>
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                    <option value="oled">Dark (OLED)</option>
+                    <option value="red">Burgundy</option>
+                    <option value="carrot">Carrot Clicker</option>
+                </select>
+            </div>
+            <div class="item">
+                <img src="/assets/icon/motion_mode_FILL0_wght600_GRAD0_opsz20.svg" class="icon">
+                <p>Reduce motion</p>
+                <label class="switch">
+                    <input type="checkbox" data-option="reduce_motion">
+                    <span></span>
+                    <div class="on">I</div>
+                    <div class="off">O</div>
+                </label>
+            </div>
+            <div class="item">
+                <img src="/assets/icon/cookie_FILL1_wght600_GRAD0_opsz48.svg" class="icon cookie_icon">
+                <p>
+                    Consent to cookies<br/>
+                    <span class="secondary_text"><a href="/about/#privacy">Privacy policy</a></span>
+                </p>
+                <label class="switch">
+                    <input type="checkbox" data-option="cookies">
+                    <span></span>
+                    <div class="on">I</div>
+                    <div class="off">O</div>
+                </label>
+            </div>
         </div>`;
+        
+        element.addEventListener('click', event => {
+            let classes = event.target.classList;
+            console.log(classes)
+            if(classes.contains('overlay') || classes.contains('options_overlay')) options.menu(); });
 
         body.append(element);
         this.createListeners(element);
@@ -468,6 +474,7 @@ document.addEventListener("keydown", e => {
     else if(key === "escape") {
         enlargeImage(false, true);
         palette(true);
+        options.menu(true);
     }
     else if((e.ctrlKey || e.metaKey) && key === 'k') {
         e.preventDefault();
