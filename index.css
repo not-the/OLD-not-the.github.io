@@ -734,22 +734,22 @@ nav .button_icon {
 
     animation: palette_in 0.2s cubic-bezier(0.86, 0, 0.07, 1);
 }
-.options p { font-weight: bold; }
-.options .secondary_text { font-weight: initial; }
-.options > .item > .icon {
+#options p { font-weight: bold; }
+#options .secondary_text { font-weight: initial; }
+#options > .item > .icon {
     margin-right: 12px;
     width: 20px;
 }
-.options > .item {
+#options > .item {
     overflow: hidden;
     display: flex;
     align-items: center;
     padding: 6px 0;
 }
-.options > .item > :last-child {
+#options > .item > :last-child {
     margin-left: auto;
 }
-.options select {
+#options select {
     min-width: 58%;
 }
 
