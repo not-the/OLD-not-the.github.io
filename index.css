@@ -84,7 +84,7 @@
 
 /* System theme */
 @media (prefers-color-scheme: light) {
-    body:not(.theme_dark) {
+    body:not(.theme_dark):not(.theme_red) {
         color-scheme: unset;
 
         /* Background */
@@ -108,19 +108,24 @@
         /* --accent-color:        rgb(81, 162, 255); */
         --gradient-a:          var(--day-gradient-a);
         --gradient-b:          var(--day-gradient-b);
+
+        /* project.css */
+        --project-gradient: linear-gradient(90deg, var(--main-bg) 20%, transparent 100%);
+        --project-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+        --project-box-shadow-hover: 6px 6px 16px rgba(0, 0, 0, 0.2);
     }
-    body:not(.theme_dark) .icon:not(.button_icon),
-    body:not(.theme_dark) #nav:not(.nav_transparent) .icon,
-    body:not(.theme_dark) #nav.menu_open .icon {
+    body:not(.theme_dark):not(.theme_red) .icon:not(.button_icon),
+    body:not(.theme_dark):not(.theme_red) #nav:not(.nav_transparent) .icon,
+    body:not(.theme_dark):not(.theme_red) #nav.menu_open .icon {
         filter: none;
     }
-    body:not(.theme_dark) .white_icon:not(.button_icon),
-    body:not(.theme_dark) #nav:not(.nav_transparent) .white_icon,
-    body:not(.theme_dark) #nav.menu_open .white_icon {
+    body:not(.theme_dark):not(.theme_red) .white_icon:not(.button_icon),
+    body:not(.theme_dark):not(.theme_red) #nav:not(.nav_transparent) .white_icon,
+    body:not(.theme_dark):not(.theme_red) #nav.menu_open .white_icon {
         filter: invert();
     }
     /* .wave_decoration { filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(1559%) hue-rotate(182deg) brightness(90%) contrast(107%); } */
-    body:not(.theme_dark) #footer::before { filter: invert(); }
+    body:not(.theme_dark):not(.theme_red) #footer::before { filter: invert(); }
 }
 
 /* Light theme */
@@ -217,18 +222,21 @@ body.theme_red {
     --border-darker:       rgb(88, 34, 34);
     --nav-button-hover-bg: rgb(255, 255, 255, 0.1);
 
-    /* --text:                white;
+    --text:                white;
     --secondary-text:      rgb(200, 200, 200);
     --placeholder-text:    #757575;
-    --link-color:          #51a2ff; */
+    --link-color:          #51a2ff;
 
     --accent-color:        #51a2ff; /* #4687ff */
-    /* --gradient-a:          #2efff5;
-    --gradient-b:          #8e82ff; */
+    --gradient-a:          #2efff5;
+    --gradient-b:          #8e82ff;
 }
 /* body.theme_red .video_main {
     filter: hue-rotate(140deg);
 } */
+body.theme_red #footer::before {
+    filter:saturate(20) hue-rotate(90deg);
+}
 body.theme_carrot {
     /* --body-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     /* --title-font: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
@@ -255,6 +263,31 @@ body.theme_carrot {
 }
 body.theme_carrot #nav {
     background-color: var(--lighter-bg);
+}
+body.theme_twitter {
+    /* Background */
+    --main-bg:             #15202b;
+    --lighter-bg:          #1e2732;
+    --lightest-bg:         #273340;
+    --transparent-bg:      rgba(30, 39, 50, 0.85);
+    --backdrop-color:      var(--night-backdrop-color);
+
+    /* Additional colors */
+    --dark-border-color:   var(--night-dark-border-color);
+    --border-color:        #38444d;
+    --border-darker:       var(--night-border-darker);
+    --nav-button-hover-bg: var(--night-nav-button-hover-bg);
+
+    /* Text and elements */
+    --text:                var(--night-text);
+    --secondary-text:      #8B98A5;
+    --placeholder-text:    var(--night-placeholder-text);
+    --link-color:          #1d9bf0;
+
+    /* Accents */
+    --accent-color:        #1d9bf0;
+    --gradient-a:          var(--night-gradient-a);
+    --gradient-b:          var(--night-gradient-b);
 }
 /* Shorthand */
 /* .align_right { float: right; } */
@@ -1343,6 +1376,13 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
     #nav.menu_open {
         background-color: var(--main-bg);
         border-color: var(--main-bg);
+    }
+
+    #options {
+        left: 6px;
+        right: 6px;
+        max-width: unset;
+        width: unset;
     }
 
     /* Blog format */

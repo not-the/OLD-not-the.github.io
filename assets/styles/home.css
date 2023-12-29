@@ -115,7 +115,7 @@ body.theme_light .mouse_glow {
 
     transition: background-position 2s ease;
 }
-#home .home_hello .big_title_accent:hover { background-position: 400px; }
+#home .home_hello .big_title_accent:hover { background-position: 499px; }
 #home p.tagline { font-size: 16pt; }
 
 /* #home_content {

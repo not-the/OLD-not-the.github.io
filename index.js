@@ -98,6 +98,7 @@ const options = {
                     <option value="oled">Dark (OLED)</option>
                     <option value="red">Burgundy</option>
                     <option value="carrot">Carrot Clicker</option>
+                    <option value="twitter">Twitter</option>
                 </select>
             </div>
             <div class="item">
@@ -190,10 +191,6 @@ const options = {
     }
 }
 
-/** Toggle between dark/light mode */
-function switchTheme(animate=true) {
-    console.log('placeholder');   
-}
 /** Scrolls page to top */
 function toTop(closemenu=false) {
     window.scrollTo({top:0, behavior:'smooth'})
@@ -231,8 +228,9 @@ const toast = {
         t.dataset.toastId = this.id;
 
         // HTML
+        console.log(buttons);
         let buttonHTML = '';
-        if(buttonHTML !== undefined) {
+        if(buttons.length !== 0) {
             buttonHTML += '<div class="flex" style="margin-top: 12px;">';
             for(let button of buttons) {
                 buttonHTML += `
@@ -459,7 +457,6 @@ function articleCopyURL(event) {
 //#region 
 menu_button.addEventListener('click', toggleMenu);
 backdrop.addEventListener('click', toggleMenu);
-// theme_button.addEventListener('click', switchTheme);
 document.getElementById('options_button').addEventListener('click', () => options.menu());
 document.getElementById('search_button')?.addEventListener('click', () => palette());
 /** Click on figure image to enlarge */
@@ -484,8 +481,7 @@ document.addEventListener("keydown", e => {
 
 // let parallaxElement = document.getElementById('banner');
 // let parallaxElement2 = document.getElementById('home_center');
-// /** On scroll */
-window.onscroll = () => {
+let scrollHandler = () => {
     // Nav bar
     let distance = document.documentElement.scrollTop || document.body.scrollTop;
     style(nav, 'nav_transparent', (distance <= 120));
@@ -494,6 +490,9 @@ window.onscroll = () => {
     // parallaxElement.style.transform = `translateY(${distance / 2.3}px)`;
     // parallaxElement2.style.transform = `translate(-50%, calc(${distance / 5}px - 50%))`;
 };
+// /** On scroll */
+window.onscroll = scrollHandler;
+scrollHandler();
 
 /** On resize */
 window.onresize = () => { if(hamburger_open && window.innerWidth > mobile_layout_width) toggleMenu(); };
@@ -502,11 +501,6 @@ window.onresize = () => { if(hamburger_open && window.innerWidth > mobile_layout
 (() => {
     // Reduced motion
     const reduce_motion_preference = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
-
-    // Theme
-    // let t = store('main_theme');
-    // if(t === null || t === 'false') return;
-    // switchTheme(false);
 })()
 //#endregion
 
