@@ -96,6 +96,7 @@ const options = {
                     <option value="dark">Dark</option>
                     <option value="light">Light</option>
                     <option value="oled">Dark (OLED)</option>
+                    <option value="none" disabled>──────────────</option>
                     <option value="red">Burgundy</option>
                     <option value="carrot">Carrot Clicker</option>
                     <option value="twitter">Twitter</option>
@@ -452,6 +453,16 @@ function articleCopyURL(event) {
     document.execCommand("copy");
     e.remove();
 }
+
+// Navbar styling
+document.querySelectorAll('#nav a.nav_item').forEach(element => {
+    console.log(element.href, location.href);
+    if(
+        // location.href.startsWith(element.href)
+        location.href == element.href ||
+        (location.href.includes('/posts/') && element.href.includes('/posts/'))
+    ) element.classList.add('active');
+})
 
 // Event listeners
 //#region 

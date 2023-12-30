@@ -195,5 +195,10 @@
         "name": "PIXI.JS Mario Changelog",
         "url": "/posts/pixijs-mario-changelog",
         "type": "Blog post"
+    },
+    {
+        "name": "Web Development Resources",
+        "url": "/posts/web-development-resources",
+        "type": "Blog post"
     }
 ]

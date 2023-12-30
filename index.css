@@ -655,6 +655,11 @@ a.nav_item {
     border-bottom: 1px solid transparent;
     position: relative;
 }
+a.nav_item.active {
+    color: var(--accent-color);
+    font-weight: bold;
+    border-bottom: 3px solid var(--accent-color);
+}
 
 .page_title {
     font-size: 11pt;
@@ -694,6 +699,7 @@ a.nav_item::before {
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
     opacity: 0;
+    pointer-events: none;
     transform: scale(0.6) translateY(20px);
     border-radius: 12px 12px 0 0;
     transition: transform 0.1s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.1s ease, border-radius 0.25s ease;
@@ -1077,11 +1083,16 @@ cite::before { content: "- "; }
 }
 .doc table {
     margin: 3px 0;
+    border-collapse: collapse;
 }
 .doc table td,
 .doc table th {
     border: 1px solid var(--border-color);
-    padding: 4px 8px;
+    padding: 5px 9px;
+    margin: 0;
+}
+.doc table th {
+    background-color: var(--lighter-bg);
 }
 .doc figure {
     margin: 12px 0;

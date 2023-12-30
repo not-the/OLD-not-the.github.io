@@ -1,3 +1,7 @@
+12/29/2023
+- Nav bar buttons will highlight based on the current URL
+- Misc CSS improvements
+
 12/28/2023
 - Fixed system theme and red theme inconsistencies when system is in light mode
 - Twitter theme
