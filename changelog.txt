@@ -1,3 +1,6 @@
+1/3/2024
+- Fixed carrot and twitter themes not working when system is set to light mode
+
 12/29/2023
 - Nav bar buttons will highlight based on the current URL
 - Misc CSS improvements
