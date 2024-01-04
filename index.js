@@ -454,15 +454,19 @@ function articleCopyURL(event) {
     e.remove();
 }
 
-// Navbar styling
-document.querySelectorAll('#nav a.nav_item').forEach(element => {
-    console.log(element.href, location.href);
-    if(
-        // location.href.startsWith(element.href)
-        location.href == element.href ||
-        (location.href.includes('/posts/') && element.href.includes('/posts/'))
-    ) element.classList.add('active');
-})
+/** Navbar styling */
+function updateNavStyling() {
+    document.querySelectorAll('#nav a.nav_item').forEach(element => {
+        element.classList.remove('active');
+        if(
+            // location.href.startsWith(element.href)
+            location.href == element.href ||
+            (location.href.includes('/posts/') && element.href.includes('/posts/'))
+        ) element.classList.add('active');
+    })
+}
+updateNavStyling();
+addEventListener('hashchange', updateNavStyling);
 
 // Event listeners
 //#region 
