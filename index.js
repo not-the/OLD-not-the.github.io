@@ -461,7 +461,8 @@ function updateNavStyling() {
         if(
             // location.href.startsWith(element.href)
             location.href == element.href ||
-            (location.href.includes('/posts/') && element.href.includes('/posts/'))
+            (location.href.includes('/posts/') && element.href.includes('/posts/')) ||
+            (location.href.includes('/projects/') && element.href.includes('#projects'))
         ) element.classList.add('active');
     })
 }
