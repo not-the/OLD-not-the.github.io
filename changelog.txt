@@ -1,3 +1,12 @@
+1/10/2024
+- Fixed title-font weight
+- Green theme
+- Contact form
+
+1/9/2024
+- Switched to local fonts
+- Nav bar projects button now highlights when on a project page
+
 1/3/2024
 - Fixed carrot and twitter themes not working when system is set to light mode
 

@@ -600,10 +600,37 @@
         <h2>Contact</h2>
 
         <div id="contact_list">
+            <div class="contact_item" id="form">
+                <!-- <img src="/assets/icon/email.svg" alt="" class="icon"> -->
+                <div class="full_width" style="padding: 6px;">
+                    <strong style="display: inline-block; padding-bottom: 12px; padding-left: 6px;">Send me a message:</strong>
+                    <form action="https://formsubmit.co/ab074334a2691755cc5fc1c4e5d11589" method="POST">
+                        <!-- <input type="hidden" name="_next" value="https://www.notkal.com/#form_sent"> -->
+                        <input type="hidden" name="_next" value="http://localhost:5500/#t=Message%20Sent">
+                        <input type="hidden" name="_template" value="table">
+
+                        <div class="flex">
+                            <!-- <input type="text" name="name" placeholder="Name" required value="GAMER"/> -->
+                            <input type="email" name="email" placeholder="Your email" required/>
+                            <input type="subject" name="subject" placeholder="Subject (optional)"/>
+                        </div>
+
+                        <textarea placeholder="Your Message" name="message" rows="6" required></textarea>
+
+                        <br/><br/>
+                        <button type="submit" class="button button_blue bold full_width">
+                            <p>Send</p>
+                            <div class="button_shade"></div>
+                        </button>
+                        <!-- <p class="secondary_text center" style="margin-top: 6px;"><sup>Do not send any personal info</sup></p> -->
+                        <br/>
+                    </form>
+                </div>
+            </div>
             <div class="contact_item flex" id="email">
                 <img src="/assets/icon/email.svg" alt="" class="icon">
                 <div>
-                    <b class="emphasize">Email</b>
+                    <strong>Email</strong>
                     <a role="button" tabindex="0" data-obfuscated>
                         Click to reveal
                     </a>
@@ -613,7 +640,7 @@
             <div class="contact_item flex">
                 <img src="/assets/icon/github.svg" alt="" class="icon">
                 <div>
-                    <b class="emphasize">Github</b>
+                    <strong>Github</strong>
                     <a href="https://github.com/not-the" rel="noreferrer">https://github.com/not-the</a>
                 </div>
             </div>

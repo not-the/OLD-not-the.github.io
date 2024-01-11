@@ -2,6 +2,7 @@
 @font-face {
     font-family: 'Inter';
     src: url("/assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+    font-weight: 800;
 }
 @font-face {
     font-family: 'Open Sans';
@@ -9,13 +10,12 @@
     font-weight: 400;
 }
 
-
 :root {
     color-scheme: dark;
 
     /* Font */
-    --body-font: 'Open Sans', sans-serif;
-    --title-font: 'Inter', Arial, Helvetica, sans-serif;
+    --body-font: 'Open Sans', monospace;
+    --title-font: 'Inter', monospace;
     
     /* Background */
     --night-main-bg:             rgb(23, 23, 24); /* rgba(20, 20, 20, 1) */
@@ -95,7 +95,7 @@
 
 /* System theme */
 @media (prefers-color-scheme: light) {
-    body:not(.theme_dark):not(.theme_red):not(.theme_carrot):not(.theme_twitter):not(.theme_carrot):not(.theme_twitter) {
+    body:not(.theme_dark):not(.theme_oled):not(.theme_red):not(.theme_green):not(.theme_carrot):not(.theme_twitter) {
         color-scheme: unset;
 
         /* Background */
@@ -125,18 +125,18 @@
         --project-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
         --project-box-shadow-hover: 6px 6px 16px rgba(0, 0, 0, 0.2);
     }
-    body:not(.theme_dark):not(.theme_red):not(.theme_carrot):not(.theme_twitter) .icon:not(.button_icon),
-    body:not(.theme_dark):not(.theme_red):not(.theme_carrot):not(.theme_twitter) #nav:not(.nav_transparent) .icon,
-    body:not(.theme_dark):not(.theme_red):not(.theme_carrot):not(.theme_twitter) #nav.menu_open .icon {
+    body:not(.theme_dark):not(.theme_oled):not(.theme_red):not(.theme_green):not(.theme_carrot):not(.theme_twitter) .icon:not(.button_icon),
+    body:not(.theme_dark):not(.theme_oled):not(.theme_red):not(.theme_green):not(.theme_carrot):not(.theme_twitter) #nav:not(.nav_transparent) .icon,
+    body:not(.theme_dark):not(.theme_oled):not(.theme_red):not(.theme_green):not(.theme_carrot):not(.theme_twitter) #nav.menu_open .icon {
         filter: none;
     }
-    body:not(.theme_dark):not(.theme_red):not(.theme_carrot):not(.theme_twitter) .white_icon:not(.button_icon),
-    body:not(.theme_dark):not(.theme_red):not(.theme_carrot):not(.theme_twitter) #nav:not(.nav_transparent) .white_icon,
-    body:not(.theme_dark):not(.theme_red):not(.theme_carrot):not(.theme_twitter) #nav.menu_open .white_icon {
+    body:not(.theme_dark):not(.theme_oled):not(.theme_red):not(.theme_green):not(.theme_carrot):not(.theme_twitter) .white_icon:not(.button_icon),
+    body:not(.theme_dark):not(.theme_oled):not(.theme_red):not(.theme_green):not(.theme_carrot):not(.theme_twitter) #nav:not(.nav_transparent) .white_icon,
+    body:not(.theme_dark):not(.theme_oled):not(.theme_red):not(.theme_green):not(.theme_carrot):not(.theme_twitter) #nav.menu_open .white_icon {
         filter: invert();
     }
     /* .wave_decoration { filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(1559%) hue-rotate(182deg) brightness(90%) contrast(107%); } */
-    body:not(.theme_dark):not(.theme_red):not(.theme_carrot):not(.theme_twitter) #footer::before { filter: invert(); }
+    body:not(.theme_dark):not(.theme_oled):not(.theme_red):not(.theme_green):not(.theme_carrot):not(.theme_twitter) #footer::before { filter: invert(); }
 }
 
 /* Light theme */
@@ -247,6 +247,17 @@ body.theme_red {
 } */
 body.theme_red #footer::before {
     filter:saturate(20) hue-rotate(90deg);
+}
+body.theme_green {
+    --main-bg:             rgb(19, 29, 22);
+    --lighter-bg:          rgb(27, 41, 31);
+    --lightest-bg:         rgb(38, 58, 44);
+    --transparent-bg:      rgba(27, 41, 31, 0.8);
+
+    --border-color:        rgb(46, 70, 53);
+    /* --border-darker:       rgb(46, 70, 53); */
+    --nav-button-hover-bg: var(--night-nav-button-hover-bg);
+    /* --link-color:          rgb(157, 228, 184); */
 }
 body.theme_carrot {
     /* --body-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
@@ -416,7 +427,7 @@ a:focus-visible .button .button_icon {
     filter: none;
 }
 .button_white { background-color: rgba(255, 255, 255, 0.85); color: black; }
-.button_blue { background-color: var(--accent-color); }
+.button_blue { background-color: var(--accent-color); --border-color: var(--accent-color); }
 .button_red { background-color: rgb(236, 33, 67); }
 .small_button {
     /* padding: 8px; */
@@ -528,18 +539,32 @@ label.switch > input:checked ~ div.on { opacity: 1; transform: none; }
 
 
 
-input[type="text"] {
-    background-color: var(--lighter-bg);
-    color: var(--text);
+input[type="text"],
+input[type="email"],
+input[type="subject"],
+textarea {
+    font-family: var(--body-font);
+    /* background-color: var(--lighter-bg); */
+    /* color: var(--text); */
     border-color: var(--border-darker);
-    border-radius: 9px;
+    border-radius: 7px;
     width: 100%;
     text-align: left;
     outline: none;
+    padding-left: 12px; padding-right: 12px;
+    margin-bottom: 6px; margin-right: 3px;
+    box-shadow: none;
 }
-input[type="text"]:focus {
-    border-color: var(--border-color);
-    /* background-color: var(--lightest-bg); */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="subject"]:focus,
+textarea:focus {
+    border-color: var(--secondary-text);
+    /* background-color: var(--lighter-bg); */
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+    color: rgb(146, 146, 146);
 }
 
 
@@ -1271,6 +1296,7 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
     fill: var(--placeholder-text);
 }
 .palette input[type="text"] {
+    background-color: var(--lighter-bg);
     font-size: 14pt;
     padding-left: 54px;
     border-radius: 15px;

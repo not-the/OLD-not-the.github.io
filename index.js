@@ -98,6 +98,7 @@ const options = {
                     <option value="oled">Dark (OLED)</option>
                     <option value="none" disabled>──────────────</option>
                     <option value="red">Burgundy</option>
+                    <option value="green">Envy</option>
                     <option value="carrot">Carrot Clicker</option>
                     <option value="twitter">Twitter</option>
                 </select>
@@ -456,6 +457,7 @@ function articleCopyURL(event) {
 
 /** Navbar styling */
 function updateNavStyling() {
+    // Nav
     document.querySelectorAll('#nav a.nav_item').forEach(element => {
         element.classList.remove('active');
         if(
@@ -464,7 +466,17 @@ function updateNavStyling() {
             (location.href.includes('/posts/') && element.href.includes('/posts/')) ||
             (location.href.includes('/projects/') && element.href.includes('#projects'))
         ) element.classList.add('active');
-    })
+    });
+
+    // Toast
+    if(location.hash.startsWith('#t=')) {
+        let data = location.hash.slice(3).replaceAll('%20', ' ').split(',');
+        console.log(data);
+        toast.send(data[0], data[1], 8);
+        
+        // Remove hash
+        // history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
 }
 updateNavStyling();
 addEventListener('hashchange', updateNavStyling);
