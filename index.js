@@ -475,7 +475,7 @@ function updateNavStyling() {
         toast.send(data[0], data[1], 8);
         
         // Remove hash
-        // history.pushState("", document.title, window.location.pathname + window.location.search);
+        history.pushState("", document.title, window.location.pathname + window.location.search);
     }
 }
 updateNavStyling();
