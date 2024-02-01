@@ -30,7 +30,7 @@ const projects = {
         // box_art: '',
 
         github_url: 'https://github.com/not-the/Character-Creator',
-        url: 'https://www.notkal.com/Character-Creator/',
+        url: 'https://notkal.com/Character-Creator/',
         author: not,
         body: body_no_desc,
     },
@@ -230,7 +230,7 @@ function populatePage(id, fullpage=false) {
     <meta name="theme-color" content="#171718"/>
 
     <!-- Meta -->
-    <meta property="og:url" content="https://www.notkal.com/${item.type ? item.type.toLowerCase() : 'projects'}/${path}">
+    <meta property="og:url" content="https://notkal.com/${item.type ? item.type.toLowerCase() : 'projects'}/${path}">
     <meta property="og:title" content="${title}">
     <!-- <meta property="og:description" content="${item.desc}"> -->
     <meta property="og:image" content="${item.header}">
