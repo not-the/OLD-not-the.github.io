@@ -342,7 +342,7 @@ function populatePage(id, fullpage=false) {
             <br/><br/>
 
             <!-- Copyright -->
-            <p class="emphasize">Ⓒ 2023 notkal.com</p>
+            <p class="emphasize">Ⓒ 2024 notkal.com</p>
             <br/>
             <a role="button" tabindex="0" onclick="toTop()">Return to top</a>
         </div>

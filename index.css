@@ -673,6 +673,7 @@ section:target h2 {
     --text: white;
     background-color: transparent;
     border-color: var(--dark-border-color);
+    /* border-color: transparent; */
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
 }
@@ -706,9 +707,18 @@ a.nav_item.active {
     
     padding-left: 28px;
     padding-right: 24px;
+    margin-right: 6px;
     border-bottom: none;
     border-right: 1px solid var(--border-color);
+    position: relative;
 }
+/* .page_title::after {
+    content: "";
+    width: 1px; height: 20px;
+    background-color: var(--border-color);
+    position: absolute;
+    right: 0; top: 6px;
+} */
 #nav.nav_transparent .page_title {
     border-color: var(--dark-border-color);
 }
