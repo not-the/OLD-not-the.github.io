@@ -13,7 +13,7 @@ let hamburger_open = false;
 let ti1; // Timeout 1
 let ti2; // Timeout 2
 let searchdata;
-let privacy_policy_version = 1;
+let privacy_policy_version = 2;
 
 // Utility functions
 /** Loops a number within a min and max value */
