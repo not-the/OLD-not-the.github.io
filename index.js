@@ -152,13 +152,6 @@ const options = {
             // document.querySelectorAll('.cookie_icon').forEach(element => element.src = state ? '/assets/icon/cookie_FILL1_wght600_GRAD0_opsz48.svg' : '/assets/icon/cookie_off_FILL1_wght500_GRAD0_opsz24.svg');
         },
         'theme': state => {
-            // Temporary
-            function removeClassByPrefix(element, prefix) {
-                var regx = new RegExp('\\b' + prefix + '.*?\\b', 'g');
-                element.className = element.className.replace(regx, '');
-                return element;
-            }
-
             removeClassByPrefix(body, 'theme_'); // Reset
             if(state !== 'system') body.classList.add(`theme_${state}`);
 
