@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Inter';
     src: url("/assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
-    font-weight: 800;
+    /* font-weight: 800; */
 }
 @font-face {
     font-family: 'Open Sans';
@@ -387,6 +387,7 @@ select,
     padding: 8px 18px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 
+    display: inline-block;
     position: relative;
     overflow: hidden;
     transition: transform 0.1s ease;
@@ -396,6 +397,7 @@ button > *,
 .button > * {
     display: inline-block;
     vertical-align: middle;
+    font-family: var(--title-font);
 }
 /* button:hover,
 input:hover,
@@ -615,6 +617,10 @@ summary { cursor: pointer; }
     max-width: 900px;
     padding: 0 16px;
     margin: 0 auto;
+}
+.screen_height {
+    height: calc(100vh + 1px);
+    max-height: 1080px;
 }
 .overlay_element {
     background-color: var(--transparent-bg);
@@ -955,7 +961,7 @@ nav .button_icon {
 .doc a:hover::after { opacity: 1; transform: translate(-50%, 0px); }
 
 /* Projects - both item and page */
-.title_section { justify-content: space-between; }
+.project > .inner { justify-content: space-between; }
 .title_buttons { margin-top: auto; }
 .title_buttons a { position: relative; }
 .title_buttons .button {
@@ -993,10 +999,10 @@ nav .button_icon {
     box-shadow: var(--project-box-shadow-hover);
     z-index: 1;
 }
-.project .title_section {
+.project > .inner {
     margin-top: auto;
 }
-.project .title_section > div {
+.project > .inner > div {
     align-items: center;
 }
 .project h3 {
@@ -1004,7 +1010,7 @@ nav .button_icon {
     font-size: 18pt;
     /* text-shadow: 0 0 4px black; */
 }
-.project_link_area {
+.project_link {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
 }
@@ -1338,6 +1344,9 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
     font-size: 14pt;
     padding-left: 54px;
     border-radius: 15px;
+}
+.palette input[type="text"]:focus {
+    border-color: var(--border-color)
 }
 .palette .palette_results {
     margin-top: 18px;

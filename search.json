@@ -177,7 +177,7 @@
     },
     {
         "name": "Projects / Leap years list",
-        "icon": "/assets/icon/info.svg", "filter_icon": true,
+        "icon": "/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg", "filter_icon": true,
         "url": "/projects/leap-years-list",
         "type": "About project"
     },

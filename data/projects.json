@@ -1,0 +1,132 @@
+{
+    "main": [
+        {
+            "ignore": true,
+            "name": "Project Title",
+            "id": "project-title",
+            "tagline": "Tagline",
+    
+            "hero": "/assets/project/piximario.png",
+    
+            "url": "https://mario.notkal.com/",
+            "about": "/pixijs-mario"
+        },
+
+
+        {
+            "name": "Sand Toy",
+            "id": "sand-toy",
+    
+            "hero": false,
+    
+            "url": "https://not-the.github.io/sand-toy",
+            "about": "/pixijs-mario"
+        },
+        {
+            "name": "PIXI.JS Mario",
+            "id": "mario-pixijs",
+    
+            "hero": "/assets/project/piximario.png",
+            "hero_style": " center 80% !important",
+    
+            "url": "https://mario.notkal.com/",
+            "about": "/pixijs-mario"
+        },
+        {
+            "name": "Character Creator",
+            "id": "character-creator",
+            "hero": "/assets/project/character_creator_2.png",
+            "url": "https://notkal.com/Character-Creator"
+        },
+        {
+            "name": "Carrot Clicker",
+            "id": "carrot-clicker",
+            "hero": "/assets/project/carrot_clicker_big.png",
+            "about": "/projects/carrot-clicker",
+            "url": "https://carrot.notkal.com"
+        },
+        {
+            "name": "Rubik's Cube",
+            "id": "puzzle-cube",
+    
+            "hero": "/assets/project/rubiks2.png",
+            "hero_style": " right !important",
+    
+            "url": "https://rubiks.notkal.com/",
+            "about": "/projects/rubiks-cube"
+        },
+        {
+            "name": "Gravity Toy",
+            "id": "gravity-toy",
+
+            "url": "https://not-the.github.io/gravity-toy"
+        },
+        {
+            "name": "Maze Algorithm",
+            "id": "maze-algorithm",
+            "hero": "/assets/project/maze.png",
+
+            "url": "https://notkal.com/Maze-Algorithm",
+            "about": "/projects/maze"
+        },
+        {
+            "name": "Pong",
+            "id": "pong",
+            "hero": "/assets/project/pong.png",
+
+            "url": "https://notkal.com/Pong",
+            "about": "/projects/pong"
+        },
+        {
+            "name": "Tic Tac Toe",
+            "id": "tictactoe",
+            "hero": "/assets/project/ttt.png",
+
+            "url": "https://tictactoe.notkal.com",
+            "about": "/projects/tic-tac-toe"
+        }
+    ],
+
+    "older": [
+        {
+            "name": "HTML Confetti",
+            "id": "Mouse-Confetti",
+            "hero": "/assets/project/confetti.png",
+
+            "about": "/projects/html-confetti"
+        },
+        {
+            "name": "CSS Loading Screens",
+            "id": "loading-screens",
+
+            "url": "https://not-the.github.io/Loading-Screens",
+            "about": "/projects/css-loading-screens"
+        },
+        {
+            "name": "ISS Tracker",
+            "id": "iss-tracker-app",
+            "about": "/projects/iss-tracker"
+        },
+        {
+            "name": "Geolocation",
+            "id": "geolocation-html",
+
+            "url": "https://not-the.github.io/geolocation-html",
+            "about": "/projects/geolocation"
+        },
+        {
+            "name": "JS Pyramid",
+            "id": "js-pyramid",
+
+            "url": "https://not-the.github.io/js-pyramid",
+            "about": "/projects/js-pyramid"
+        },
+        {
+            "name": "Leap years list",
+            "id": "leap-years-list",
+
+            "url": "https://not-the.github.io/LeapYear",
+            "about": "/projects/leap-years-list"
+        }
+    ]
+}

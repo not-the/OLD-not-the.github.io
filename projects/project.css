@@ -28,6 +28,7 @@ header .title_section {
     margin-top: 200px;
     padding-bottom: 12px;
     text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
 }
 header .title_section h1 {
     color: white;

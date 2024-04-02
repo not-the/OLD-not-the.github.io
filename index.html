@@ -79,7 +79,7 @@
     </nav>
 
     <!---------- Main ---------->
-    <main id="home">
+    <main id="home" class="screen_height">
         <video src="/assets/video/abstract_ds.mp4" id="banner" class="banner video_main" autoplay loop muted webkit-playsinline playsinline></video>
         <div id="home_center">
             <!-- Hello -->
@@ -161,7 +161,7 @@
     <!---------- Skills ---------->
     <div style="overflow-x: hidden;" id="skills_mouse_area">
         <div id="portfolio"></div>
-        <section id="skills" class="container flex">
+        <section id="skills" class="container screen_height flex">
             <div>
                 <h2>Skills & Experience</h2>
         
@@ -246,357 +246,384 @@
     <!---------- Projects ---------->
     <section id="projects" class="container">
         <!-- Title -->
-        <h2>Personal Projects</h2>
+        <h2>Projects</h2>
         
         <!-- List -->
         <div id="projects_list">
 
-            <div class="project" id="pixijs-mario" style="background: var(--project-gradient), url(/assets/project/piximario.png) center 80% !important;">
-                <div class="title_section flex">
+            <div class="project" id="sand-toy">
+                <div class="inner flex">
                     <div class="flex">
-                        <a href="./pixijs-mario" class="project_link"><div class="project_link_area"></div></a>
-                        <h3>PIXI.JS Mario</h3>
+                        <div>
+                            <a href="https://not-the.github.io/sand-toy" class="project_link"></a>
+                            <h3>Sand Toy</h3>
+                            
+                        </div>
                     </div>
                     <div class="title_buttons flex">
                         <!-- Github -->
-                        <a href="https://github.com/not-the/mario-pixijs" class="label_github" target="_blank" rel="noreferrer">
-                            <div class="button bold small_button">
-                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                <div class="button_shade"></div>
-                            </div>
+                        <a href="https://github.com/not-the/sand-toy" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
                         </a>
-                        <!-- Visit -->
-                        <a href="https://mario.notkal.com/">
-                            <div class="button bold button_blue">
-                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/pixijs-mario" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
                     </div>
                 </div>
             </div>
 
-            <div class="project" id="character-creator" style="background: var(--project-gradient), url(/assets/project/character_creator_2.png);">
-                <div class="title_section flex">
+            <div class="project" id="mario-pixijs" style="background: var(--project-gradient), url(/assets/project/piximario.png) center 80% !important">
+                <div class="inner flex">
                     <div class="flex">
-                        <a href="https://notkal.com/Character-Creator/" class="project_link"><div class="project_link_area"></div></a>
-                        <h3>Character Creator</h3>
+                        <div>
+                            <a href="https://mario.notkal.com/" class="project_link"></a>
+                            <h3>PIXI.JS Mario</h3>
+                            
+                        </div>
                     </div>
                     <div class="title_buttons flex">
                         <!-- Github -->
-                        <a href="https://github.com/not-the/Character-Creator" class="label_github" target="_blank" rel="noreferrer">
-                            <div class="button bold small_button">
-                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                <div class="button_shade"></div>
-                            </div>
+                        <a href="https://github.com/not-the/mario-pixijs" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
                         </a>
-                        <!-- Visit -->
-                        <a href="https://notkal.com/Character-Creator/">
-                            <div class="button bold button_blue">
-                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project" id="carrot-clicker"style="background: var(--project-gradient), url(/assets/project/carrot_clicker_big.png);">
-                <div class="title_section flex">
-                    <div class="flex">
-                        <a href="/projects/carrot-clicker" class="project_link"><div class="project_link_area"></div></a>
-                        <h3>Carrot Clicker</h3>
-                    </div>
-                    <div class="title_buttons flex">
-                        <!-- Github -->
-                        <a href="https://github.com/not-the/Carrot-Clicker" class="label_github" target="_blank" rel="noreferrer">
-                            <div class="button bold small_button">
-                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                        <!-- Visit -->
-                        <a href="https://carrot.notkal.com/">
-                            <div class="button bold button_blue">
-                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project" id="rubiks-cube"style="background: var(--project-gradient), url(/assets/project/rubiks2.png) right !important;;">
-                <div class="title_section flex">
-                    <div class="flex">
-                        <a href="/projects/rubiks-cube" class="project_link"><div class="project_link_area"></div></a>
-                        <h3>Rubik's Cube</h3>
-                    </div>
-                    <div class="title_buttons flex">
-                        <!-- Github -->
-                        <a href="https://github.com/not-the/puzzle-cube" class="label_github" target="_blank" rel="noreferrer">
-                            <div class="button bold small_button">
-                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                        <!-- Visit -->
-                        <a href="https://rubiks.notkal.com/">
-                            <div class="button bold button_blue">
-                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project" id="gravity_toy">
-                <div class="title_section flex">
-                    <div class="flex">
-                        <a href="/gravity-toy/" class="project_link"><div class="project_link_area"></div></a>
-                        <h3>Gravity Toy</h3>
-                    </div>
-                    <div class="title_buttons flex">
-                        <!-- Github -->
-                        <a href="https://github.com/not-the/gravity-toy" class="label_github" target="_blank" rel="noreferrer">
-                            <div class="button bold small_button">
-                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                        <!-- Visit -->
-                        <a href="/gravity-toy/">
-                            <div class="button bold button_blue">
-                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project" id="maze" style="background: var(--project-gradient), url(/assets/project/maze.png);">
-                <div class="title_section flex">
-                    <div class="flex">
-                        <a href="/projects/maze" class="project_link"><div class="project_link_area"></div></a>
-                        <h3>Maze Algorithm</h3>
-                    </div>
-                    <div class="title_buttons flex">
-                        <!-- Github -->
-                        <a href="https://github.com/not-the/Maze-Algorithm" class="label_github" target="_blank" rel="noreferrer">
-                            <div class="button bold small_button">
-                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                        <!-- Visit -->
-                        <a href="https://notkal.com/Maze-Algorithm/">
-                            <div class="button bold button_blue">
-                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project" id="pong" style="background: var(--project-gradient), url(/assets/project/pong.png);">
-                <div class="title_section flex">
-                    <div class="flex">
-                        <a href="/projects/pong" class="project_link"><div class="project_link_area"></div></a>
-                        <h3>Pong</h3>
-                    </div>
-                    <div class="title_buttons flex">
-                        <!-- Github -->
-                        <a href="https://github.com/not-the/Pong" class="label_github" target="_blank" rel="noreferrer">
-                            <div class="button bold small_button">
-                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                        <!-- Visit -->
-                        <a href="https://notkal.com/Pong/">
-                            <div class="button bold button_blue">
-                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project" id="tic-tac-toe"style="background: var(--project-gradient), url(/assets/project/ttt.png);">
-                <div class="title_section flex">
-                    <div class="flex">
-                        <a href="/projects/tic-tac-toe" class="project_link"><div class="project_link_area"></div></a>
-                        <h3>Tic Tac Toe</h3>
-                    </div>
-                    <div class="title_buttons flex">
-                        <!-- Github -->
-                        <a href="https://github.com/not-the/TicTacToe" class="label_github" target="_blank" rel="noreferrer">
-                            <div class="button bold small_button">
-                                <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
-                        <!-- Visit -->
-                        <a href="https://tictactoe.notkal.com/">
-                            <div class="button bold button_blue">
-                                <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                <div class="button_shade"></div>
-                            </div>
-                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/pixijs-mario" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
                     </div>
                 </div>
             </div>
 
-            <!-- View more -->
-            <details>
-                <summary>Older projects</summary>
+            <div class="project" id="character-creator" style="background: var(--project-gradient), url(/assets/project/character_creator_2.png)">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://notkal.com/Character-Creator" class="project_link"></a>
+                            <h3>Character Creator</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/character-creator" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
 
-                <div class="project" id="html-confetti"style="background: var(--project-gradient), url(/assets/project/confetti.png);">
-                    <div class="title_section flex">
-                        <div class="flex">
-                            <a href="/projects/html-confetti" class="project_link"><div class="project_link_area"></div></a>
+                        <!-- About -->
+                        <!-- <a href="undefined" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="carrot-clicker" style="background: var(--project-gradient), url(/assets/project/carrot_clicker_big.png)">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://carrot.notkal.com" class="project_link"></a>
+                            <h3>Carrot Clicker</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/carrot-clicker" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/projects/carrot-clicker" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="puzzle-cube" style="background: var(--project-gradient), url(/assets/project/rubiks2.png) right !important">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://rubiks.notkal.com/" class="project_link"></a>
+                            <h3>Rubik's Cube</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/puzzle-cube" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/projects/rubiks-cube" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="gravity-toy">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://not-the.github.io/gravity-toy" class="project_link"></a>
+                            <h3>Gravity Toy</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/gravity-toy" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="undefined" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="maze-algorithm" style="background: var(--project-gradient), url(/assets/project/maze.png)">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://notkal.com/Maze-Algorithm" class="project_link"></a>
+                            <h3>Maze Algorithm</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/maze-algorithm" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/projects/maze" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="pong" style="background: var(--project-gradient), url(/assets/project/pong.png)">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://notkal.com/Pong" class="project_link"></a>
+                            <h3>Pong</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/pong" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/projects/pong" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="tictactoe" style="background: var(--project-gradient), url(/assets/project/ttt.png)">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://tictactoe.notkal.com" class="project_link"></a>
+                            <h3>Tic Tac Toe</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/tictactoe" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/projects/tic-tac-toe" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div><details><summary>Older projects</summary>
+            <div class="project" id="Mouse-Confetti" style="background: var(--project-gradient), url(/assets/project/confetti.png)">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="undefined" class="project_link"></a>
                             <h3>HTML Confetti</h3>
-                        </div>
-                        <div class="title_buttons flex">
-                            <!-- Github -->
-                            <a href="https://github.com/not-the/Mouse-Confetti" class="label_github" target="_blank" rel="noreferrer">
-                                <div class="button bold small_button">
-                                    <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
-                            <!-- Visit -->
-                            <a href="https://confetti.notkal.com/">
-                                <div class="button bold button_blue">
-                                    <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
+                            
                         </div>
                     </div>
-                </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/Mouse-Confetti" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
 
-                <div class="project" id="css-loading-screens">
-                    <div class="title_section flex">
-                        <div class="flex">
-                            <a href="/projects/css-loading-screens" class="project_link"><div class="project_link_area"></div></a>
+                        <!-- About -->
+                        <!-- <a href="/projects/html-confetti" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="loading-screens">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://not-the.github.io/Loading-Screens" class="project_link"></a>
                             <h3>CSS Loading Screens</h3>
-                        </div>
-                        <div class="title_buttons flex">
-                            <!-- Github -->
-                            <a href="https://github.com/not-the/Loading-Screens" class="label_github" target="_blank" rel="noreferrer">
-                                <div class="button bold small_button">
-                                    <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
-                            <!-- Visit -->
-                            <a href="https://not-the.github.io/Loading-Screens/">
-                                <div class="button bold button_blue">
-                                    <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
+                            
                         </div>
                     </div>
-                </div>
-                <div class="project" id="iss-tracker">
-                    <div class="title_section flex">
-                        <div class="flex">
-                            <a href="/projects/iss-tracker" class="project_link"><div class="project_link_area"></div></a>
-                            <h3>ISS Tracker</h3>
-                        </div>
-                        <div class="title_buttons flex">
-                            <!-- Github -->
-                            <a href="https://github.com/not-the/iss-tracker-app" class="label_github" target="_blank" rel="noreferrer">
-                                <div class="button bold small_button">
-                                    <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
-                            <!-- Visit -->
-                            <a href="https://notkal.com/iss-tracker-app/">
-                                <div class="button bold button_blue">
-                                    <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project" id="geolocation">
-                    <div class="title_section flex">
-                        <div class="flex">
-                            <a href="/projects/geolocation" class="project_link"><div class="project_link_area"></div></a>
-                            <h3>Geolocation</h3>
-                        </div>
-                        <div class="title_buttons flex">
-                            <!-- Github -->
-                            <a href="https://github.com/not-the/geolocation-html" class="label_github" target="_blank" rel="noreferrer">
-                                <div class="button bold small_button">
-                                    <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
-                            <!-- Visit -->
-                            <a href="https://not-the.github.io/geolocation-html/">
-                                <div class="button bold button_blue">
-                                    <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project" id="js-pyramid">
-                    <div class="title_section flex">
-                        <div class="flex">
-                            <a href="/projects/js-pyramid" class="project_link"><div class="project_link_area"></div></a>
-                            <h3>JS Pyramid</h3>
-                        </div>
-                        <div class="title_buttons flex">
-                            <!-- Github -->
-                            <a href="https://github.com/not-the/js-pyramid" class="label_github" target="_blank" rel="noreferrer">
-                                <div class="button bold small_button">
-                                    <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
-                            <!-- Visit -->
-                            <a href="https://not-the.github.io/js-pyramid/">
-                                <div class="button bold button_blue">
-                                    <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project" id="leap-years-list">
-                    <div class="title_section flex">
-                        <div class="flex">
-                            <a href="/projects/leap-years-list" class="project_link"><div class="project_link_area"></div></a>
-                            <h3>Leap years list</h3>
-                        </div>
-                        <div class="title_buttons flex">
-                            <!-- Github -->
-                            <a href="https://github.com/not-the/LeapYear" class="label_github" target="_blank" rel="noreferrer">
-                                <div class="button bold small_button">
-                                    <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon">
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
-                            <!-- Visit -->
-                            <a href="https://not-the.github.io/LeapYear/">
-                                <div class="button bold button_blue">
-                                    <p>Open <img src="/assets/icon/external_link.svg" alt="" class="button_icon" rel="noreferrer"></p>
-                                    <div class="button_shade"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </details>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/loading-screens" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
 
-        </div>
+                        <!-- About -->
+                        <!-- <a href="/projects/css-loading-screens" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="iss-tracker-app">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="undefined" class="project_link"></a>
+                            <h3>ISS Tracker</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/iss-tracker-app" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/projects/iss-tracker" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="geolocation-html">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://not-the.github.io/geolocation-html" class="project_link"></a>
+                            <h3>Geolocation</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/geolocation-html" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/projects/geolocation" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="js-pyramid">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://not-the.github.io/js-pyramid" class="project_link"></a>
+                            <h3>JS Pyramid</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/js-pyramid" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/projects/js-pyramid" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="leap-years-list">
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="https://not-the.github.io/LeapYear" class="project_link"></a>
+                            <h3>Leap years list</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <!-- Github -->
+                        <a href="https://github.com/not-the/leap-years-list" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <!-- About -->
+                        <!-- <a href="/projects/leap-years-list" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a> -->
+                    </div>
+                </div>
+            </div></details></div>
 
     </section>
 
@@ -723,5 +750,65 @@
         });
     }
     </script>
+
+
+
+
+
+    <!-- <script>
+        let plist = document.getElementById("projects_list");
+        let projects = get("/data/projects.json", true);
+        
+
+
+        let html = map(projects.main);
+        html += '<details><summary>Older projects</summary>';
+        html += map(projects.older);
+        html += '</details>';
+
+        
+
+        plist.innerHTML = html;
+
+        function map(list) {
+            return list.map( p => p.ignore ? '' : projectHTML(p) ).join('\n');
+        }
+
+        function projectHTML(p) {
+            return `
+            <div
+                class="project"
+                id="${p.id}"
+                ${
+                    p.hero ?
+                    `style="background: var(--project-gradient), url(${p.hero})${p?.hero_style ?? ''}"` :
+                    ''
+                }
+            >
+                <div class="inner flex">
+                    <div class="flex">
+                        <div>
+                            <a href="${p.url}" class="project_link"></a>
+                            <h3>${p.name}</h3>
+                            ${
+                                p.tagline ? `<p class="secondary_text">${p.tagline}</p>` : ''
+                            }
+                        </div>
+                    </div>
+                    <div class="title_buttons flex">
+                        <a href="https://github.com/not-the/${p.id}" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
+                            <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
+                            <div class="button_shade"></div>
+                        </a>
+
+                        <a href="${p.about}" class="button small_button bold">
+                            <img src="/assets/icon/info_FILL1_wght400_GRAD200_opsz20.svg" alt="" class="button_icon" rel="noreferrer">
+                            <div class="button_shade"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>`
+        }
+    </script> -->
 </body>
 </html>
