@@ -689,6 +689,7 @@ section:target h2 {
 }
 a.nav_item {
     min-width: 80px;
+    padding: 4px 15px;
     border-bottom: 1px solid transparent;
     position: relative;
 }
@@ -698,6 +699,33 @@ a.nav_item.active {
 
     font-weight: bold;
     border-bottom: 3px solid var(--accent-color);
+}
+
+.drop_content {
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 0;
+    right: 0;
+
+    padding: 12px 20px;
+
+    transform: translateY(2px);
+    opacity: 0;
+    transition: 0.1s ease;
+    pointer-events: none;
+}
+.drop_content > .inner {
+    background-color: var(--lightest-bg);
+    padding: 16px 32px;
+    border-radius: 10px;
+}
+a.nav_item:hover + .drop_content,
+a.nav_item:focus-visible + .drop_content,
+.drop_content:hover,
+.drop_content:focus-within {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: unset;
 }
 
 .page_title {
