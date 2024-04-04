@@ -93,6 +93,7 @@
             "id": "Mouse-Confetti",
             "hero": "/assets/project/confetti.png",
 
+            "url": "https://notkal.com/html-confetti",
             "about": "/projects/html-confetti"
         },
         {
@@ -105,6 +106,8 @@
         {
             "name": "ISS Tracker",
             "id": "iss-tracker-app",
+
+            "url": "https://notkal.com/iss-tracker-app/",
             "about": "/projects/iss-tracker"
         },
         {
