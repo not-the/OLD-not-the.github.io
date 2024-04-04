@@ -342,8 +342,10 @@ body.theme_light .mouse_glow {
     /* Projects */
     .project > .inner, #skills_list { flex-direction: column; }
     .project .title_buttons { margin-top: 9px; }
-    .project .title_buttons .button { max-width: unset; width: 100%; }
-    .project .title_buttons a:first-of-type .button { margin-left: 0; }
+    /* .project .title_buttons .button { max-width: unset; width: 100%; } */
+    .project .title_buttons > .button:first-of-type { margin-left: 0; }
+
+    .project h3:after { opacity: 1; transform: translate(-50%, 0px); }
 }
 
 @media print {
