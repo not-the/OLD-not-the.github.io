@@ -45,11 +45,9 @@ const options = {
     policy_version: store('main_policy_version'),
     list: ['cookies', 'theme', 'reduce_motion'],
     set(name, state, save=true) {
-        console.log(name, state);
 
         if(save) this.save(name, state);
         document.querySelectorAll(`[data-option="${name}"]`).forEach(element => {
-            console.log(element.tagName);
             let property = element.tagName === 'SELECT' ? 'value' : 'checked';
             element[property] = state
         }) // Update all checkboxes on page
@@ -130,7 +128,6 @@ const options = {
         
         element.addEventListener('click', event => {
             let classes = event.target.classList;
-            console.log(classes)
             if(classes.contains('overlay') || classes.contains('options_overlay')) options.menu(); });
 
         body.append(element);
@@ -223,7 +220,6 @@ const toast = {
         t.dataset.toastId = this.id;
 
         // HTML
-        console.log(buttons);
         let buttonHTML = '';
         if(buttons.length !== 0) {
             buttonHTML += '<div class="flex" style="margin-top: 12px;">';
@@ -324,7 +320,6 @@ function palette(close) {
             block:"nearest",
             behavior:"smooth"
         });
-        console.log(active);
     })
     // search();
 
@@ -464,7 +459,6 @@ function updateNavStyling() {
     // Toast
     if(location.hash.startsWith('#t=')) {
         let data = location.hash.slice(3).replaceAll('%20', ' ').split(',');
-        console.log(data);
         toast.send(data[0], data[1], 8);
         
         // Remove hash
