@@ -983,7 +983,7 @@ nav .button_icon {
     border-radius: 6px;
     box-shadow: var(--project-box-shadow);
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: cover; */
     background-position: center !important;
     /* background-position: center bottom !important; */
 
