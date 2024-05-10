@@ -1408,7 +1408,7 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
     color: var(--secondary-text);
     float: right;
 }
-#toast_container .toast div.flex > *:not(:last-child) { margin-right: 9px; }
+#toast_container .toast div.flex { column-gap: 9px; margin-top: 12px; }
 #toast_container .toast .expires {
     background-color: var(--accent-color);
     width: 100%;

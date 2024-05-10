@@ -212,36 +212,70 @@ const toast = {
      * @param {string} title 
      * @param {string} desc 
      * @param {number} expires Time until the toast auto-dismisses in seconds
-     * @param  {...object} buttons An object containing a "label" parameter (string) and a "func" parameter (function)
+     * @param  {...object} buttons An object containing a "label" parameter (string) and a "func" parameter (function). Optionally a "classes" parameters to apply CSS classes
      */
     send(title='', desc='', expires=0, ...buttons) {
-        let t = document.createElement('div');
-        t.className = 'toast toast_in';
+
+        /** Shorthand for creating a sanitized HTML element */
+        function makeElement(tagName='div', properties={}, children=[], clickHandler) {
+            // Invalid
+            if(tagName === 'script') return console.warn('script tag not allowed');
+
+            // Create
+            let el = document.createElement(tagName);
+            for(let [key, value] of Object.entries(properties)) el[key] = value; // Properties
+            for(let child of children) el.appendChild(child); // Child elements
+
+            // On click
+            if(clickHandler) el.addEventListener('click', clickHandler);
+
+            return el;
+        }
+
+        // Remove self
+        const removeSelf = function() { toast.remove(this); }
+
+        // Toast
+        let t = makeElement('div', { className:"toast toast_in" }, [
+            // Close button
+            makeElement('div', { innerText:"Dismiss", className:"dismiss hover_underline", tabindex:"0", role:"button" }, undefined, removeSelf),
+
+            // Title
+            makeElement('h3', { innerText: title }),
+            makeElement('p', { className:"secondary_text", innerText: desc }), // Body
+
+            makeElement('p', { className:"links" }),
+
+            // Buttons
+            makeElement("div", { className:"flex", }, [
+                ...buttons.map(button => {
+                    return makeElement("button", {
+                        className: `button full_width ${button.classes ?? ''}`
+                    },
+                    [
+                        makeElement("p", { innerText: button.label }),
+                        makeElement("div", { className:"button_shade" })
+                    ],
+                    button.func)
+                })
+            ])
+        ])
         t.dataset.toastId = this.id;
 
-        // HTML
-        let buttonHTML = '';
-        if(buttons.length !== 0) {
-            buttonHTML += '<div class="flex" style="margin-top: 12px;">';
-            for(let button of buttons) {
-                buttonHTML += `
-                <button class="button full_width ${button.classes ?? ''}" onclick="${button.func}">
-                    <p>${button.label}</p>
-                    <div class="button_shade"></div>
-                </button>`;
-            }
-            buttonHTML += '</div>';
-        }
-        let expiresHTML = expires ? `<div class="expires" style="animation-duration: ${expires}s"></div>` : '';
+        // Parse links
+        // let descP = t.querySelector('p.secondary_text');
+        // if(descP.innerText.includes('<a ')) {
+        //     descP.innerHTML = descP.innerText;
+        // }
 
-        t.innerHTML = `
-        <div class="dismiss hover_underline" tabindex="0" role="button" onclick="toast.remove(this)">Dismiss</div>
-        <h3>${title}</h3>
-        <p class="secondary_text">
-            ${desc}
-        </p>
-        ${buttonHTML}
-        ${expiresHTML}`;
+        // Expiration bar
+        if(expires) {
+            t.appendChild(
+                makeElement("div", { className:"expires", style:{animationDuration:`${expires}s`} })
+            )
+        }
+
+        // Register
         this.container.appendChild(t);
         this.id++;
 
@@ -404,11 +438,17 @@ if(options.cookies === undefined) {
         'Cookie Usage',
         'This website uses cookies to remember your settings and save game progress. It also uses third-party cookies to serve personalized ads on some pages. <a href="/about/#privacy">Privacy Policy</a>',
         undefined,
-        { label:'Accept', classes:'button_white', func:`options.set('cookies', true); toast.remove(this);` },
-        { label:'Reject', func:"options.set('cookies', false); toast.remove(this);" }
+        { label:'Accept', classes:'button_white', func:function() {
+            options.set('cookies', true);
+            toast.remove(this)
+        }},
+        { label:'Reject', func:function() {
+            options.set('cookies', false);
+            toast.remove(this);
+        }}
     )
 }
-    // Updated policy notice
+// Updated policy notice
 else if(options.cookies !== false) {
     if(options.cookies !== 'false' && privacy_policy_version > options.policy_version) {
         toast.send('Privacy Policy Updated', 'Our privacy policy has been updated.<br/><a href="/about/#privacy">Privacy Policy</a>');
@@ -475,7 +515,7 @@ function updateNavStyling() {
         toast.send(data[0], data[1], 8);
         
         // Remove hash
-        history.pushState("", document.title, window.location.pathname + window.location.search);
+        // history.pushState("", document.title, window.location.pathname + window.location.search);
     }
 }
 updateNavStyling();
