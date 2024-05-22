@@ -37,7 +37,12 @@
     },
 
 
-
+    {
+        "name": "Sand Toy",
+        "icon": "https://notkal.com/sand-toy/artwork/materials/sand.png",
+        "url": "https://notkal.com/sand-toy/",
+        "type": "url"
+    },
     {
         "name": "Carrot Clicker",
         "icon": "https://carrot.notkal.com/assets/stats/carrot.png",
