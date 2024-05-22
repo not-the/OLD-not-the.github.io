@@ -93,7 +93,7 @@ body.theme_light .mouse_glow {
     animation-delay: 0.15s;
     animation-fill-mode: backwards;
 }
-#home h1.big_title {
+#home .big_title {
     font-size: 40pt;
     padding-bottom: 2px;
     line-height: 100%;
