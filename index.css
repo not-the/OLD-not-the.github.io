@@ -37,7 +37,7 @@
     --night-link-color:          #51a2ff;
 
     /* Accents */
-    --night-accent-color:        #51a2ff; /* #4687ff */
+    --night-accent-color:        #4096f8; /* #4687ff */
     --night-gradient-a:          #48ff9a;
     --night-gradient-b:          #5b81ff;
 
@@ -56,8 +56,8 @@
     --day-nav-button-hover-bg: rgb(255, 255, 255, 0.1);
 
     /* Text and elements */
-    --day-text:                black;
-    --day-secondary-text:      rgb(40, 40, 40);
+    --day-text:                rgb(28, 11, 48);
+    --day-secondary-text:      rgb(38, 37, 41);
     --day-link-color:          rgb(35, 119, 214);
 
     /* Accents */
