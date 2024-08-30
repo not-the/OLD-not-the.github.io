@@ -433,27 +433,27 @@ function palette(close) {
 // }
 
 // Cookie notice
-if(options.cookies === undefined) {
-    toast.send(
-        'Cookie Usage',
-        'This website uses cookies to remember your settings and save game progress. It also uses third-party cookies to serve personalized ads on some pages. <a href="/about/#privacy">Privacy Policy</a>',
-        undefined,
-        { label:'Accept', classes:'button_white', func:function() {
-            options.set('cookies', true);
-            toast.remove(this)
-        }},
-        { label:'Reject', func:function() {
-            options.set('cookies', false);
-            toast.remove(this);
-        }}
-    )
-}
+// if(options.cookies === undefined) {
+//     toast.send(
+//         'Cookie Usage',
+//         'This website uses cookies to remember your settings and save game progress. It also uses third-party cookies to serve personalized ads on some pages. <a href="/about/#privacy">Privacy Policy</a>',
+//         undefined,
+//         { label:'Accept', classes:'button_white', func:function() {
+//             options.set('cookies', true);
+//             toast.remove(this)
+//         }},
+//         { label:'Reject', func:function() {
+//             options.set('cookies', false);
+//             toast.remove(this);
+//         }}
+//     )
+// }
 // Updated policy notice
-else if(options.cookies !== false) {
-    if(options.cookies !== 'false' && privacy_policy_version > options.policy_version) {
-        toast.send('Privacy Policy Updated', 'Our privacy policy has been updated.<br/><a href="/about/#privacy">Privacy Policy</a>');
-    }
-}
+// else if(options.cookies !== false) {
+//     if(options.cookies !== 'false' && privacy_policy_version > options.policy_version) {
+//         toast.send('Privacy Policy Updated', 'Our privacy policy has been updated.<br/><a href="/about/#privacy">Privacy Policy</a>');
+//     }
+// }
 
 // Option toggles
 options.createListeners();
