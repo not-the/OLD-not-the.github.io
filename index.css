@@ -653,6 +653,10 @@ section:target h2 {
     /* border-left: 8px solid var(--accent-color); */
     /* background-color: var(--nav-button-hover-bg); */
 }
+.contact_item .icon {
+    width: 28px;
+    height: 28px;
+}
 .column {
     flex: 1;
     padding: 8px 0;
